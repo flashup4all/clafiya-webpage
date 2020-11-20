@@ -1,0 +1,16 @@
+
+@import "./bootstrap/css/bootstrap.min.css";
+/* @import "./fontawesome/css/all.min.css"; */
+@import "./owl.carousel/assets/owl.carousel.min.css";
+@import "./owl.carousel/assets/owl.theme.default.min.css";
+@import "theme.css";
+@import "theme-elements.css";
+@import "theme-blog.css";
+@import "default.css";
+@import "custom.css";
+@import "style.css"; 
+
+
+.about-header{
+    background-image: url(/img/page-header/page-header-about-us.jpg);
+}
