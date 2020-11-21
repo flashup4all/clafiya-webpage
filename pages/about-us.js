@@ -4,11 +4,26 @@ export default function Home() {
   return (
     <>
      <Head>
-            <script src="vendor/jquery/jquery.min.js"></script>		
-            <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
-            <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
-            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
-            <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
+        <script src="vendor/jquery/jquery.min.js"></script>		
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
+		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>		
+		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>		
+		{/* <script src="master/style-switcher/style.switcher.js" id="styleSwitcherScript" data-base-path="" data-skin-src=""></script>		 */}
+		<script src="vendor/popper/umd/popper.min.js"></script>		
+		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>		
+		<script src="vendor/common/common.min.js"></script>		
+		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>		
+		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>		
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>		
+		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>		
+		<script src="vendor/isotope/jquery.isotope.min.js"></script>		
+		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>		
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>		
+		<script src="vendor/vide/jquery.vide.min.js"></script>		
+		<script src="vendor/vivus/vivus.min.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/theme.init.js"></script>
+
         </Head>
     {/* hero section */}
     <section className="about-header page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7">
@@ -36,7 +51,7 @@ export default function Home() {
             <div className="row text-center pb-5">
                 <div className="col-md-9 mx-md-auto">
                     <div className="overflow-hidden mb-3">
-                        <h1 className="word-rotator slide font-weight-bold text-8 mb-0 appeear-animation" data-appear-animation="maskUp">
+                        <h1 className="word-rotator slide font-weight-bold text-8 mb-0 appear-animation" data-appear-animation="maskUp">
                             <span>We are Clafiya, We </span>
                             <span className="word-rotator-words bg-primary">
                                 <b className="is-visible">Provide</b>
@@ -134,14 +149,14 @@ export default function Home() {
                 <div className="col-md-6 order-2 order-md-1 text-center text-md-left">
                     <div className="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
                         <div>
-                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-1.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Wisdom Doe</h3>
-                            <p className="text-2 mb-0">CTO</p>
-                        </div>
-                        <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-2.jpg" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Doe</h3>
                             <p className="text-2 mb-0">CEO</p>
+                        </div>
+                        <div>
+                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-1.jpg" alt="" />
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Wisdom Doe</h3>
+                            <p className="text-2 mb-0">CTO</p>
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-3.jpg" alt="" />

@@ -5,24 +5,26 @@ function PartialLayout({ children }) {
   return (
     <>
         <Head>
-            <title>Clafiya</title>
+            <title>Clafiya - Primary Health Service at Your Door Step</title>
             <link rel="icon" href="/favicon.ico" />
 		    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
             <script src="vendor/jquery/jquery.min.js"></script>		
+            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
             <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
             <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
-            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
             <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
         </Head>
         {/* Header */}
         <div className="body">
             <nav className="navbar navbar-expand-lg navbar-light bg-light my-nav sticky-top">
                 <div className="container">
-                    <a href="demo-it-services.html" className="navbar-brand pl-0">
-                        <img alt="Clafiya's logo" src="img/logo.png" />
-                    </a>
+                    <Link href="/">
+                        <a className="navbar-brand pl-0">
+                            <img alt="Clafiya's logo" src="img/logo.png" />
+                        </a>
+                    </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span className="navbar-toggler-icon"></span>
                     </button>
