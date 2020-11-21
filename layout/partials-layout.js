@@ -8,8 +8,13 @@ function PartialLayout({ children }) {
             <title>Clafiya</title>
             <link rel="icon" href="/favicon.ico" />
 		    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css" />
-            {/* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" /> */}
+            <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
 
+            <script src="vendor/jquery/jquery.min.js"></script>		
+            <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
+            <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
+            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
+            <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
         </Head>
         {/* Header */}
         <div className="body">
@@ -53,11 +58,11 @@ function PartialLayout({ children }) {
                                     Contact Us
                                 </a>
                             </li>
-                            <li className="nav-item font-weight-semibold ml-2">
-                                <button className="nav-link text-white button btn" href="#">
+                            {/* <li className="nav-item font-weight-semibold ml-2">
+                                <a className="nav-link text-white button btn" href="https://localhealer.typeform.com/to/AWUPye" target="_blank">
                                     Apply now
-                                </button>
-                            </li>
+                                </a>
+                            </li> */}
                         </ul>
                     </div>
                 </div>
@@ -67,6 +72,7 @@ function PartialLayout({ children }) {
             <div role="main" className="main">
                 {children}
             </div>
+            {/* footer */}
             <footer id="footer">				
             <div className="container">					
                 <div className="footer-ribbon">						
@@ -117,9 +123,10 @@ function PartialLayout({ children }) {
                     <div className="col-md-6 col-lg-2">							
                             <h5 className="text-3 mb-3">FOLLOW US</h5>							
                             <ul className="social-icons">								
-                                <li className="social-icons-facebook"><a href="#" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></li>								
-                                <li className="social-icons-twitter"><a href="#" target="_blank" title="Twitter"><i className="fab fa-twitter"></i></a></li>								
-                                <li className="social-icons-instagram"><a href="#" target="_blank" title="instagram"><i className="fab fa-instagram"></i></a></li>							
+                                <li className="social-icons-facebook"><a href="https://www.facebook.com/ClafiyaAfrica" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></li>								
+                                <li className="social-icons-twitter"><a href="https://twitter.com/Clafiya1" target="_blank" title="Twitter"><i className="fab fa-twitter"></i></a></li>								
+                                <li className="social-icons-instagram"><a href="https://www.instagram.com/clafiya/" target="_blank" title="instagram"><i className="fab fa-instagram"></i></a></li>							
+                                <li className="social-icons-instagram"><a href="https://www.linkedin.com/company/clafiya" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>							
                             </ul>						
                     </div>	
                                         

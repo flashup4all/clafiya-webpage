@@ -310,7 +310,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="col-md-4 d-flex justify-content-center ">
-                            <a href="#" className="text-white sign-up d-flex justify-content-center align-items-center">Sign Up <i className="fa fa-arrow-right px-2"></i></a>
+                            <a href="https://localhealer.typeform.com/to/AWUPye" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">Apply Now <i className="fa fa-arrow-right px-2"></i></a>
                     </div>
                 </div>
             </div>

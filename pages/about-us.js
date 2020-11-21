@@ -3,6 +3,13 @@ import PartialLayout from '../layout/partials-layout'
 export default function Home() {
   return (
     <>
+     <Head>
+            <script src="vendor/jquery/jquery.min.js"></script>		
+            <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
+            <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
+            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
+            <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
+        </Head>
     {/* hero section */}
     <section className="about-header page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7">
         <div className="container">
