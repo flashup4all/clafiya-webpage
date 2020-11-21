@@ -24,7 +24,7 @@ export default function Home() {
                     <article className="post post-large blog-single-post border-0 m-0 p-0">
                         <div className="post-image ml-0">
                             <a>
-                                <img src="/img/blog/wide/blog-11.jpg" className="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                <img src="/img/blog/blog1.jpeg" className="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                             </a>
                         </div>
                 

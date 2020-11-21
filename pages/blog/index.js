@@ -38,7 +38,7 @@ export default function Home() {
                                     <div className="col">
                                         <div className="post-image">
                                             <a href="blog-post.html">
-                                                <img src="img/blog/wide/blog-11.jpg" className="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                                <img src="img/blog/blog1.jpeg" className="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                             </a>
                                         </div>
                                     </div>
