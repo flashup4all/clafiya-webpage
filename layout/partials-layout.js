@@ -5,10 +5,21 @@ function PartialLayout({ children }) {
   return (
     <>
         <Head>
+            <meta charset="utf-8" />
+            <meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+
+
+            <meta charset="UTF-8" />
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+            <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
+
             <title>Clafiya - Primary Health Service at Your Door Step</title>
             <link rel="icon" href="/favicon.ico" />
 		    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
+            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 
             <script src="vendor/jquery/jquery.min.js"></script>		
             <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
@@ -89,7 +100,7 @@ function PartialLayout({ children }) {
                         <div className="alert alert-danger d-none" id="newsletterError">
     
                         </div>							
-                        <form id="newsletterForm" action="https://preview.oklerthemes.com/porto/8.0.0/php/newsletter-subscribe.php" method="POST" className="mr-4 mb-3 mb-md-0">								
+                        <form id="newsletterForm"  method="POST" className="mr-4 mb-3 mb-md-0">								
                             <div className="input-group input-group-rounded">									
                                 <input className="form-control form-control-sm bg-light" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text" />									
                                 <span className="input-group-append">										
