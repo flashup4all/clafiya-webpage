@@ -62,7 +62,7 @@ export default function Home() {
                         </h1>
                     </div>
                     <div className="overflow-hidden mb-3">
-                        <p className="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                        <p className="lead mb-0 appeear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
                             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo.
                         </p>
                     </div>
