@@ -5,11 +5,9 @@ function PartialLayout({ children }) {
   return (
     <>
         <Head>
-            <meta charset="utf-8" />
+
             <meta http-equiv="X-UA-Compatible" content="IE=edge" />	
 
-
-            <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1.0" />
             <meta http-equiv="X-UA-Compatible" content="ie=edge" />
 
@@ -21,11 +19,28 @@ function PartialLayout({ children }) {
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
             <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
 
-            <script src="vendor/jquery/jquery.min.js"></script>		
-            <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
-            <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
-            <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
-            <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
+        <script src="vendor/jquery/jquery.min.js"></script>		
+		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
+		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>		
+		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>		
+		{/* <script src="master/style-switcher/style.switcher.js" id="styleSwitcherScript" data-base-path="" data-skin-src=""></script>		 */}
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="vendor/popper/umd/popper.min.js"></script>		
+		{/* <script src="vendor/bootstrap/js/bootstrap.min.js"></script>		 */}
+		<script src="vendor/common/common.min.js"></script>		
+		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>		
+		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>		
+		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>		
+		<script src="vendor/jquery.lazyload/jquery.lazyload.min.js"></script>		
+		<script src="vendor/isotope/jquery.isotope.min.js"></script>		
+		<script src="vendor/owl.carousel/owl.carousel.min.js"></script>		
+		<script src="vendor/magnific-popup/jquery.magnific-popup.min.js"></script>		
+		<script src="vendor/vide/jquery.vide.min.js"></script>		
+		<script src="vendor/vivus/vivus.min.js"></script>
+        <script src="js/theme.js"></script>
+        <script src="js/theme.init.js"></script>
+
+
         </Head>
         {/* Header */}
         <div className="body">
@@ -48,7 +63,7 @@ function PartialLayout({ children }) {
                                 </Link>
                             </li>
                             <li className="nav-item font-weight-semibold">
-                                <Link href="/about-us">
+                                <Link href="/about-us" prefetch={true}>
                                     <a className="nav-link">
                                         About Us
                                     </a>

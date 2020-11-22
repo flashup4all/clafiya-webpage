@@ -3,12 +3,12 @@ import PartialLayout from '../layout/partials-layout'
 export default function Home() {
   return (
     <>
-     <Head>
+     {/* <Head>
         <script src="vendor/jquery/jquery.min.js"></script>		
 		<script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
 		<script src="vendor/jquery.easing/jquery.easing.min.js"></script>		
 		<script src="vendor/jquery.cookie/jquery.cookie.min.js"></script>		
-		{/* <script src="master/style-switcher/style.switcher.js" id="styleSwitcherScript" data-base-path="" data-skin-src=""></script>		 */}
+
 		<script src="vendor/popper/umd/popper.min.js"></script>		
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>		
 		<script src="vendor/common/common.min.js"></script>		
@@ -24,7 +24,7 @@ export default function Home() {
         <script src="js/theme.js"></script>
         <script src="js/theme.init.js"></script>
 
-        </Head>
+        </Head> */}
     {/* hero section */}
     <section className="about-header page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7">
         <div className="container">
@@ -70,15 +70,15 @@ export default function Home() {
             </div>
 
             <div className="row mt-3 mb-5">
-                <div className="col-md-4 appeear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
+                <div className="col-md-4 appear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
                     <h3 className="font-weight-bold text-4 mb-2">Our Mission</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu.</p>
                 </div>
-                <div className="col-md-4 appeear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+                <div className="col-md-4 appear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
                     <h3 className="font-weight-bold text-4 mb-2">Our Vision</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla vel pellentesque consequat, ante nulla hendrerit arcu.</p>
                 </div>
-                <div className="col-md-4 appeear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
+                <div className="col-md-4 appear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
                     <h3 className="font-weight-bold text-4 mb-2">Why Us</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel consequat, ante nulla hendrerit arcu.</p>
                 </div>

@@ -3,6 +3,25 @@ import PartialLayout from '../layout/partials-layout'
 export default function Home() {
   return (
     <>
+    {/* <Head>
+
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
+
+        <title>Clafiya - Primary Health Service at Your Door Step</title>
+      
+        <script src="vendor/jquery/jquery.min.js"></script>		
+        <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
+        <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
+        <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
+        <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
+        <script src="js/theme.js"></script>
+        <script src="js/theme.init.js"></script>
+        </Head> */}
     {/* hero section */}
       <div className="hero mb-5">
         <div className="container hero-content">
