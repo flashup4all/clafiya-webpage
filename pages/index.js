@@ -3,7 +3,7 @@ import PartialLayout from '../layout/partials-layout'
 export default function Home() {
   return (
     <>
-    {/* <Head>
+    <Head>
 
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />	
 
@@ -21,7 +21,7 @@ export default function Home() {
         <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
         <script src="js/theme.js"></script>
         <script src="js/theme.init.js"></script>
-        </Head> */}
+        </Head>
     {/* hero section */}
       <div className="hero mb-5">
         <div className="container hero-content">
