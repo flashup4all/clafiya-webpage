@@ -111,7 +111,12 @@ a:hover{
     list-style: none;
 }
 
-.package-list li::before {
+.package-list-count{
+    color: #172B4D;
+    font-style: normal;
+    font-weight: bold;
+}
+.packagelist li::before {
     content: "•"; 
     color: #083e9e;
     display: inline-block; 

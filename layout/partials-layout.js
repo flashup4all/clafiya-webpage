@@ -17,7 +17,7 @@ function PartialLayout({ children }) {
             <link rel="icon" href="/favicon.ico" />
 		    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,600,700,800%7CShadows+Into+Light" rel="stylesheet" type="text/css" />
             <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css" />
-            <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/>
+            {/* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"/> */}
 
 
         </Head>
@@ -27,7 +27,7 @@ function PartialLayout({ children }) {
                 <div className="container">
                     <Link href="/">
                         <a className="navbar-brand pl-0">
-                            <img alt="Clafiya's logo" src="img/logo.png" />
+                            <img alt="Clafiya's logo" src="img/logo.svg" />
                         </a>
                     </Link>
                     <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">

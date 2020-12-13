@@ -76,7 +76,7 @@ export default function Home() {
                     </div>
 
                     <div className="col-md-4 service">
-                        <img src="./img/indexImg/img 3.svg" alt="" />
+                        <img src="./img/indexImg/tech.svg" alt="" />
                         <div className="service-text px-4 py-2">
                             <h4 className="text-color-dark">
                                 Easy-To-Use Technology
@@ -111,7 +111,7 @@ export default function Home() {
                             Our Community Health Workers employ a door-to-door approach to increase access to primary care services in semi-urban, rural, and remote communities. Our reach extends all the way to the last mile, promoting an inclusive experience whilst seeking quality and affordable primary care services.
                         </p>
                         <div className="info">
-                            <img src="img/indexImg/12 1.svg" alt="" />
+                            <img src="img/indexImg/sdg1.svg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -135,7 +135,7 @@ export default function Home() {
 
                 <div className="row mb-5 service-what">
                     <div className="col-md-6">
-                        <img src="./img/indexImg/Group 2606.svg" alt="" />
+                        <img src="./img/indexImg/124.svg" alt="" />
                     </div>
                     <div className="col-md-6 text-md-right text-center">
                         <h2 className="lead font-weight-semibold mb-1">
@@ -145,7 +145,7 @@ export default function Home() {
                             HealthCare Mobile takes a systems thinking approach to address the current pain points in Africa's fractured primary care system. By eliciting active stakeholder engagement, we conceptualize and design products that will create resilient and sustainable communities while promoting socio-economic empowerment. We believe that active community engagement is the number one key factor in executing strategic and targeted solutions on the African continent.
                         </p>
                         <div className="info">
-                            <img src="img/indexImg/poverty 2.svg" alt="" />
+                            <img src="img/indexImg/poverty.svg" alt="" />
                         </div>
                     </div>
                 </div>
@@ -203,7 +203,7 @@ export default function Home() {
             <div className="container d-flex justify-content-center">
                 <div className="row align-items-center tech">
                     <div className="col-md-6 justify-content-center">
-                        <img src="./img/indexImg/Screen.svg" alt="" className="phone" />
+                        <img src="./img/indexImg/Phones.svg" alt="" className="phone" />
                     </div>
                     <div className="col-md-6 text-md-right text-center">
                         <div className="tech-head ">
@@ -275,17 +275,17 @@ export default function Home() {
                      <div className="col-md-6">
                          <div className="package mb-4">
                              <div className="text-center mb-4">
-                                 <img src="./img/indexImg/credit card.svg" alt="" className="package-img" />
+                                 <img src="./img/indexImg/credit_card.svg" alt="" className="package-img" />
                              </div>
-                             <div className="package-text  text-center text-md-left">
+                             <div className="package-text  text-center text-md-let">
                                  <h4 className="font-weight-semibold">Pay as you go.</h4>
                                  <p className="text-2">
                                     Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo, Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo,
                                  </p>
                                  <ul className="package-list px-0">
-                                     <li>Lorem, ipsum dolor.</li>
-                                     <li>Lorem, ipsum dolor.</li>
-                                     <li>Lorem, ipsum dolor.</li>
+                                     <li><span className="package-list-count">1.</span> Lorem, ipsum dolor.</li>
+                                     <li><span className="package-list-count">2.</span> Lorem, ipsum dolor.</li>
+                                     <li><span className="package-list-count">3.</span> Lorem, ipsum dolor.</li>
                                  </ul>
                              </div>
                          </div>
@@ -293,17 +293,17 @@ export default function Home() {
                      <div className="col-md-6">
                         <div className="package mb-4">
                             <div className="text-center mb-4">
-                                <img src="./img/indexImg/pricing 1.svg" alt="" className="package-img" />
+                                <img src="./img/indexImg/pricing.svg" alt="" className="package-img" />
                             </div>
-                            <div className="package-text text-center text-md-left">
+                            <div className="package-text text-center text-md-lef">
                                 <h4 className="font-weight-semibold">Suscription Base</h4>
                                 <p className="text-2">
                                    Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo, Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo,
                                 </p>
                                 <ul className="package-list px-0">
-                                    <li>Lorem, ipsum dolor.</li>
-                                    <li>Lorem, ipsum dolor.</li>
-                                    <li>Lorem, ipsum dolor.</li>
+                                    <li><span className="package-list-count">1.</span> Lorem, ipsum dolor.</li>
+                                    <li><span className="package-list-count">2.</span> Lorem, ipsum dolor.</li>
+                                    <li><span className="package-list-count">3.</span> Lorem, ipsum dolor.</li>
                                 </ul>
                             </div>
                         </div>
