@@ -95,7 +95,7 @@ a:hover{
 
 .package{
     width: 350px;
-    height: 450px;
+    height: 530px;
     padding: 30px;
     background: #FFFFFF;
     border: 1px solid #DEEBFF;
@@ -111,6 +111,10 @@ a:hover{
 
 .package-list{
     list-style: none;
+}
+
+.package-list > li{
+    padding: 3px;
 }
 
 .package-list-count{

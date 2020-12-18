@@ -306,8 +306,8 @@ export default function Home() {
                                     <li><span className="package-list-count">2.</span> Basic Primary Care Consultation.</li>
                                     <li><span className="package-list-count">3.</span> Pre-Natal, Antenatal , Post-Natal Care (Blood Pressure, Urine Sample, Blood Sample).</li>
                                     <li><span className="package-list-count">4.</span> Early Childhood Diseases.</li>
-                                    <li><span className="package-list-count">4.</span> Malaria Rapid Test and Treatment.</li>
-                                    <li><span className="package-list-count">4.</span> Typhoid Screening and Treatment.</li>
+                                    <li><span className="package-list-count">5.</span> Malaria Rapid Test and Treatment.</li>
+                                    <li><span className="package-list-count">6.</span> Typhoid Screening and Treatment.</li>
                                 </ul>
                             </div>
                         </div>
