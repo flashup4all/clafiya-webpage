@@ -301,7 +301,7 @@ export default function Home() {
                                 <p className="text-2">
                                 Enjoy unlimited access to our services when you subscribe at any time! You can subscribe Weekly, Monthly, Quarterly, Or Annually.
                                 </p>
-                                <ul className="package-list px-0">
+                                <ul className="package-list px-0 text-2">
                                     <li><span className="package-list-count">1.</span> Health Worker Home Visits.</li>
                                     <li><span className="package-list-count">2.</span> Basic Primary Care Consultation.</li>
                                     <li><span className="package-list-count">3.</span> Pre-Natal, Antenatal , Post-Natal Care (Blood Pressure, Urine Sample, Blood Sample).</li>
