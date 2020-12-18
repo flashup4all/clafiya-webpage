@@ -31,7 +31,7 @@ export default function Home() {
             <div className="row mt-5">
                 <div className="col-md-12 align-self-center p-static order-2 text-center">
                     <h1 className="text-9 font-weight-bold">Know More About Clafiya</h1>
-                    <span className="sub-title">Primary Health Care Service For All</span>
+                    <span className="sub-title">Primary Health Care For All</span>
                 </div>
                 <div className="col-md-12 align-self-center order-1">
                     <ul className="breadcrumb breadcrumb-light d-block text-center">
@@ -58,12 +58,12 @@ export default function Home() {
                                 <b>Create</b>
                                 <b>Bring</b>
                             </span>
-                            <span> HealthCare Solutions</span>
+                            <span> Primary HealthCare Solutions</span>
                         </h1>
                     </div>
                     <div className="overflow-hidden mb-3">
                         <p className="lead mb-0 appeear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
-                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu, ac tincidunt mauris lacus sed leo.
+                        We at Clafifa believe that access to affordable and quality primary health care should be a basic right for all Africans.
                         </p>
                     </div>
                 </div>
@@ -76,7 +76,7 @@ export default function Home() {
                 </div>
                 <div className="col-md-4 appeear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
                     <h3 className="font-weight-bold text-4 mb-2">Our Vision</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce nulla vel pellentesque consequat, ante nulla hendrerit arcu.</p>
+                    <p>A world where all Africans have access to quality and affordable primary health care regardless of their socioeconomic status.</p>
                 </div>
                 <div className="col-md-4 appeear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
                     <h3 className="font-weight-bold text-4 mb-2">Why Us</h3>
@@ -177,8 +177,8 @@ export default function Home() {
                 </div>
                 <div className="col-md-6 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0">
                     <h2 className="text-color-dark font-weight-normal text-6 mb-2 pb-1">Meet <strong className="font-weight-extra-bold">Our Team</strong></h2>
-                    <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit massa enim. Nullam id varius nunc.</p>
-                    <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc. Vivamus bibendum magna ex, et faucibus lacus venenatis eget.</p>
+                    <p className="lead">Meet the team changing the way Africans access primary health care.</p>
+                    {/* <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc. Vivamus bibendum magna ex, et faucibus lacus venenatis eget.</p> */}
                 </div>
             </div>
         </div>

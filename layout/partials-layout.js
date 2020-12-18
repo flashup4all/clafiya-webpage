@@ -50,7 +50,7 @@ function PartialLayout({ children }) {
                             </li>
                             <li className="nav-item font-weight-semibold">
                                 <a className="nav-link" href="#">
-                                    Impacts
+                                    Impact
                                 </a>
                             </li>
                             <li className="nav-item font-weight-semibold">
@@ -83,12 +83,14 @@ function PartialLayout({ children }) {
             <footer id="footer">				
             <div className="container">					
                 <div className="footer-ribbon">						
-                    <span>Get in Touch</span>					
+                    <span>Get In Touch</span>					
                 </div>					
                 <div className="row py-5 my-4">						
                     <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">							
                         <h5 className="text-3 mb-3">NEWSLETTER</h5>							
-                        <p className="pr-1">Keep up on our always evolving product features and technology. Enter your e-mail address and subscribe to our newsletter.</p>							
+                        <p className="pr-1">
+                            Want to stay up to date on all things Clafiya? Enter your email address below and subscribe to our newsletter. We promise not to spam you ☺.
+                        </p>							
                         <div className="alert alert-success d-none" id="newsletterSuccess">								<strong>Success!</strong> You've been added to our email list.							
                         </div>							
                         <div className="alert alert-danger d-none" id="newsletterError">

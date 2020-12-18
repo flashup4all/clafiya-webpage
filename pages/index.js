@@ -12,7 +12,7 @@ export default function Home() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
 
-        <title>Clafiya - Primary Health Service at Your Door Step</title>
+        <title>Clafiya - Primary Health Care at Your Door Step</title>
       
         <script src="vendor/jquery/jquery.min.js"></script>		
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
@@ -28,10 +28,10 @@ export default function Home() {
             <div className="row align-items-center py-5">
                 <div className="col-md-6 hero-text text-center text-md-left">
                     <h1 className="font-weight-semibold text-color-dark">
-                        Primary Health Service at Your Door Step
+                        Primary Health Care at Your Door Step
                     </h1>
-                    <p>Providing access to fast and affordable primary healthcare services for Africa's underserved communities..</p>
-                    <div><button className="btn button px-4 py-2 text-white">Learn more</button></div>
+                    <p className="hero-p">Providing access to fast and affordable primary healthcare services for Africa's underserved communities.</p>
+                    <div><a className="btn button px-4 py-2 text-white" href="#about_clafiya">Learn more</a></div>
                 </div>
                 <div className="hero-img col-md-6 pt-5 mt-3">
                     <img src="img/indexImg/hero IMG.svg" />
@@ -40,7 +40,7 @@ export default function Home() {
         </div>
     </div>
 {/* service section */}
-    <div className="services-grid py-5">
+    <div className="services-grid py-5" id="about_clafiya">
             <div className="container">
                 <div className="text-left service-head pb-4">
                     <h3 className="font-weight-semibold text-capitalize text-7 my-2">
@@ -56,9 +56,9 @@ export default function Home() {
                                 For Patients
                             </h4>
                             <p>
-                                With Clafiya, our patients can register, pay and connect the nearest community health worker to get access to fast and affordable primary healthcare.
+                                With Clafiya, our patients can register, pay and connect with the nearest community health worker to get access to fast and affordable primary healthcare.
                             </p>
-                            <a href="#" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
+                            <a href="#get_started" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                         </div>
                     </div>
 
@@ -71,7 +71,7 @@ export default function Home() {
                             <p>
                                 Our Community Health Workers are directly connected to people who need their services. They generate an income for the services they provide, promoting social entrepreneurship. 
                             </p>
-                            <a href="#" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
+                            <a href="#chew_get_started" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                         </div>
                     </div>
 
@@ -84,7 +84,7 @@ export default function Home() {
                             <p>
                                 Our easy to use technology allows anyone to access to our platform without internet connectivity by simply dialing our short USSD code *347*58#
                             </p>
-                            <a href="#" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
+                            <a href="#our_tech" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                         </div>
                     </div>
                 </div>
@@ -95,7 +95,7 @@ export default function Home() {
             <div className="container">
                 <div className="text-md-left text-center service-head pb-4">
                     <h3 className="my-2 text-capitalize font-weight-semibold">
-                        What is Clafiya for?
+                    What Does Clafiya Do?
                     </h3>
                      <div className="rectangle mb-4 d-inline-block"></div>
                 </div>
@@ -119,10 +119,10 @@ export default function Home() {
                 <div className="row mb-5 service-what">
                     <div className="col-md-6 text-md-left text-center mb-3">
                         <h2 className="lead font-weight-semibold mb-1">
-                            Increasing Job Opportunities for Women
+                            Increasing <span className="ml-1"> Job Opportunities for Women</span>
                         </h2>
                         <p>
-                            According to the UN, less than half of the global women population are under employed. Particularly in Africa, the women unemployment rate is estimated to be 49.6%. By increasing job opportunities for women, HealthCare Mobile is re-writing this narrative..
+                            According to the UN, less than half of the global women population are under employed. Particularly in Africa, the women unemployment rate is estimated to be 49.6%. By increasing job opportunities for women, Clafiya is re-writing this narrative.
                         </p>
                         <div className="info">
                             <img src="img/indexImg/sdg_8_grande_en 1.svg" alt="" />
@@ -142,7 +142,7 @@ export default function Home() {
                             Promoting Socio-Economic Development In Low Income Communities
                         </h2>
                         <p>
-                            HealthCare Mobile takes a systems thinking approach to address the current pain points in Africa's fractured primary care system. By eliciting active stakeholder engagement, we conceptualize and design products that will create resilient and sustainable communities while promoting socio-economic empowerment. We believe that active community engagement is the number one key factor in executing strategic and targeted solutions on the African continent.
+                        Clafiya takes a holistic approach to address Africa’s fractured primary healthcare system. At Clafiya, we understand that in order to realize our impact, we have to make something that Africans need. That is leveraging existing systems and technologies to improve access to home based primary care services. We also understand that this problem is two sided and addressing one side without the other will not generate the desired sustained impact needed in Africa. Overtime, Clafiya seeks to improve the life expectancy of Africans and reduce healthcare expenditure – thus alleviating people out of poverty. 
                         </p>
                         <div className="info">
                             <img src="img/indexImg/poverty.svg" alt="" />
@@ -152,9 +152,9 @@ export default function Home() {
             </div>
         </div>
         {/* Getting started */}
-        <div className="getting-started">
+        <div className="getting-started" id="get_started">
             <div className="container">
-                <h2 className="font-weight-semibold mb-5 text-md-left text-center">Getting started</h2>
+                <h2 className="font-weight-semibold mb-5 text-md-left text-center">Getting Started</h2>
                 <div className="row text-center">
                     <div className="col-md-3">
                         <div>
@@ -171,7 +171,7 @@ export default function Home() {
                             <img src="img/indexImg/Group 2587.svg" alt="" className="mb-2 started-img" />
                             <p className="font-weight-semibold text-color-dark">2. Sign Up</p>
                             <p>
-                                Our registration is simple and straight forward! Sign Up in just “X” steps! 
+                                Our registration is simple and straight forward! Sign Up in just “4” steps! 
                             </p>
                         </div>
                     </div>
@@ -200,7 +200,7 @@ export default function Home() {
         </div>
         {/* our tech */}
         <div>
-            <div className="container d-flex justify-content-center">
+            <div className="container d-flex justify-content-center" id="our_tech">
                 <div className="row align-items-center tech">
                     <div className="col-md-6 justify-content-center">
                         <img src="./img/indexImg/Phones.svg" alt="" className="phone" />
@@ -267,7 +267,7 @@ export default function Home() {
              <div className="container justify-content-center packages">
                 <div>
                     <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
-                        Our affordable prices
+                        Our Affordable Prices
                     </h3>
                     <div className="rectangle d-inline-block mb-4"></div>
                 </div>
@@ -278,14 +278,15 @@ export default function Home() {
                                  <img src="./img/indexImg/credit_card.svg" alt="" className="package-img" />
                              </div>
                              <div className="package-text  text-center text-md-let">
-                                 <h4 className="font-weight-semibold">Pay as you go.</h4>
+                                 <h4 className="font-weight-semibold">Pay As You Go.</h4>
                                  <p className="text-2">
-                                    Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo, Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo,
+                                    Health Worker Home Visits, Basic Primary Care Consultation,Pre-Natal, Antenatal, and Post-Natal Care, Additional Primary Care Services.
                                  </p>
                                  <ul className="package-list px-0">
-                                     <li><span className="package-list-count">1.</span> Lorem, ipsum dolor.</li>
-                                     <li><span className="package-list-count">2.</span> Lorem, ipsum dolor.</li>
-                                     <li><span className="package-list-count">3.</span> Lorem, ipsum dolor.</li>
+                                     <li><span className="package-list-count">1.</span> Blood Sugar Screening.</li>
+                                     <li><span className="package-list-count">2.</span> Malaria Rapid Test and Treatment.</li>
+                                     <li><span className="package-list-count">3.</span> Typhoid Screening and Treatment.</li>
+                                     <li><span className="package-list-count">4.</span> Pregnancy Test (Additional fees apply).</li>
                                  </ul>
                              </div>
                          </div>
@@ -298,12 +299,15 @@ export default function Home() {
                             <div className="package-text text-center text-md-lef">
                                 <h4 className="font-weight-semibold">Suscription Base</h4>
                                 <p className="text-2">
-                                   Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo, Lorem ipsum dolor sit amet, consectetur iaculis leo, adipiscing elit. Cursus enim urna pharetra tincidunt iaculis leo,
+                                Enjoy unlimited access to our services when you subscribe at any time! You can subscribe Weekly, Monthly, Quarterly, Or Annually.
                                 </p>
                                 <ul className="package-list px-0">
-                                    <li><span className="package-list-count">1.</span> Lorem, ipsum dolor.</li>
-                                    <li><span className="package-list-count">2.</span> Lorem, ipsum dolor.</li>
-                                    <li><span className="package-list-count">3.</span> Lorem, ipsum dolor.</li>
+                                    <li><span className="package-list-count">1.</span> Health Worker Home Visits.</li>
+                                    <li><span className="package-list-count">2.</span> Basic Primary Care Consultation.</li>
+                                    <li><span className="package-list-count">3.</span> Pre-Natal, Antenatal , Post-Natal Care (Blood Pressure, Urine Sample, Blood Sample).</li>
+                                    <li><span className="package-list-count">4.</span> Early Childhood Diseases.</li>
+                                    <li><span className="package-list-count">4.</span> Malaria Rapid Test and Treatment.</li>
+                                    <li><span className="package-list-count">4.</span> Typhoid Screening and Treatment.</li>
                                 </ul>
                             </div>
                         </div>
@@ -312,12 +316,9 @@ export default function Home() {
              </div>
          </div>
          {/* contact */}
-         <div className="contact my-5 py-4">
+         <div className="contact my-5 py-4" id="chew_get_started">
             <div className="container text-white align-items-center text-center text-md-left">
                 <div className="d-flex align-items-center">
-                    <p className="text-white">
-                        Let's get in touch
-                    </p>
                 </div>
                 <div className="row align-items-center">
                     <div className="col-md-8">
