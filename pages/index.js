@@ -4,16 +4,11 @@ export default function Home() {
   return (
     <>
     <Head>
-
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />	
-
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
-
         <title>Clafiya - Quality Primary Health Care at Your Door Step</title>
-      
         <script src="vendor/jquery/jquery.min.js"></script>		
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
         <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
@@ -21,7 +16,7 @@ export default function Home() {
         <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
         <script src="js/theme.js"></script>
         <script src="js/theme.init.js"></script>
-        </Head>
+    </Head>
     {/* hero section */}
       <div className="hero mb-5">
         <div className="container hero-content">
@@ -171,7 +166,7 @@ export default function Home() {
                             <img src="img/indexImg/Group 2587.svg" alt="" className="mb-2 started-img" />
                             <p className="font-weight-semibold text-color-dark">2. Sign Up</p>
                             <p>
-                                Our registration is simple and straight forward! Sign Up in just “4” steps! 
+                                Our registration is simple and straight forward! Sign Up in just 4 steps! 
                             </p>
                         </div>
                     </div>
@@ -189,7 +184,7 @@ export default function Home() {
                     <div className="col-md-3">
                         <div>
                             <img src="img/indexImg/Group 2590.svg" alt="" className="mb-2 started-img" />
-                            <p className="font-weight-semibold text-color-dark">4. That's it</p>
+                            <p className="font-weight-semibold text-color-dark">4. That's it!</p>
                             <p>
                                 Enjoy fast and affordable primary health care at your doorsteps
                             </p>
@@ -203,7 +198,7 @@ export default function Home() {
             <div className="container d-flex justify-content-center" id="our_tech">
                 <div className="row align-items-center tech">
                     <div className="col-md-6 justify-content-center">
-                        <img src="./img/indexImg/Phones.svg" alt="" className="phone" />
+                        <img src="./img/indexImg/phone.svg" alt="" className="phone" />
                     </div>
                     <div className="col-md-6 text-md-right text-center">
                         <div className="tech-head ">
@@ -213,7 +208,13 @@ export default function Home() {
                             <div className="rectangle mb-2 tech-rect d-inline-block"></div>
                         </div>
                              <p>
-                                Clafiya’s is a USSD (Unstructured Supplementary Service Data) is a session-based text communication protocol available on every GSM-enabled mobile device. A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. According GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. As such it was imperative that our platform is easily accessible. With short USSD codes, Africans are using their mobile phones for banking, telecoms, agriculture and sports. With Clafiya they can now use it for health care.
+                                Clafiya is a USSD (Unstructured Supplementary Service Data) 
+                                session-based text communication protocol available on every GSM-enabled mobile device. 
+                                A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. 
+                                According to GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. 
+                                As such, it was imperative that our platform is easily accessible. 
+                                In various African countries, people are using their mobile phones for banking, telecoms, agriculture and sports. 
+                                With Clafiya they can now use it for health care.
                              </p>
                     </div>
                 </div>
@@ -320,8 +321,9 @@ export default function Home() {
             <div className="container text-white align-items-center text-center text-md-left">
                 <div className="d-flex align-items-center">
                 </div>
-                <div className="row align-items-center">
+                <div className="row align-items-center mt-5 mb-5">
                     <div className="col-md-8">
+                        <p className="text-white">Work With Us</p>
                         <h2 className="text-white font-weight-semibold">
                             Are You A Skilled And Highly Qualified Community Health Worker? 
                         </h2>

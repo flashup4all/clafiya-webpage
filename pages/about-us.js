@@ -157,12 +157,12 @@ export default function Home() {
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-1.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Wisdom Doe</h3>
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Itoro Inoyo</h3>
                             <p className="text-2 mb-0">CO-Founder</p>
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-3.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing</h3>
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing Onyirimba</h3>
                             <p className="text-2 mb-0">Health Cordinator</p>
                         </div>
                         <div>
