@@ -1,4 +1,6 @@
 import Head from 'next/head'
+
+ 
 import PartialLayout from '../layout/partials-layout'
 export default function Home() {
   return (
@@ -11,7 +13,7 @@ export default function Home() {
 		{/* <script src="master/style-switcher/style.switcher.js" id="styleSwitcherScript" data-base-path="" data-skin-src=""></script>		 */}
 		<script src="vendor/popper/umd/popper.min.js"></script>		
 		<script src="vendor/bootstrap/js/bootstrap.min.js"></script>		
-		<script src="vendor/common/common.min.js"></script>		
+		{/* <script src="vendor/common/common.min.js"></script>		 */}
 		<script src="vendor/jquery.validation/jquery.validate.min.js"></script>		
 		<script src="vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js"></script>		
 		<script src="vendor/jquery.gmap/jquery.gmap.min.js"></script>		
@@ -58,7 +60,7 @@ export default function Home() {
                                 <b>Create</b>
                                 <b>Bring</b>
                             </span>
-                            <span> Primary HealthCare Solutions</span>
+                            <span> Primary Health Care Solutions</span>
                         </h1>
                     </div>
                     <div className="overflow-hidden mb-3">
@@ -72,16 +74,16 @@ export default function Home() {
             <div className="row mt-3 mb-5">
                 <div className="col-md-4 appeear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
                     <h3 className="font-weight-bold text-4 mb-2">Our Mission</h3>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel pellentesque consequat, ante nulla hendrerit arcu.</p>
+                    <p>Bringing quality primary health care to the doorsteps of those who need it the most</p>
                 </div>
                 <div className="col-md-4 appeear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
                     <h3 className="font-weight-bold text-4 mb-2">Our Vision</h3>
                     <p>A world where all Africans have access to quality and affordable primary health care regardless of their socioeconomic status.</p>
                 </div>
-                <div className="col-md-4 appeear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
+                {/* <div className="col-md-4 appeear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
                     <h3 className="font-weight-bold text-4 mb-2">Why Us</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce elementum, nulla vel consequat, ante nulla hendrerit arcu.</p>
-                </div>
+                </div> */}
             </div>
 
         </div>
@@ -150,39 +152,39 @@ export default function Home() {
                     <div className="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-2.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Doe</h3>
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Nwokoye</h3>
                             <p className="text-2 mb-0">CEO</p>
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-1.jpg" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Wisdom Doe</h3>
-                            <p className="text-2 mb-0">CTO</p>
+                            <p className="text-2 mb-0">CO-Founder</p>
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-3.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Chris Doe</h3>
-                            <p className="text-2 mb-0">Health Worker</p>
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing</h3>
+                            <p className="text-2 mb-0">Health Cordinator</p>
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-4.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing Doe</h3>
-                            <p className="text-2 mb-0">Health Worker</p>
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Miracle Agada</h3>
+                            <p className="text-2 mb-0">Product Designer</p>
                         </div>
                         <div>
                             <img className="img-fluid rounded-0 mb-4" src="img/team/team-5.jpg" alt="" />
-                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Robert Doe</h3>
-                            <p className="text-2 mb-0">Health Worker</p>
+                            <h3 className="font-weight-bold text-color-dark text-4 mb-0">Bardeson Lucky</h3>
+                            <p className="text-2 mb-0">Tech Lead</p>
                         </div>
                     </div>
                 </div>
                 <div className="col-md-6 order-1 order-md-2 text-center text-md-left mb-5 mb-md-0">
                     <h2 className="text-color-dark font-weight-normal text-6 mb-2 pb-1">Meet <strong className="font-weight-extra-bold">Our Team</strong></h2>
                     <p className="lead">Meet the team changing the way Africans access primary health care.</p>
-                    {/* <p className="mb-4">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus blandit massa enim. Nullam id varius nunc. Vivamus bibendum magna ex, et faucibus lacus venenatis eget.</p> */}
+                    <p className="mb-4">Our team has a combined, 10 years of experience in global health, big tech, management consulting and social impact. We’ve all been impacted by the inability to access timely and affordable primary care. Either by losing a family member or close friend. That's what drives us to do what we do today. We are prepared to dedicate our lives to ensure that access to primary health care is a basic right for all Africans</p>
                 </div>
             </div>
         </div>
-        <section className="section bg-color-grey-scale-1 section-height-3 border-0 m-0">
+        {/* <section className="section bg-color-grey-scale-1 section-height-3 border-0 m-0">
             <div className="container pb-2">
                 <div className="row">
                     <div className="col-lg-6 text-center text-md-left mb-5 mb-lg-0">
@@ -222,7 +224,7 @@ export default function Home() {
                     </div>
                 </div>
             </div>
-        </section>
+        </section> */}
     </>
   )
 }

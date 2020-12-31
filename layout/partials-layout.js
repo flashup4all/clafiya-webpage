@@ -2,6 +2,10 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 function PartialLayout({ children }) {
+    const newsletter = (e) => {
+        preventDefault(e);
+        console.log('newslartter mail')
+    }
   return (
     <>
         <Head>
@@ -42,26 +46,26 @@ function PartialLayout({ children }) {
                                 </Link>
                             </li>
                             <li className="nav-item font-weight-semibold">
-                                <Link href="/about-us" prefetch={true}>
+                                <Link href="/about-us">
                                     <a className="nav-link">
                                         About Us
                                     </a>
                                 </Link>
                             </li>
-                            <li className="nav-item font-weight-semibold">
+                            {/* <li className="nav-item font-weight-semibold">
                                 <a className="nav-link" href="#">
                                     Impact
                                 </a>
-                            </li>
+                            </li> */}
                             <li className="nav-item font-weight-semibold">
                                 <Link href="/blog">
                                     <a className="nav-link">
-                                    Our Blog
+                                    Impact
                                     </a>
                                 </Link>
                             </li>
                             <li className="nav-item font-weight-semibold">
-                                <a className="nav-link" href="#">
+                                <a className="nav-link" href="#newsletter">
                                     Contact Us
                                 </a>
                             </li>
@@ -81,7 +85,7 @@ function PartialLayout({ children }) {
             </div>
             {/* footer */}
             <footer id="footer">				
-            <div className="container">					
+            <div className="container" id="newsletter">					
                 <div className="footer-ribbon">						
                     <span>Get In Touch</span>					
                 </div>					
@@ -96,7 +100,7 @@ function PartialLayout({ children }) {
                         <div className="alert alert-danger d-none" id="newsletterError">
     
                         </div>							
-                        <form id="newsletterForm"  method="POST" className="mr-4 mb-3 mb-md-0">								
+                        <form id="newsletterForm" className="mr-4 mb-3 mb-md-0" onSubmit={() => newsletter}>								
                             <div className="input-group input-group-rounded">									
                                 <input className="form-control form-control-sm bg-light" placeholder="Email Address" name="newsletterEmail" id="newsletterEmail" type="text" />									
                                 <span className="input-group-append">										
@@ -112,8 +116,8 @@ function PartialLayout({ children }) {
                             <h5 className="text-3 mb-3">CONTACT US</h5>								
                             <ul className="list list-icons list-icons-lg">									
                                 <li className="mb-1"><i className="far fa-dot-circle text-color-primary"></i><p className="m-0">234 Street Name, City Name</p></li>									
-                                <li className="mb-1"><i className="fab fa-whatsapp text-color-primary"></i><p className="m-0"><a href="tel:8001234567">(800) 123-4567</a></p></li>									
-                                <li className="mb-1"><i className="far fa-envelope text-color-primary"></i><p className="m-0"><a href="mailto:mail@example.com">mail@example.com</a></p></li>								
+                                <li className="mb-1"><i className="fab fa-whatsapp text-color-primary"></i><p className="m-0"><a href="tel:8001234567">(+234) 913 813 4702</a></p></li>									
+                                <li className="mb-1"><i className="far fa-envelope text-color-primary"></i><p className="m-0"><a href="mailto:mail@example.com">info@clafiya.com</a></p></li>								
                             </ul>							
                             </div>						
                         </div>	
@@ -121,11 +125,10 @@ function PartialLayout({ children }) {
                     <div className="col-md-6 col-lg-3 mb-4 mb-lg-0">							
                         <h5 className="text-3 mb-3">Pages</h5>							
                         <ul className="list list-unstyled">
-                            <li className="mb-1"><a href="#" className="link-hover-style-1"> Home</a></li>
-                            <li className="mb-1"><a href="#" className="link-hover-style-1"> About Us</a></li>
-                            <li className="mb-1"><a href="#" className="link-hover-style-1"> Impacts</a></li>
-                            <li className="mb-1"><a href="#" className="link-hover-style-1"> Our Blog</a></li>
-                            <li className="mb-1"><a href="#" className="link-hover-style-1"> Contact Us</a></li>
+                            <li className="mb-1"><Link href="/"><a href="#" className="link-hover-style-1"> Home</a></Link></li>
+                            <li className="mb-1"><Link href="/about-us"><a href="#" className="link-hover-style-1"> About Us</a></Link></li>
+                            <li className="mb-1"><Link href="/blog"><a href="#" className="link-hover-style-1"> Impact</a></Link></li>
+                            {/* <li className="mb-1"><a href="#" className="link-hover-style-1"> Contact Us</a></li> */}
                         </ul>						
                     </div>
     

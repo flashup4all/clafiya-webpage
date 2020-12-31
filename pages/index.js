@@ -12,7 +12,7 @@ export default function Home() {
 
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
 
-        <title>Clafiya - Primary Health Care at Your Door Step</title>
+        <title>Clafiya - Quality Primary Health Care at Your Door Step</title>
       
         <script src="vendor/jquery/jquery.min.js"></script>		
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
@@ -28,12 +28,12 @@ export default function Home() {
             <div className="row align-items-center py-5">
                 <div className="col-md-6 hero-text text-center text-md-left">
                     <h1 className="font-weight-semibold text-color-dark">
-                        Primary Health Care at Your Door Step
+                        Quality Primary Health Care at Your Door Step
                     </h1>
-                    <p className="hero-p">Providing access to fast and affordable primary healthcare services for Africa's underserved communities.</p>
+                    <p className="hero-p">Providing access to fast and affordable primary health care services for Africa's underserved communities.</p>
                     <div><a className="btn button px-4 py-2 text-white" href="#about_clafiya">Learn more</a></div>
                 </div>
-                <div className="hero-img col-md-6 pt-5 mt-3">
+                <div className="hero-img col-md-6 col-sm-push-6 pt-5 mt-3">
                     <img src="img/indexImg/hero IMG.svg" />
                 </div>
             </div>
@@ -56,7 +56,7 @@ export default function Home() {
                                 For Patients
                             </h4>
                             <p>
-                                With Clafiya, our patients can register, pay and connect with the nearest community health worker to get access to fast and affordable primary healthcare.
+                                With Clafiya, our patients can register, pay and connect with the nearest community health worker to get access to fast and affordable primary health care.
                             </p>
                             <a href="#get_started" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                         </div>
@@ -115,9 +115,9 @@ export default function Home() {
                         </div>
                     </div>
                 </div>
-
+                
                 <div className="row mb-5 service-what">
-                    <div className="col-md-6 text-md-left text-center mb-3">
+                    <div className="col-md-6  text-md-left text-center mb-3 order-last order-md-last order-lg-first">
                         <h2 className="lead font-weight-semibold mb-1">
                             Increasing <span className="ml-1"> Job Opportunities for Women</span>
                         </h2>
@@ -128,21 +128,21 @@ export default function Home() {
                             <img src="img/indexImg/sdg_8_grande_en 1.svg" alt="" />
                         </div>
                     </div>
-                    <div className="col-md-6">
+                    <div className="col-md-6 order-md-first order-xs-first order-lg-last">
                         <img src="img/indexImg/Group 2609.svg" alt="" />
                     </div>
                 </div>
 
                 <div className="row mb-5 service-what">
                     <div className="col-md-6">
-                        <img src="./img/indexImg/124.svg" alt="" />
+                        <img src="./img/indexImg/124.jpeg" width="100%" alt="" />
                     </div>
                     <div className="col-md-6 text-md-right text-center">
                         <h2 className="lead font-weight-semibold mb-1">
                             Promoting Socio-Economic Development In Low Income Communities
                         </h2>
                         <p>
-                        Clafiya takes a holistic approach to address Africa’s fractured primary healthcare system. At Clafiya, we understand that in order to realize our impact, we have to make something that Africans need. That is leveraging existing systems and technologies to improve access to home based primary care services. We also understand that this problem is two sided and addressing one side without the other will not generate the desired sustained impact needed in Africa. Overtime, Clafiya seeks to improve the life expectancy of Africans and reduce healthcare expenditure – thus alleviating people out of poverty. 
+                        Clafiya takes a holistic approach to address Africa’s fractured primary health care system. At Clafiya, we understand that in order to realize our impact, we have to make something that Africans need. That is leveraging existing systems and technologies to improve access to home based primary care services. We also understand that this problem is two sided and addressing one side without the other will not generate the desired sustained impact needed in Africa. Overtime, Clafiya seeks to improve the life expectancy of Africans and reduce health care expenditure – thus alleviating people out of poverty. 
                         </p>
                         <div className="info">
                             <img src="img/indexImg/poverty.svg" alt="" />
@@ -181,7 +181,7 @@ export default function Home() {
                             <img src="img/indexImg/Group 2588.svg" alt="" className="mb-2 started-img" />
                             <p className="font-weight-semibold text-color-dark">3. Get An Appointment</p>
                             <p>
-                                Enter your location to schedule an appointment with registered Community Health Workers in your area. 
+                                Enter your location to schedule an appointment with registered Community Health Workers in your area
                             </p>
                         </div>
                     </div>
@@ -189,9 +189,9 @@ export default function Home() {
                     <div className="col-md-3">
                         <div>
                             <img src="img/indexImg/Group 2590.svg" alt="" className="mb-2 started-img" />
-                            <p className="font-weight-semibold text-color-dark">4. That's it...</p>
+                            <p className="font-weight-semibold text-color-dark">4. That's it</p>
                             <p>
-                                Enjoy fast and affordable primary healthcare at your doorsteps. 
+                                Enjoy fast and affordable primary health care at your doorsteps
                             </p>
                         </div>
                     </div>
@@ -213,7 +213,7 @@ export default function Home() {
                             <div className="rectangle mb-2 tech-rect d-inline-block"></div>
                         </div>
                              <p>
-                                Clafiya’s is a USSD (Unstructured Supplementary Service Data) is a session-based text communication protocol available on every GSM-enabled mobile device. A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. According GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. As such it was imperative that our platform is easily accessible. With short USSD codes, Africans are using their mobile phones for banking, telecoms, agriculture and sports. With Clafiya they can now use it for healthcare.
+                                Clafiya’s is a USSD (Unstructured Supplementary Service Data) is a session-based text communication protocol available on every GSM-enabled mobile device. A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. According GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. As such it was imperative that our platform is easily accessible. With short USSD codes, Africans are using their mobile phones for banking, telecoms, agriculture and sports. With Clafiya they can now use it for health care.
                              </p>
                     </div>
                 </div>
@@ -283,10 +283,10 @@ export default function Home() {
                                     Health Worker Home Visits, Basic Primary Care Consultation,Pre-Natal, Antenatal, and Post-Natal Care, Additional Primary Care Services.
                                  </p>
                                  <ul className="package-list px-0">
-                                     <li><span className="package-list-count">1.</span> Blood Sugar Screening.</li>
-                                     <li><span className="package-list-count">2.</span> Malaria Rapid Test and Treatment.</li>
-                                     <li><span className="package-list-count">3.</span> Typhoid Screening and Treatment.</li>
-                                     <li><span className="package-list-count">4.</span> Pregnancy Test (Additional fees apply).</li>
+                                     <li><span className="package-list-count">1.</span> Blood Sugar Screening</li>
+                                     <li><span className="package-list-count">2.</span> Malaria Rapid Test and Treatment</li>
+                                     <li><span className="package-list-count">3.</span> Typhoid Screening and Treatment</li>
+                                     <li><span className="package-list-count">4.</span> Pregnancy Test (Additional fees apply)</li>
                                  </ul>
                              </div>
                          </div>
@@ -330,7 +330,7 @@ export default function Home() {
                         </p>
                     </div>
                     <div className="col-md-4 d-flex justify-content-center ">
-                            <a href="https://localhealer.typeform.com/to/AWUPye" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">Apply Now <i className="fa fa-arrow-right px-2"></i></a>
+                            <a href="https://localhealer.typeform.com/to/AWUPye" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">Sign Up <i className="fa fa-arrow-right px-2"></i></a>
                     </div>
                 </div>
             </div>
