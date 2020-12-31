@@ -71,12 +71,12 @@ export default function Home() {
                 </div>
             </div>
 
-            <div className="row mt-3 mb-5">
-                <div className="col-md-4 appeear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
+            <div className="row align-items-center justify-content-center mt-3 mb-5">
+                <div className="col-md-4 text-center appeear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
                     <h3 className="font-weight-bold text-4 mb-2">Our Mission</h3>
                     <p>Bringing quality primary health care to the doorsteps of those who need it the most</p>
                 </div>
-                <div className="col-md-4 appeear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+                <div className="col-md-4 text-center appeear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
                     <h3 className="font-weight-bold text-4 mb-2">Our Vision</h3>
                     <p>A world where all Africans have access to quality and affordable primary health care regardless of their socioeconomic status.</p>
                 </div>
