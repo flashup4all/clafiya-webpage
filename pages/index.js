@@ -125,7 +125,7 @@ export default function Home() {
                             According to the UN, less than half of the global women population are under employed. Particularly in Africa, the women unemployment rate is estimated to be 49.6%. By increasing job opportunities for women, Clafiya is re-writing this narrative.
                         </p>
                         <div className="info">
-                            <img src="img/indexImg/sdg_8_grande_en 1.svg" alt="" />
+                            <img src="img/indexImg/sdg.svg" alt="" />
                         </div>
                     </div>
                     <div className="col-md-6 order-md-first order-xs-first order-lg-last">
@@ -275,7 +275,7 @@ export default function Home() {
                      <div className="col-md-6">
                          <div className="package mb-4">
                              <div className="text-center mb-4">
-                                 <img src="./img/indexImg/credit_card.svg" alt="" className="package-img" />
+                                 <img src="./img/indexImg/money.svg" alt="" className="package-img" />
                              </div>
                              <div className="package-text  text-center text-md-let">
                                  <h4 className="font-weight-semibold">Pay As You Go.</h4>
@@ -294,7 +294,7 @@ export default function Home() {
                      <div className="col-md-6">
                         <div className="package mb-4">
                             <div className="text-center mb-4">
-                                <img src="./img/indexImg/pricing.svg" alt="" className="package-img" />
+                                <img src="./img/indexImg/wallet.svg" alt="" className="package-img" />
                             </div>
                             <div className="package-text text-center text-md-lef">
                                 <h4 className="font-weight-semibold">Suscription Base</h4>
