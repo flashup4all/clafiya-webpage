@@ -25,6 +25,7 @@ export default function Home() {
 		<script src="vendor/vivus/vivus.min.js"></script>
         <script src="js/theme.js"></script>
         <script src="js/theme.init.js"></script>
+        
 
         </Head>
     {/* hero section */}
@@ -119,7 +120,7 @@ export default function Home() {
                         <div className="counter">
                             <i className="icons icon-cup text-color-light"></i>
                             <strong className="text-color-light font-weight-extra-bold" data-to="352">0</strong>
-                            <label className="text-4 mt-1 text-color-light">Cups of Coffee</label>
+                            <label className="text-4 mt-1 text-color-light">Health Interventions</label>
                         </div>
                     </div>
                 </div>
@@ -138,10 +139,14 @@ export default function Home() {
                                 care programs have to adapt to individual health needs, integrate into current care practices and make optimal use of health 
                                 system resources so as to improve health outcomes & reduce cost.</p>
                     </div>
-                    <div className="col-sm-8 col-md-6 col-lg-4 offset-sm-4 offset-md-4 offset-lg-2 mt-sm-5" style={{top: "1.7rem"}}>
-                        <img src="img/generic/generic-corporate-3-1.jpg" className="img-fluid position-absolute d-none d-sm-block appeear-animation" data-appear-animation="expandIn" data-appear-animation-delay="300" style={{top: "10%", left: "-50%"}} alt="" />
+                    <div className="col-md-6">
+
+                    <video controls >
+                        <source src="videos/about.mp4" type="video/mp4"/>
+                    </video>
+                        {/* <img src="img/generic/generic-corporate-3-1.jpg" className="img-fluid position-absolute d-none d-sm-block appeear-animation" data-appear-animation="expandIn" data-appear-animation-delay="300" style={{top: "10%", left: "-50%"}} alt="" />
                         <img src="img/generic/generic-corporate-3-2.jpg" className="img-fluid position-absolute d-none d-sm-block appeear-animation" data-appear-animation="expandIn" style={{top: "-33%", left: "-29%"}} alt="" />
-                        <img src="img/generic/generic-corporate-3-3.jpg" className="img-fluid position-relative appeear-animation mb-2" data-appear-animation="expandIn" data-appear-animation-delay="600" alt="" />
+                        <img src="img/generic/generic-corporate-3-3.jpg" className="img-fluid position-relative appeear-animation mb-2" data-appear-animation="expandIn" data-appear-animation-delay="600" alt="" /> */}
                     </div>
                 </div>
             </div>
@@ -151,27 +156,27 @@ export default function Home() {
                 <div className="col-md-6 order-2 order-md-1 text-center text-md-left">
                     <div className="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
                         <div>
-                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-2.jpg" alt="" />
+                            <img className="team-img img-fluid rounded-0 mb-4" src="img/team/jennie.png" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Nwokoye</h3>
-                            <p className="text-2 mb-0">CEO</p>
+                            <p className="text-2 mb-0">CEO / Co-Founder</p>
                         </div>
                         <div>
-                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-1.jpg" alt="" />
+                            <img className="team-img img-fluid rounded-0 mb-4" src="img/team/avata.png" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Itoro Inoyo</h3>
-                            <p className="text-2 mb-0">CO-Founder</p>
+                            <p className="text-2 mb-0">Co-Founder</p>
                         </div>
                         <div>
-                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-3.jpg" alt="" />
+                            <img className="team-img img-fluid rounded-0 mb-4" src="img/team/avata.png" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing Onyirimba</h3>
-                            <p className="text-2 mb-0">Health Cordinator</p>
+                            <p className="text-2 mb-0">Health Coordinator</p>
                         </div>
                         <div>
-                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-4.jpg" alt="" />
+                            <img className="team-img img-fluid rounded-0 mb-4" src="img/team/avata.png" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Miracle Agada</h3>
                             <p className="text-2 mb-0">Product Designer</p>
                         </div>
                         <div>
-                            <img className="img-fluid rounded-0 mb-4" src="img/team/team-5.jpg" alt="" />
+                            <img className="team-img img-fluid rounded-0 mb-4" src="img/team/lucky.png" alt="" />
                             <h3 className="font-weight-bold text-color-dark text-4 mb-0">Bardeson Lucky</h3>
                             <p className="text-2 mb-0">Tech Lead</p>
                         </div>

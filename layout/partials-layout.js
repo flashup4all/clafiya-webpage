@@ -93,7 +93,7 @@ function PartialLayout({ children }) {
                     <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">							
                         <h5 className="text-3 mb-3">NEWSLETTER</h5>							
                         <p className="pr-1">
-                            Want to stay up to date on all things Clafiya? Enter your email address below and subscribe to our newsletter. We promise not to spam you ☺.
+                            Want to stay up to date on all things Clafiya? Enter your email address below and subscribe to our newsletter. We promise not to spam you <img src="./img/indexImg/happy.svg" alt="" className="phone" />
                         </p>							
                         <div className="alert alert-success d-none" id="newsletterSuccess">								<strong>Success!</strong> You've been added to our email list.							
                         </div>							
@@ -115,9 +115,9 @@ function PartialLayout({ children }) {
                         <div className="contact-details">								
                             <h5 className="text-3 mb-3">CONTACT US</h5>								
                             <ul className="list list-icons list-icons-lg">									
-                                <li className="mb-1"><i className="far fa-dot-circle text-color-primary"></i><p className="m-0">234 Street Name, City Name</p></li>									
+                                {/* <li className="mb-1"><i className="far fa-dot-circle text-color-primary"></i><p className="m-0">234 Street Name, City Name</p></li>									 */}
                                 {/* <li className="mb-1"><i className="fab fa-whatsapp text-color-primary"></i><p className="m-0"><a href="tel:8001234567">(+234) 913 813 4702</a></p></li>									 */}
-                                <li className="mb-1"><i className="far fa-envelope text-color-primary"></i><p className="m-0"><a href="mailto:mail@example.com">hello@clafiya.com</a></p></li>								
+                                <li className="mb-1"><i className="far fa-envelope text-color-primary"></i><p className="m-0"><a href="mailto:mail@example.com">hi@clafiya.com</a></p></li>								
                             </ul>							
                             </div>						
                         </div>	
