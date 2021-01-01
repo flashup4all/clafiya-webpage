@@ -98,28 +98,28 @@ export default function Home() {
                     <div className="col-sm-6 col-lg-3 mb-5 mb-lg-0">
                         <div className="counter">
                             <i className="icons icon-user text-color-light"></i>
-                            <strong className="text-color-light font-weight-extra-bold" data-to="256" data-append="+">0</strong>
+                            <strong className="text-color-light font-weight-extra-bold" data-to="256" data-append="+">50</strong>
                             <label className="text-4 mt-1 text-color-light">Patients</label>
                         </div>
                     </div>
                     <div className="col-sm-6 col-lg-3 mb-5 mb-lg-0">
                         <div className="counter">
                             <i className="icons icon-badge text-color-light"></i>
-                            <strong className="text-color-light font-weight-extra-bold" data-to="50">0</strong>
+                            <strong className="text-color-light font-weight-extra-bold" data-to="50">256</strong>
                             <label className="text-4 mt-1 text-color-light">Health Workers</label>
                         </div>
                     </div>
                     <div className="col-sm-6 col-lg-3 mb-5 mb-sm-0">
                         <div className="counter">
                             <i className="icons icon-graph text-color-light"></i>
-                            <strong className="text-color-light font-weight-extra-bold" data-to="14">0</strong>
+                            <strong className="text-color-light font-weight-extra-bold" data-to="14">7</strong>
                             <label className="text-4 mt-1 text-color-light">Outreach Events</label>
                         </div>
                     </div>
                     <div className="col-sm-6 col-lg-3">
                         <div className="counter">
                             <i className="icons icon-cup text-color-light"></i>
-                            <strong className="text-color-light font-weight-extra-bold" data-to="352">0</strong>
+                            <strong className="text-color-light font-weight-extra-bold" data-to="352">405</strong>
                             <label className="text-4 mt-1 text-color-light">Health Interventions</label>
                         </div>
                     </div>
