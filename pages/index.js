@@ -4,9 +4,9 @@ export default function Home() {
   return (
     <>
     <Head>
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />	
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />	
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
         <title>Clafiya - Quality Primary Health Care at Your Door Step</title>
         <script src="vendor/jquery/jquery.min.js"></script>		
