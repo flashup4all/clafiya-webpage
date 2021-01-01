@@ -226,7 +226,7 @@ export default function Home() {
                 <div className="row"> 
                     <div className="col-lg-6 text-center text-md-left mb-5 mb-lg-0">
                         <h2 className="text-color-dark font-weight-normal text-6 mb-2">Our  <strong className="font-weight-extra-bold">Stories</strong></h2>
-                        <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit massa enim. Nullam id varius nunc.</p>
+                        {/* <p className="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit massa enim. Nullam id varius nunc.</p> */}
                         
                     </div>
 
