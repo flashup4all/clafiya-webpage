@@ -135,9 +135,9 @@ a:hover{
 /* media queries */
 
 @media(max-width: 490px){
-    img{
+    /* img{
         width: 100% !important;
-    }
+    } */
 
     .hero{
         height: 100vh;
