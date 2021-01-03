@@ -298,7 +298,7 @@ export default function Home() {
                                 <img src="./img/indexImg/wallet.svg" alt="" className="package-img" />
                             </div>
                             <div className="package-text text-center text-md-lef">
-                                <h4 className="font-weight-semibold">Suscription Base</h4>
+                                <h4 className="font-weight-semibold">Subscription</h4>
                                 <p className="text-2">
                                 Enjoy unlimited access to our services when you subscribe at any time! You can subscribe Weekly, Monthly, Quarterly, Or Annually.
                                 </p>

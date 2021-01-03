@@ -189,27 +189,27 @@ class Home extends Component {
                             <div className="col-md-6 order-2 order-md-1 text-center text-md-left">
                                 <div className="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
                                     <div>
-                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/jennie.png" alt="" />
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/jennie.svg" alt="" />
                                         <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Nwokoye</h3>
                                         <p className="text-2 mb-0">CEO / Co-Founder</p>
                                     </div>
                                     <div>
-                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/avata.png" alt="" />
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/itoro.svg" alt="" />
                                         <h3 className="font-weight-bold text-color-dark text-4 mb-0">Itoro Inoyo</h3>
                                         <p className="text-2 mb-0">Co-Founder</p>
                                     </div>
                                     <div>
-                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/avata.png" alt="" />
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/blessing.svg" alt="" />
                                         <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing Onyirimba</h3>
                                         <p className="text-2 mb-0">Health Coordinator</p>
                                     </div>
                                     <div>
-                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/avata.png" alt="" />
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/miracle.svg" alt="" />
                                         <h3 className="font-weight-bold text-color-dark text-4 mb-0">Miracle Agada</h3>
                                         <p className="text-2 mb-0">Product Designer</p>
                                     </div>
                                     <div>
-                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/lucky.png" alt="" />
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/ahead.svg" alt="" />
                                         <h3 className="font-weight-bold text-color-dark text-4 mb-0">Bardeson Lucky</h3>
                                         <p className="text-2 mb-0">Tech Lead</p>
                                     </div>
