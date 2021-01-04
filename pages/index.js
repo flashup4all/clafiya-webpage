@@ -1,5 +1,9 @@
+import React, { Component } from 'react';
 import Head from 'next/head'
 import PartialLayout from '../layout/partials-layout'
+
+
+
 export default function Home() {
   return (
     <>
@@ -11,13 +15,29 @@ export default function Home() {
         <title>Clafiya - Quality Primary Health Care at Your Door Step</title>
         <script src="vendor/jquery/jquery.min.js"></script>		
         <script src="vendor/bootstrap/js/bootstrap.min.js"></script>       
-        <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		
-        <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			
+        {/* <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		 */}
+        {/* <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			 */}
         <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
         <script src="js/theme.js"></script>
         <script src="js/theme.init.js"></script>
     </Head>
     {/* hero section */}
+    {/* <div class="hero mb-5">
+                <div class="container hero-content">
+                    <div class="row align-items-center py-5">
+                        <div class="col-md-6 hero-text text-center text-md-left">
+                            <h1 class="font-weight-semibold text-color-dark">
+                                Primary Health Service at Your Door Step
+                            </h1>
+                            <p>Providing access to fast and affordable primary healthcare services for Africa's underserved communities..</p>
+                            <div><button class="btn button px-4 py-2 text-white">Learn more</button></div>
+                        </div>
+                        <div class="hero-img col-md-6 pt-5 mt-3">
+                            <img src="./img/indexImg/hero IMG.svg" />
+                        </div>
+                    </div>
+                </div>
+            </div> */}
       <div className="hero mb-5">
         <div className="container hero-content">
             <div className="row align-items-center py-5">
