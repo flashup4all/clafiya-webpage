@@ -1,11 +1,15 @@
+import React, { useState } from 'react';
 import Head from 'next/head'
 import Link from 'next/link'
 
 function PartialLayout({ children }) {
+    const [activeNavIndex, setActiveNavIndex] = useState(1)
     const newsletter = (e) => {
         preventDefault(e);
         console.log('newslartter mail')
     }
+
+    
   return (
     <>
         <Head>
@@ -40,12 +44,12 @@ function PartialLayout({ children }) {
                 
                     <div className="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul className="nav nav-pills navbar-nav ml-auto" id="mainNav">
-                            <li className="nav-item font-weight-semibold">
+                            <li className={activeNavIndex == 1 ? 'current nav-item font-weight-semibold' : "nav-item font-weight-semibold"} onClick={() => setActiveNavIndex(1)}>
                                 <Link href="/">
                                     <a className="nav-link" href="Index.html">Home</a>
                                 </Link>
                             </li>
-                            <li className="nav-item font-weight-semibold">
+                            <li className={activeNavIndex == 2 ? 'current nav-item font-weight-semibold' : "nav-item font-weight-semibold"} onClick={() => setActiveNavIndex(2)}>
                                 <Link href="/about-us">
                                     <a className="nav-link">
                                         About Us
@@ -57,14 +61,14 @@ function PartialLayout({ children }) {
                                     Impact
                                 </a>
                             </li> */}
-                            <li className="nav-item font-weight-semibold">
+                            <li className={activeNavIndex == 3 ? 'current nav-item font-weight-semibold' : "nav-item font-weight-semibold"} onClick={() => setActiveNavIndex(3)}>
                                 <Link href="/blog">
                                     <a className="nav-link">
                                     Impact
                                     </a>
                                 </Link>
                             </li>
-                            <li className="nav-item font-weight-semibold">
+                            <li className={activeNavIndex == 4 ? 'current nav-item font-weight-semibold' : "nav-item font-weight-semibold"} onClick={() => setActiveNavIndex(4)}>
                                 <a className="nav-link" href="#newsletter">
                                     Contact Us
                                 </a>
