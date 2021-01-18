@@ -1,15 +1,73 @@
 import React, { Component } from 'react';
 import Head from 'next/head'
 import PartialLayout from '../layout/partials-layout'
+import PaystackButton from 'react-paystack';
+// import 'bootstrap/dist/js/bootstrap.js';
 var loadJs = require('loadjs');
+
 
 class Home extends Component {
 
     constructor(props) {
         super(props);
     }
+
+    state = {
+        key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
+        email: "shodipovi@gmail.com",
+        amount: 10000
+      }
+ 
+      callback = (response) => {
+        alert('success. transaction ref is ' + response.reference);
+      }
+ 
+      close = () => {
+        console.log("Payment closed");
+      }
+ 
+      getReference = () => {
+        let text = "";
+        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=";
+ 
+        for( let i=0; i < 15; i++ )
+          text += possible.charAt(Math.floor(Math.random() * possible.length));
+ 
+        return text;
+      }
+    
     componentDidMount() {
         loadJs("js/theme.init.js");
+        // loadJs("https://js.paystack.co/v1/inline.js");
+
+
+// var handler = PaystackPop.setup({
+//             key: 'pk_live_477f8475b863b328656efdad927cd98e47e740fd',
+//             email: 'customer@email.com',
+//             amount: 10000,
+//             currency: "NGN",
+//             ref: ''+Math.floor((Math.random() * 1000000000) + 1), // generates a pseudo-unique reference. Please replace with a reference you generated. Or remove the line entirely so our API will generate one for you
+//             firstname: 'Stephen',
+//             lastname: 'King',
+//             // label: "Optional string that replaces customer email"
+//             metadata: {
+//                custom_fields: [
+//                   {
+//                       display_name: "Mobile Number",
+//                       variable_name: "mobile_number",
+//                       value: "+2348012345678"
+//                   }
+//                ]
+//             },
+//             callback: function(response){
+//                 alert('success. transaction ref is ' + response.reference);
+//             },
+//             onClose: function(){
+//                 alert('window closed');
+//             }
+//           });
+//           handler.openIframe();
+        
     }
 
     render(){
@@ -27,26 +85,11 @@ class Home extends Component {
                 {/* <script src="vendor/jquery.easing/jquery.easing.min.js"></script>			 */}
                 <script src="vendor/owl.carousel/owl.carousel.min.js"></script>	
                 <script src="js/theme.js"></script>
+                {/* <script src="https://js.paystack.co/v1/inline.js"></script> */}
                 {/* <script src="js/theme.init.js"></script> */}
                 {/* <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"></link> */}
             </Head>
             {/* hero section */}
-            {/* <div class="hero mb-5">
-                        <div class="container hero-content">
-                            <div class="row align-items-center py-5">
-                                <div class="col-md-6 hero-text text-center text-md-left">
-                                    <h1 class="font-weight-semibold text-color-dark">
-                                        Primary Health Service at Your Door Step
-                                    </h1>
-                                    <p>Providing access to fast and affordable primary healthcare services for Africa's underserved communities..</p>
-                                    <div><button class="btn button px-4 py-2 text-white">Learn more</button></div>
-                                </div>
-                                <div class="hero-img col-md-6 pt-5 mt-3">
-                                    <img src="./img/indexImg/hero IMG.svg" />
-                                </div>
-                            </div>
-                        </div>
-                    </div> */}
             <div className="hero mb-5">
                 <div className="container hero-content">
                     <div className="row align-items-center py-5">
@@ -115,7 +158,132 @@ class Home extends Component {
                     </div>
                 </div>
                 {/* difference */}
-                <div className="services">
+                <div className="difference-container">
+                    <div className="container">
+                        <div className="row scroll-section">
+                            <div className="text-md-left text-center service-head pb-4 col-md-6">
+                                <section>
+                                    <div className="rectangle mb-0 d-inline-block"></div>
+                                    <h2 className="my-2 text-capitalize font-weight-semibold">
+                                        This is What Makes Clafiya Different From All Others.
+                                    </h2>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor turpis bibendum condimentum viverra. Iaculis diam lorem tellus sem eget etiam sed proin. Lobortis in posuere nascetur vivamus. Elementum porttitor enim ullamcorper lacinia.</p>
+                                </section>
+                            </div>
+                            <div className="col-md-6 what-scroll">
+                                <div className="what-card bg-light p-3 shadow mb-4">
+                                    <div  className="text-left">
+                                        <h2 className="lead font-weight-semibold mb-1">
+                                            Last Mile Distribution of Primary Care Services
+                                        </h2>
+                                        <p>
+                                        Our Community Health Workers employ a door-to-door approach to increase access to primary care services in semi-urban, rural, and remote communities. Our reach extends all the way to the last mile, promoting an inclusive experience whilst seeking quality and affordable primary care services.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <img src="./img/indexImg/left img last mile.svg " className="what-img" alt="" /> 
+                                        <div className="info mt-3">
+                                            <img src="./img/indexImg/sdg1.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="what-card bg-light p-3 shadow mb-4">
+                                    <div  className="text-left">
+                                        <h2 className="lead font-weight-semibold mb-1">
+                                            Increasing Job Opportunities for Women
+
+                                        </h2>
+                                        <p>
+                                                According to the UN, less than half of the global women population are under employed. Particularly in Africa, the women unemployment rate is estimated to be 49.6%. By increasing job opportunities for women, Clafiya is re-writing this narrative.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <img src="./img/indexImg/Group 2609.svg" alt="" className="what-img" />
+                                        <div className="info mt-3">
+                                            <img src="./img/indexImg/sdg.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div className="what-card bg-light p-3 shadow mb-4">
+                                    <div  className="text-left">
+                                        <h2 className="lead font-weight-semibold mb-1">
+                                            Promoting Socio-Economic Development In Low Income Communities
+
+
+                                        </h2>
+                                        <p>
+                                                Clafiya takes a holistic approach to address Africa’s fractured primary health care system. At Clafiya, we understand that in order to realize our impact, we have to make something that Africans need. That is leveraging existing systems and technologies to improve access to home based primary care services. We also understand that this problem is two sided and addressing one side without the other will not generate the desired sustained impact needed in Africa. Overtime, Clafiya seeks to improve the life expectancy of Africans and reduce health care expenditure – thus alleviating people out of poverty. 
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <img src="./img/indexImg/124.jpeg" alt="" className="what-img" />
+                                        <div className="info mt-3">
+                                            <img src="./img/indexImg/poverty.svg" alt="" />
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            {/* modal */}
+            <div className="modal fade" id="paymentModal"  aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div className="modal-dialog modal-dialog-centered">
+                <div className="modal-content my-modal p-4">
+                    <div className="d-flex flex-column">
+                        <div className="w-100 d-flex justify-content-end">
+                            <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                            <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
+                            </button>
+                        </div>
+
+                        <div className="text-center w-100">
+                            <h2 className="modal-title font-weight-semibold" id="exampleModalLabel">Hey there, Let's get you started</h2>
+                            <p className="modal-title" id="exampleModalLabel">Quickly sign up and pay for a subscription plan</p>
+                        </div>
+                    
+                    </div>
+                    <div className="modal-body">
+                    <form action="" className="my-form">
+                        <div className="form-div">
+                            <input type="text" className="form-input" />
+                            <label  className="form-label">Full Name</label>
+                        </div>
+
+                        <div className="form-div">
+                            <input type="email" className="form-input" />
+                            <label  className="form-label">Email Address</label>
+                        </div>
+
+                        <div className="form-div">
+                            <input type="email" className="form-input" />
+                            <label  className="form-label">Phone Number</label>
+                        </div>
+                    </form>
+                    </div>
+                    <div className="w-100">
+                    {/* <button type="button" className="btn button text-white w-100" data-dismiss="modal">Proceed to Payment</button> */}
+                    <PaystackButton
+                        className="btn button text-white w-100n"
+                        text="Make Payment"
+                        callback={this.callback}
+                        close={this.close}
+                        disabled={false}
+                        embed={false}
+                        reference={this.getReference()}
+                        email={this.state.email}
+                        amount={this.state.amount}
+                        paystackkey={this.state.key}
+                        tag="button"
+                    />
+                    </div>
+                </div>
+                </div>
+            </div>
+                {/* <div className="services">
                     <div className="container">
                         <div className="text-md-left text-center service-head pb-4">
                             <h3 className="my-2 text-capitalize font-weight-semibold">
@@ -174,7 +342,7 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* Getting started */}
                 <div className="getting-started" id="get_started">
                     <div className="container">
@@ -293,7 +461,100 @@ class Home extends Component {
                     </div>
                 </section>
                 {/* packages */}
-                <div>
+                <div className="packages-section">
+                    <div className="container justify-content-center packages">
+                        <div>
+                            <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
+                                Our affordable prices
+                            </h3>
+                            <div className="rectangle d-inline-block mb-4"></div>
+                        </div>
+                        <div className="row">
+                            <div className="col-lg-3 col-sm-6">
+                                <div className="package mb-4 justify-content-between d-flex flex-column">
+                                    <div className="text-center mb-4">
+                                        <h4 className="mb-0 text-5">Basic Plan</h4>
+                                        <p className="font-weight-semibold mb-0 text-2">Pay as you go</p>
+                                        <h4 className="mb-0"><sup>₦</sup>8,000</h4>
+                                        <p className="text-1 mb-0">Monthly</p>
+                                    </div>
+                                    <div className="package-text text-center">
+                                        <h6 className="font-weight-semibold ">Includes:</h6>
+                                        <ul className="package-list px-0 text-left">
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                        </ul>
+                                    </div>
+                                    <div className="d-flex justify-content-center"><button className="rounded button btn text-white" type="button" data-toggle="modal" data-target="#paymentModal">Get Started</button></div>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6">
+                                <div className="package mb-4 justify-content-between d-flex flex-column">
+                                    <div className="text-center mb-4">
+                                        <h4 className="mb-0 text-5">Basic Plan</h4>
+                                        <p className="font-weight-semibold mb-0 text-2">Pay as you go</p>
+                                        <h4 className="mb-0"><sup>₦</sup>8,000</h4>
+                                        <p className="text-1 mb-0">Monthly</p>
+                                    </div>
+                                    <div className="package-text text-center">
+                                        <h6 className="font-weight-semibold">Includes:</h6>
+                                        <ul className="package-list px-0 text-center">
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                        </ul>
+                                    </div>
+                                    <div className="d-flex justify-content-center"><button className="rounded button btn text-white" type="button" data-toggle="modal" data-target="#paymentModal">Get Started</button></div>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6">
+                                <div className="package mb-4 justify-content-between d-flex flex-column">
+                                    <div className="text-center mb-4">
+                                        <h4 className="mb-0 text-5">Basic Plan</h4>
+                                        <p className="font-weight-semibold mb-0 text-2">Pay as you go</p>
+                                        <h4 className="mb-0"><sup>₦</sup>8,000</h4>
+                                        <p className="text-1 mb-0">Monthly</p>
+                                    </div>
+                                    <div className="package-text text-center text-md-center">
+                                        <h6 className="font-weight-semibold">Includes:</h6>
+                                        <ul className="package-list px-0">
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                        </ul>
+                                    </div>
+                                    <div className="d-flex justify-content-center"><button className="rounded button btn text-white" type="button" data-toggle="modal" data-target="#paymentModal">Get Started</button></div>
+                                </div>
+                            </div>
+                            <div className="col-lg-3 col-sm-6">
+                                <div className="package mb-4 justify-content-between d-flex flex-column">
+                                    <div className="text-center mb-4">
+                                        <h4 className="mb-0 text-5">Basic Plan</h4>
+                                        <p className="font-weight-semibold mb-0 text-2">Pay as you go</p>
+                                        <h4 className="mb-0"><sup>₦</sup>8,000</h4>
+                                        <p className="text-1 mb-0">Monthly</p>
+                                    </div>
+                                    <div className="package-text text-center text-md-center">
+                                        <h6 className="font-weight-semibold">Includes:</h6>
+                                        <ul className="package-list px-0">
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                            <li className="d-flex align-items-center justify-content-md-start justify-content-center"><img src="./img/indexImg/done_24px.svg" alt="" className="mr-2"/><p className="mb-0">Lorem, ipsum dolor.</p></li>
+                                        </ul>
+                                    </div>
+                                    <div className="d-flex justify-content-center"><button className="rounded button btn text-white" type="button" data-toggle="modal" data-target="#paymentModal">Get Started</button></div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+
+                <div className="dots packages-dots">
+                    <img src="./img/indexImg/dots-background-2 1packages.svg" alt="" />
+                </div>
+                {/* <div>
                     <div className="container justify-content-center packages">
                         <div>
                             <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
@@ -344,15 +605,19 @@ class Home extends Component {
                             </div>
                         </div>
                     </div>
-                </div>
+                </div> */}
                 {/* contact */}
-                <div className="contact my-5 py-4" id="chew_get_started">
+
+                <div className="contact my-5 py-4">
                     <div className="container text-white align-items-center text-center text-md-left">
-                        <div className="d-flex align-items-center">
+                        <div className="d-flex align-items-center mt-4 mb-5">
+                            <div className="rectangle bg-light mx-3"></div>
+                            <p className="text-white mb-0 text-sm-4">
+                                Let's get in touch
+                            </p>
                         </div>
-                        <div className="row align-items-center mt-5 mb-5">
+                        <div className="row align-items-center mb-5 mt-4">
                             <div className="col-md-8">
-                                <p className="text-white">Work With Us</p>
                                 <h2 className="text-white font-weight-semibold">
                                     Are You A Skilled And Highly Qualified Community Health Worker? 
                                 </h2>
@@ -362,6 +627,81 @@ class Home extends Component {
                             </div>
                             <div className="col-md-4 d-flex justify-content-center ">
                                     <a href="https://localhealer.typeform.com/to/AWUPye" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">Sign Up <i className="fa fa-arrow-right px-2"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* map section */}
+                <div className="map-section mb-5">
+                    <div className="container">
+                        <div className="map-head d-flex text-center justify-content-center mb-4">
+                            <h4 className="font-weight-semibold w-50">Clafiya started and is based in Anambra state in Nigeria.</h4>
+                        </div>
+                        <div>
+                            <img src="./img/indexImg/world_map.svg" alt="map of the world" />
+                        </div>
+
+                    </div>
+                </div>
+
+                <div className="dots map">
+                    <img src="./img/indexImg/dots-background-1 5map.svg" alt=""/>
+                </div>
+
+                {/* sponsors */}
+                <div className="mb-5 mt-4">
+                    <div className="container justify-content-center packages">
+                    <div>
+                        <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
+                            Meet Our Sponsors and Partners
+                        </h3>
+                        <div className="rectangle d-inline-block mb-4"></div>
+                    </div>
+                        <div className="sponsor-grid mb-5">
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Novartis Foundation Logo  1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Aws logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Inspired Minds Logo  1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Acumen Academy Logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Women in Global Health logo  1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Citi Ventures logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                            <img src="./img/indexImg/sponsors/Ted Leonsis logo 1.svg" alt="" />
+                            </div>
+                        
+                        </div>
+                        <div className="sponsor-grid mb-5">
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/NSF Corps Logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/Georgetown University Logo  1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/Future founders logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/twilio logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/Rockerfeller Foundation logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/Berkely Skydeck logo 1.svg" alt="" />
+                            </div>
+                            <div className="sponsor-img">
+                                <img src="./img/indexImg/sponsors/Anambra Ministry of Health Logo  1.svg" alt="" />
                             </div>
                         </div>
                     </div>
