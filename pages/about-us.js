@@ -105,13 +105,14 @@ class Home extends Component {
                             </div>
                         </div>
 
-                        <div className="row align-items-center justify-content-center mt-3 mb-5">
-                            <div className="col-md-4 text-center appeear-animation" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
-                                <h3 className="font-weight-bold text-4 mb-2">Our Mission</h3>
+                        <div className="row align-items-center justify-content-center mt-3 mb-5 mission-vision">
+                            <div className="col-md-4 text-center appeear-animation mission" data-appear-animation="fadeInLeftShorter" data-appear-animation-delay="800">
+                                <h2 className="font-weight-bold text-4 mb-2">Our Mission</h2>
                                 <p>Bringing quality primary health care to the doorsteps of those who need it the most</p>
                             </div>
-                            <div className="col-md-4 text-center appeear-animation" data-appear-animation="fadeIn" data-appear-animation-delay="600">
-                                <h3 className="font-weight-bold text-4 mb-2">Our Vision</h3>
+                            <hr className="about-divider"></hr>
+                            <div className="col-md-4 text-center appeear-animation vision" data-appear-animation="fadeIn" data-appear-animation-delay="600">
+                                <h2 className="font-weight-bold text-4 mb-2">Our Vision</h2>
                                 <p>A world where all Africans have access to quality and affordable primary health care regardless of their socioeconomic status.</p>
                             </div>
                             {/* <div className="col-md-4 appeear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">

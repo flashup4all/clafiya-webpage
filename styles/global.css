@@ -15,3 +15,39 @@
 .about-header{
     background-image: url(/img/blog/blog1.jpeg);
 }
+
+.mission-vision {
+    height: 300px;
+    border: 1px solid #B3D4FF;
+    border-radius: 20px;
+    width: 70vw;
+    margin: auto;
+}
+
+.mission, .vision {
+    width: 300px !important;
+    margin: 0px 50px;
+    box-shadow: 0px 0px 1px 0px #091E42 31% !important;
+    box-shadow: 0px 8px 12px 0px #091E42 15% !important;
+}
+
+.mission h2.font-weight-bold, .vision h2.font-weight-bold {
+    font-size: 32px !important;
+    color: #172B4D, 100% !important;
+}
+
+.mission p, .vision p {
+    font-size: 18px !important;
+    color: #172B4D, 100% !important;
+}
+
+.about-divider {
+    border-left: 1px solid #4C9AFF;
+    height: 200px;
+    width: 2px;
+    opacity: .5;
+}
+
+/* .mission {
+    border-right: 1px solid #efefef;
+} */
