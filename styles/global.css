@@ -43,7 +43,7 @@
 }
 
 .mission-vision {
-    height: 300px;
+    min-height: 300px;
     border: 1px solid #B3D4FF;
     border-radius: 20px;
     width: 70vw;
@@ -73,6 +73,7 @@
     width: 2px;
     opacity: .5;
 }
+
 
 footer .social-icons-facebook, 
 footer .social-icons-twitter, 
