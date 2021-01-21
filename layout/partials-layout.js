@@ -142,7 +142,7 @@ function PartialLayout({ children }) {
                                 <li className="social-icons-facebook"><a href="https://www.facebook.com/ClafiyaAfrica" target="_blank" title="Facebook"><i className="fab fa-facebook-f"></i></a></li>								
                                 <li className="social-icons-twitter"><a href="https://twitter.com/Clafiya1" target="_blank" title="Twitter"><i className="fab fa-twitter"></i></a></li>								
                                 <li className="social-icons-instagram"><a href="https://www.instagram.com/clafiya/" target="_blank" title="instagram"><i className="fab fa-instagram"></i></a></li>							
-                                <li className="social-icons-instagram"><a href="https://www.linkedin.com/company/clafiya" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>							
+                                <li className="social-icons-linkedin"><a href="https://www.linkedin.com/company/clafiya" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>							
                             </ul>						
                     </div>	
                                         

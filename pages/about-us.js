@@ -175,9 +175,11 @@ class Home extends Component {
                                 </div>
                                 <div className="col-md-6">
 
-                                <video controls >
+                                <iframe width="100%" height="315" src="https://www.youtube-nocookie.com/embed/17Za5jeRkaU" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                                {/* <video controls >
                                     <source src="videos/about.mp4" type="video/mp4"/>
-                                </video>
+                                </video> */}
                                     {/* <img src="img/generic/generic-corporate-3-1.jpg" className="img-fluid position-absolute d-none d-sm-block appeear-animation" data-appear-animation="expandIn" data-appear-animation-delay="300" style={{top: "10%", left: "-50%"}} alt="" />
                                     <img src="img/generic/generic-corporate-3-2.jpg" className="img-fluid position-absolute d-none d-sm-block appeear-animation" data-appear-animation="expandIn" style={{top: "-33%", left: "-29%"}} alt="" />
                                     <img src="img/generic/generic-corporate-3-3.jpg" className="img-fluid position-relative appeear-animation mb-2" data-appear-animation="expandIn" data-appear-animation-delay="600" alt="" /> */}

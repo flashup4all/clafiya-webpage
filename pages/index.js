@@ -165,9 +165,12 @@ class Home extends Component {
                                 <section>
                                     <div className="rectangle mb-0 d-inline-block"></div>
                                     <h2 className="my-2 text-capitalize font-weight-semibold">
-                                        This is What Makes Clafiya Different From All Others.
+                                        What Makes Clafiya Different?
                                     </h2>
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Auctor turpis bibendum condimentum viverra. Iaculis diam lorem tellus sem eget etiam sed proin. Lobortis in posuere nascetur vivamus. Elementum porttitor enim ullamcorper lacinia.</p>
+                                    <p>
+                                        Our desire to ensure that access to primary health care is a basic right for all Africans regardless of socio-economic status is what makes Clafiya different. <br/>  
+                                        Clafiya was founded with the mission to provide life-saving health care services to individuals living in semi-urban and rural communities. This women-led platform is determined to connect people to the nearest health care worker, no matter where they live and what their income may be - our goal is that quality and affordable health services are within reach to everyone, everywhere. Through Clafiya, we are one step closer to meeting the SDGs 1, 3, and 8. 
+                                    </p>
                                 </section>
                             </div>
                             <div className="col-md-6 what-scroll">
@@ -465,11 +468,166 @@ class Home extends Component {
                     <div className="container justify-content-center packages">
                         <div>
                             <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
-                                Our affordable prices
+                                Our Affordable Packages
                             </h3>
                             <div className="rectangle d-inline-block mb-4"></div>
                         </div>
-                        <div className="row">
+                        <div className='table-responsive'>
+                            <table className='table packages-table'>
+                                <thead>
+                                    <tr>
+                                        <th scope="col" className='justify-content-start benefits-heading'>Benefits</th>
+                                        <th scope="col" className='text-center basic-col'>
+                                            <div>
+                                                Basic Plan <br/>
+                                                <sup>₦</sup>2,000 <br/>
+                                                <small>Pay as you go</small>
+                                            </div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                        </th>
+                                        <th scope="col" className='text-center'>
+                                            <div>
+                                                Single Plan <br/>
+                                                <sup>₦</sup>3,000 <br/>
+                                                <small>Monthly</small>
+                                            </div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                        </th>
+                                        <th scope="col" className='text-center'>
+                                            <div>
+                                                Maternity Care <br/>
+                                                <sup>₦</sup>3,500 <br/>
+                                                <small>Monthly</small>
+                                            </div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                        </th>
+                                        <th scope="col" className='text-center'>
+                                            <div>
+                                                Family <br/>
+                                                <sup>₦</sup>5,000 <br/>
+                                                <small>Monthly</small>
+                                            </div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {/* Primary Care Consultation */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Primary Care Consultation</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                    {/* Hypertension Screening */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Hypertension Screening</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                    {/* Blood Sugar Screening */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Blood Sugar Screening</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                    {/* Rapid Diagnostic Test For: Malaria, Typhoid */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Rapid Diagnostic Test For: Malaria, Typhoid</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                    {/* Pregnancy Test */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Pregnancy Test</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                    {/* Prenatal | Antenatal | Postnatal Care Services */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Prenatal | Antenatal | Postnatal Care Services</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                    {/* Protein and Urine Screening */}
+                                    <tr>
+                                        <td scope="row" className='service-name'>Protein and Urine Screening</td>
+                                        <td className='text-center basic-col'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-x.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                        <td className='text-center'>
+                                            <img src='./img/icons/icon-check.svg'></img>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        {/* <div className="row">
                             <div className="col-lg-3 col-sm-6">
                                 <div className="package mb-4 justify-content-between d-flex flex-column">
                                     <div className="text-center mb-4">
@@ -547,7 +705,7 @@ class Home extends Component {
                                 </div>
                             </div>
                             
-                        </div>
+                        </div> */}
                     </div>
                 </div>
 
