@@ -37,9 +37,11 @@ export default function Home() {
             
                                     <div className="col">
                                         <div className="post-image">
-                                            <a href="blog-post.html">
+                                        <Link href="/blog/healthcare-mobile-and-covid-news-story">
+                                            <a>
                                                 <img src="img/blog/blog1.jpeg" className="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
                                             </a>
+                                        </Link>
                                         </div>
                                     </div>
                                 </div>
