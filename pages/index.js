@@ -361,7 +361,7 @@ class Home extends Component {
                     </div>
                 </div>
                 {/* stories */}
-                <section className="section bg-color-grey-scale-1 section-height-3 border-0 m-0 mb-5">
+                <section className="section bg-color-grey-scale-1 section-height-3 border-0 m-0 mb-5 contact">
                     <div className="container pb-2">
                         <div className="row"> 
                             <div className="col-lg-6 text-center text-md-left mb-5 mb-lg-0">
