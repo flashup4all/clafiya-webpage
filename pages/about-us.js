@@ -98,7 +98,7 @@ class Home extends Component {
                                     </h1>
                                 </div>
                                 <div className="overflow-hidden mb-3">
-                                    <p className="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
+                                    <p className="lead mb-0 appeear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
                                     We at Clafiya believe that access to affordable and quality primary health care should be a basic right for all Africans.
                                     </p>
                                 </div>
