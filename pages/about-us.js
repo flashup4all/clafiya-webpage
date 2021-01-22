@@ -33,7 +33,7 @@ class Home extends Component {
         // loadJs("vendor/vide/jquery.vide.min.js");
         // loadJs("vendor/vivus/vivus.min.js");
         // loadJs("js/theme.js");
-        loadJs("js/theme.init.js");
+        // loadJs("js/theme.init.js");
 
 	
     }
@@ -60,7 +60,7 @@ class Home extends Component {
                 <script src="vendor/vide/jquery.vide.min.js"></script>		
                 <script src="vendor/vivus/vivus.min.js"></script>
                 <script src="js/theme.js"></script>
-                {/* <script src="js/theme.init.js"></script> */}
+                <script src="js/theme.init.js"></script>
             </Head>
                 <section className="about-header page-header page-header-modern page-header-background page-header-background-md overlay overlay-color-dark overlay-show overlay-op-7">
                     <div className="container">
@@ -87,7 +87,7 @@ class Home extends Component {
                         <div className="row text-center pb-5">
                             <div className="col-md-10 mx-md-auto">
                                 <div className="overflow-hidden mb-3">
-                                    <h1 className="word-rotator slide font-weight-bold text-8 mb-0 appeear-animation" data-appear-animation="maskUp">
+                                    <h1 className="word-rotator slide font-weight-bold text-8 mb-0 appeear-animation">
                                         <span>We are Clafiya, We </span>
                                         <span className="word-rotator-words bg-primary">
                                             <b className="is-visible">Provide</b>
