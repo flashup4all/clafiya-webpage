@@ -99,7 +99,7 @@ class Home extends Component {
                                 </div>
                                 <div className="overflow-hidden mb-3">
                                     <p className="lead mb-0 appear-animation" data-appear-animation="maskUp" data-appear-animation-delay="200">
-                                    We at Clafifa believe that access to affordable and quality primary health care should be a basic right for all Africans.
+                                    We at Clafiya believe that access to affordable and quality primary health care should be a basic right for all Africans.
                                     </p>
                                 </div>
                             </div>
@@ -132,14 +132,14 @@ class Home extends Component {
                                 <div className="col-sm-6 col-lg-3 mb-5 mb-lg-0">
                                     <div className="counter">
                                         <i className="icons icon-user text-color-light"></i>
-                                        <strong className="text-color-light font-weight-extra-bold" data-to="50" data-append="+">50</strong>
+                                        <strong className="text-color-light font-weight-extra-bold" data-to="256">256</strong>
                                         <label className="text-4 mt-1 text-color-light">Patients</label>
                                     </div>
                                 </div>
                                 <div className="col-sm-6 col-lg-3 mb-5 mb-lg-0">
                                     <div className="counter">
                                         <i className="icons icon-badge text-color-light"></i>
-                                        <strong className="text-color-light font-weight-extra-bold" data-to="256">256</strong>
+                                        <strong className="text-color-light font-weight-extra-bold" data-to="50" data-append="+">50</strong>
                                         <label className="text-4 mt-1 text-color-light">Health Workers</label>
                                     </div>
                                 </div>
