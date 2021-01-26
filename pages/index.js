@@ -15,7 +15,7 @@ class Home extends Component {
     state = {
         key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         email: "shodipovi@gmail.com",
-        amount: 10000
+        amount: 100000
       }
  
       callback = (response) => {
@@ -24,6 +24,12 @@ class Home extends Component {
  
       close = () => {
         console.log("Payment closed");
+      }
+
+      setAmount = (amount) => {
+          this.setState({...this.state, amount: amount})
+        //   this.state.amount = amount;
+        //   console.log(this.state.amount);
       }
  
       getReference = () => {
@@ -399,7 +405,7 @@ class Home extends Component {
                                                 <sup>₦</sup>3,000 <br/>
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(300000)}>Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center'>
                                             <div>
@@ -407,7 +413,7 @@ class Home extends Component {
                                                 <sup>₦</sup>3,500 <br/>
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(350000)}>Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center'>
                                             <div>
@@ -415,7 +421,7 @@ class Home extends Component {
                                                 <sup>₦</sup>5,000 <br/>
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal">Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(500000)}>Get Started</a></div>
                                         </th>
                                     </tr>
                                 </thead>

@@ -75,7 +75,6 @@
     opacity: .5;
 }
 
-
 footer .social-icons-facebook, 
 footer .social-icons-twitter, 
 footer .social-icons-instagram, 
@@ -99,6 +98,7 @@ footer .social-icons-linkedin {
 .map-title{
     line-height: 48px;
 }
+
 /* .mission {
     border-right: 1px solid #efefef;
 } */
