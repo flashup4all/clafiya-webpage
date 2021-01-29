@@ -37,6 +37,75 @@
     font-size: .8rem;
 }
 
+.mobile-packages .plan {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: #F4F5F7;
+    border-radius: 10px;
+    margin: 20px 0px;
+    padding: 40px 10px;
+}
+
+.mobile-packages .plan .plan-name {
+    font-weight: 800;
+    font-size: 2rem;
+    color: #172B4D;
+}
+
+.mobile-packages .plan .plan-price {
+    margin: 0;
+    padding: 0;
+    font-weight: 800;
+    font-size: 1.3rem;
+    color: #172B4D;
+}
+
+.mobile-packages .plan small {
+    font-weight: 600;
+    font-size: 0.7rem;
+}
+
+.mobile-packages .plan .plan-button {
+    margin: 20px auto;
+}
+
+.mobile-packages .plan .plan-services {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.mobile-packages .plan .plan-services .plan-service {
+    width: 100vw;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0px 20px;
+    border-top: 2px solid #6B778C, 100%;
+}
+
+.mobile-packages .plan .plan-services .plan-service .service-name {
+    padding: 0px;
+    margin: 0px 10px;
+}
+
+.mobile-packages .plan .plan-services .plan-service hr {
+    width: 100% !important;
+    height: 2px;
+    border-top: 1px solid #6B778C;
+}
+
+.mobile-packages .plan .plan-services .plan-service img {
+    height: 20px !important;
+    width: 20px !important;
+    margin: 0px 10px;
+}
+
 
 .about-header{
     background-image: url(/img/blog/blog1.jpeg);

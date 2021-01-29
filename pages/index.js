@@ -386,7 +386,260 @@ class Home extends Component {
                             </h3>
                             <div className="rectangle d-inline-block mb-4"></div>
                         </div>
-                        <div className='table-responsive'>
+                        {/* Mobile Packages View */}
+                        <div className='d-block d-sm-none mobile-packages'>
+                            {/* Basic Plan */}
+                            <div className='plan'>
+                                <p className='plan-name'>
+                                    Basic Plan
+                                </p>
+                                <p className='plan-price'>
+                                    <sup>₦</sup>2,000
+                                </p>
+                                <small>Pay as you go - charges for extra services</small>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(200000)}>Get Started</a></div>
+                                <div className='plan-services'>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Primary Care Consultation
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Hypertension Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Blood Sugar Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Rapid Diagnostic Test for: Malaria, Typhoid
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Pregnancy Test
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Prenatal | Antenatal |  Postnatal Care Services 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Protein and Urine Screening 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Single Plan */}
+                            <div className='plan'>
+                                <p className='plan-name'>
+                                    Single Plan
+                                </p>
+                                <p className='plan-price'>
+                                    <sup>₦</sup>3,000
+                                </p>
+                                <small>Monthly</small>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(300000)}>Get Started</a></div>
+                                <div className='plan-services'>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Primary Care Consultation
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Hypertension Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Blood Sugar Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Rapid Diagnostic Test for: Malaria, Typhoid
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Pregnancy Test
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Prenatal | Antenatal |  Postnatal Care Services 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Protein and Urine Screening 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-x.svg'></img>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Maternity Care */}
+                            <div className='plan'>
+                                <p className='plan-name'>
+                                    Maternity Care
+                                </p>
+                                <p className='plan-price'>
+                                    <sup>₦</sup>3,500
+                                </p>
+                                <small>Monthly</small>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(350000)}>Get Started</a></div>
+                                <div className='plan-services'>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Primary Care Consultation
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Hypertension Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Blood Sugar Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Rapid Diagnostic Test for: Malaria, Typhoid
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Pregnancy Test
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Prenatal | Antenatal |  Postnatal Care Services 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Protein and Urine Screening 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* Family */}
+                            <div className='plan'>
+                                <p className='plan-name'>
+                                    Family
+                                </p>
+                                <p className='plan-price'>
+                                    <sup>₦</sup>5,000
+                                </p>
+                                <small>Monthly</small>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(500000)}>Get Started</a></div>
+                                <div className='plan-services'>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Primary Care Consultation
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Hypertension Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Blood Sugar Screening
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Rapid Diagnostic Test for: Malaria, Typhoid
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Pregnancy Test
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Prenatal | Antenatal |  Postnatal Care Services 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                    <div className='plan-service row'>
+                                        <hr></hr>
+                                        <p className='justify-content-start service-name col-xs-12'>
+                                            Protein and Urine Screening 
+                                        </p>
+                                        <img className='justify-content-end' height='40px' width='40px' src='./img/icons/icon-check.svg'></img>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        {/*  */}
+
+                        <div className='table-responsive d-none d-md-block d-lg-block'>
                             <table className='table packages-table'>
                                 <thead>
                                     <tr>
