@@ -8,7 +8,7 @@ body, html {
 * {
     margin: 0;
     padding: 0;
-    transition: all 1s ease-in-out;
+    transition: all .4s ease-in-out;
   }
   
   :root {
@@ -16,6 +16,13 @@ body, html {
     --primary-bg: #083e9e;
     --primary-white: #ffffff;
 
+  }
+
+  a.button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
   }
   
   a:hover {
@@ -81,6 +88,12 @@ body, html {
     background: var(--primary-bg);
     color: var(--primary-white);
     font-weight: 600;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    margin: auto; */
   }
   
   .dots {

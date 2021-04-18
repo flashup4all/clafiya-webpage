@@ -32,7 +32,10 @@ class Home extends Component {
 
     setAmount = (amount) => {
         this.setState({ ...this.state, amount: amount })
-        // this.router.push('/register', '', { plan: 'basic' })
+        // this.router.push({
+        //     pathname: '/register',
+        //     query: { pid: 'basic' },
+        // })
         //   this.state.amount = amount;
         //   console.log(this.state.amount);
     }
@@ -655,7 +658,7 @@ class Home extends Component {
                                                 <sup>₦</sup>2,000 <br />
                                                 <small>Pay as you go - charges for extra services</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(200000)}>Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" onClick={() => this.setAmount(200000)}>Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center'>
                                             <div>
