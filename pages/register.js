@@ -18,7 +18,7 @@ class Register extends Component {
         // email: "shodipovi@gmail.com",
         // amount: 100000
         api: 'https://api.clafiya.com/api/tfap',
-        currentStep: 3,
+        currentStep: 1,
         // Form One
         firstname: '',
         lastname: '',

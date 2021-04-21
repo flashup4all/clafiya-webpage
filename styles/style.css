@@ -8,14 +8,25 @@ body, html {
 * {
     margin: 0;
     padding: 0;
-    transition: all 1s ease-in-out;
+    transition: all .4s ease-in-out;
   }
   
   :root {
-    --primary-text: #172b4d;
+    --primary-text: #172B4D;
     --primary-bg: #083e9e;
     --primary-white: #ffffff;
 
+  }
+
+  a.button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.text-color-dark {
+    color: #2E2C47 !important
   }
   
   a:hover {
@@ -25,6 +36,10 @@ body, html {
   .hero {
     background: url(/img/indexImg/hero\ bg.png) center center/cover;
     height: 100vh;
+  }
+
+  .hero-p {
+    font-weight: 600 !important;
   }
   
   .hero-img {
@@ -53,6 +68,29 @@ body, html {
   
   .contact {
     background: #000;
+    margin-bottom: 0px !important;
+  }
+
+  .btn {
+    height: 50px;
+    border-bottom: 10px !important;
+    font-weight: 600;
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .col .button {
+    width: 100%;
+  }
+
+  .btn.outline-primary {
+    background: none;
+    border: 1px solid var(--primary-bg) !important;
+    color: var(--primary-bg);
   }
 
   .btn {
@@ -81,6 +119,12 @@ body, html {
     background: var(--primary-bg);
     color: var(--primary-white);
     font-weight: 600;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    margin: auto; */
   }
   
   .dots {
@@ -100,6 +144,10 @@ body, html {
     background-color: var(--primary-bg);
     border-radius: 50px;
   }
+
+  .rectangle.stories-rect {
+    background-color: #FFFFFF !important;
+  }
   
   .service {
     width: 472px;
@@ -111,7 +159,7 @@ body, html {
   }
   
   .service-text {
-    border: 1px solid #eef5ff;
+    border: 1px solid #DEEBFF;
     border-top: none;
   }
   
@@ -150,8 +198,8 @@ body, html {
     position: sticky;
     top: 0;
     left: 0;
-    transform: translate(0%, -10%);
-    height: 100vh;
+    transform: translate(0%, 20%);
+    height: 60vh;
   }
   
   .scroll-section .service-head section {
@@ -197,7 +245,7 @@ body, html {
   }
   
   .contact {
-    margin-bottom: 6rem !important;
+    /* margin-bottom: 6rem !important; */
     /* height: 50vh; */
   }
   
@@ -273,6 +321,14 @@ body, html {
     color: #fff;
     margin: 0 3px;
   }
+
+  .my-form:invalid + .register-button {
+    display: none;
+  }
+
+  .my-form:invalid + .register-button {
+    display: inline-block;
+  }
   
   .form-div {
     position: relative;
@@ -315,15 +371,28 @@ body, html {
     z-index: 10;
     background-color: #fff;
   }
+
+  .form-input:valid + .form-label {
+    display: none;
+  }
   
   .form-input:focus {
     border: 1px solid #083e9e;
+  }
+
+  .map-section {
+    background-color:#E9F6FB;
+    padding: 6rem 0px;
   }
   
   .map-head h4 {
     color: #172b4d;
     font-size: 32px;
     /* width: 50%; */
+  }
+
+  .map-img img {
+    margin: 10px auto;
   }
   
   .dots.map {
@@ -342,7 +411,7 @@ body, html {
   
   .sponsor-img {
     width: max-content;
-    margin-right: 0.7rem;
+    margin: 0px 20px 0px 0px;
   }
   
   .dots.sponsor {

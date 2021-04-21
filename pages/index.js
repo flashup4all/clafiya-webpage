@@ -106,9 +106,9 @@ class Home extends Component {
                         <div className="row align-items-center py-5">
                             <div className="col-md-6 hero-text text-center text-md-left">
                                 <h1 className="font-weight-semibold text-color-dark">
-                                    Quality Primary Health Care at Your Door Step
+                                    QUALITY PRIMARY HEALTHCARE FOR ALL AFRICANS.
                             </h1>
-                                <p className="hero-p">Providing access to fast and affordable primary health care services for Africa's underserved communities.</p>
+                                <p className="hero-p">We are focused on bringing fast, affordable, and quality healthcare to your doorstep, anywhere in Africa.</p>
                                 <div><a className="btn button px-4 py-2 text-white" href="#about_clafiya">Learn more</a></div>
                             </div>
                             <div className="hero-img col-md-6 col-sm-push-6 pt-5 mt-3">
@@ -121,8 +121,8 @@ class Home extends Component {
                 <div className="services-grid py-5" id="about_clafiya">
                     <div className="container">
                         <div className="text-left service-head pb-4">
-                            <h3 className="font-weight-semibold text-capitalize text-7 my-2">
-                                Who is Clafiya for?
+                            <h3 className="font-weight-extrabold text-7 my-2">
+                                Who is Clafiya For?
                             </h3>
                             <div className="rectangle mb-4"></div>
                         </div>
@@ -130,11 +130,11 @@ class Home extends Component {
                             <div className="col-md-4 service">
                                 <img src="./img/indexImg/img 1.svg" alt="" />
                                 <div className="service-text px-4 py-2">
-                                    <h4 className="text-color-dark">
+                                    <h4 className="text-color-dark font-weight-bold">
                                         For Patients
                                     </h4>
                                     <p>
-                                        With Clafiya, our patients can register, pay and connect with the nearest community health worker to get access to fast and affordable primary health care.
+                                        Our patients can register, pick their desired plan, schedule appointments, and get connected with health workers nearest to them!
                                     </p>
                                     <a href="#get_started" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                                 </div>
@@ -143,24 +143,26 @@ class Home extends Component {
                             <div className="col-md-4 service">
                                 <img src="./img/indexImg/Group 2604.svg" alt="" />
                                 <div className="service-text px-4 py-2 my-0">
-                                    <h4 className="text-color-dark">
+                                    <h4 className="text-color-dark font-weight-bold">
                                         For Health Workers
                                     </h4>
                                     <p>
-                                        Our Community Health Workers are directly connected to people who need their services. They generate an income for the services they provide, promoting social entrepreneurship.
+                                        We connect our community health workers with people who need their services.
+                                        <br />
+                                        Would you like to work with us? Connect with us here:
                                     </p>
-                                    <a href="#chew_get_started" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
+                                    <a href="#for_health_workers" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                                 </div>
                             </div>
 
                             <div className="col-md-4 service">
                                 <img src="./img/indexImg/tech.svg" alt="" />
                                 <div className="service-text px-4 py-2">
-                                    <h4 className="text-color-dark">
-                                        Easy-To-Use Technology
+                                    <h4 className="text-color-dark font-weight-bold">
+                                        For You!
                                     </h4>
                                     <p>
-                                        Our easy to use technology allows anyone to access to our platform without internet connectivity by simply dialing our short USSD code *347*58#
+                                        Consistent medical checkups saves you a lot, and it's a good way to live! Register with us and stay up to date with your health.
                                     </p>
                                     <a href="#our_tech" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                                 </div>
@@ -175,19 +177,39 @@ class Home extends Component {
                             <div className="text-md-left text-center service-head pb-4 col-md-6">
                                 <section>
                                     <div className="rectangle mb-0 d-inline-block"></div>
-                                    <h2 className="my-2 text-capitalize font-weight-semibold">
-                                        What Makes Clafiya Different?
+                                    <h2 className="my-2 font-weight-extrabold">
+                                        This is What Makes Clafiya Different From All Others.
                                     </h2>
                                     <p>
-                                        Our desire to ensure that access to primary health care is a basic right for all Africans regardless of socio-economic status is what makes Clafiya different. <br />
-                                        Clafiya was founded with the mission to provide life-saving health care services to individuals living in semi-urban and rural communities. This women-led platform is determined to connect people to the nearest health care worker, no matter where they live and what their income may be - our goal is that quality and affordable health services are within reach to everyone, everywhere. Through Clafiya, we are one step closer to meeting the SDGs 1, 3, and 8.
+                                        - Clafiya thrives on a mission to consistently provide basic health care to individuals in both rural and urban communities. <br /><br />
+
+                                        - We think of it as a responsibility to ensure that quality and affordable healthcare services are available everywhere in Africa. <br /><br />
+
+                                        - Are you into SDGs? This brings us closer to meeting SDGs 1,3 and 8. <br />
                                     </p>
                                 </section>
                             </div>
                             <div className="col-md-6 what-scroll">
                                 <div className="what-card bg-light p-3 shadow mb-4">
                                     <div className="text-left">
-                                        <h2 className="lead font-weight-semibold mb-1">
+                                        <h2 className="lead font-weight-bold mb-1">
+                                            Easy to Use Technology
+                                        </h2>
+                                        <p>
+                                            Struggling with poor internet connection, or no access to the internet at all? You can easily dial our shortcode *347*58# and get started with appointment scheduling and more.
+                                        </p>
+                                    </div>
+                                    <div>
+                                        <img src="./img/indexImg/easy to use tech.svg " className="what-img" alt="" />
+                                        {/* <div className="info mt-3">
+                                            <img src="./img/indexImg/sdg1.svg" alt="" />
+                                        </div> */}
+                                    </div>
+                                </div>
+
+                                <div className="what-card bg-light p-3 shadow mb-4">
+                                    <div className="text-left">
+                                        <h2 className="lead font-weight-bold mb-1">
                                             Last Mile Distribution of Primary Care Services
                                         </h2>
                                         <p>
@@ -204,7 +226,7 @@ class Home extends Component {
 
                                 <div className="what-card bg-light p-3 shadow mb-4">
                                     <div className="text-left">
-                                        <h2 className="lead font-weight-semibold mb-1">
+                                        <h2 className="lead font-weight-bold mb-1">
                                             Increasing Job Opportunities for Women
 
                                         </h2>
@@ -222,7 +244,7 @@ class Home extends Component {
 
                                 <div className="what-card bg-light p-3 shadow mb-4">
                                     <div className="text-left">
-                                        <h2 className="lead font-weight-semibold mb-1">
+                                        <h2 className="lead font-weight-bold mb-1">
                                             Promoting Socio-Economic Development In Low Income Communities
 
 
@@ -263,29 +285,29 @@ class Home extends Component {
                             <div className="modal-body">
                                 <form action="" className="my-form">
                                     <div className="form-div">
-                                        <input type="text" className="form-input" />
+                                        <input type="text" className="form-input" value={this.state.name} onChange={(event) => this.isFormValid(event, 'name')} placeholder='E.g Firstname Lastname' required />
                                         <label className="form-label">Full Name</label>
                                     </div>
 
                                     <div className="form-div">
-                                        <input type="email" className="form-input" />
+                                        <input type="email" className="form-input" value={this.state.email} onChange={(event) => this.isFormValid(event, 'email')} required />
                                         <label className="form-label">Email Address</label>
                                     </div>
 
                                     <div className="form-div">
-                                        <input type="email" className="form-input" />
+                                        <input type="email" className="form-input" value={this.state.phone} onChange={(event) => this.isFormValid(event, 'phone')} required />
                                         <label className="form-label">Phone Number</label>
                                     </div>
                                 </form>
                             </div>
-                            <div className="w-100">
+                            <div className="w-100 register-button">
                                 {/* <button type="button" className="btn button text-white w-100" data-dismiss="modal">Proceed to Payment</button> */}
                                 <PaystackButton
-                                    className="btn button text-white w-100n"
+                                    className="btn button text-white w-100n register-form-button"
                                     text="Make Payment"
                                     callback={this.callback}
                                     close={this.close}
-                                    disabled={false}
+                                    disabled={!this.isRegisterFormValid}
                                     embed={false}
                                     reference={this.getReference()}
                                     email={this.state.email}
@@ -300,24 +322,25 @@ class Home extends Component {
                 {/* Getting started */}
                 <div className="getting-started" id="get_started">
                     <div className="container">
-                        <h2 className="font-weight-semibold mb-5 text-md-left text-center">Getting Started</h2>
-                        <div className="row text-center">
+                        <h2 className="font-weight-extrabold mb-5 text-md-left text-center">Getting Started</h2>
+                        <div className="row">
+
                             <div className="col-md-3">
                                 <div>
-                                    <img src="img/indexImg/Group 2586.svg" alt="" className="mb-2 started-img" />
-                                    <p className="font-weight-semibold text-color-dark">1. Dial *347*58#</p>
+                                    <img src="img/indexImg/Group 2587.svg" alt="" className="mb-2 started-img" />
+                                    <p className="font-weight-bold text-color-dark">1. Dial *347*58#</p>
                                     <p>
-                                        Simply dial our short code on your keypad to get started
+                                        Simply dial our shortcode on any mobile device
                                     </p>
                                 </div>
                             </div>
 
                             <div className="col-md-3">
                                 <div>
-                                    <img src="img/indexImg/Group 2587.svg" alt="" className="mb-2 started-img" />
-                                    <p className="font-weight-semibold text-color-dark">2. Sign Up</p>
+                                    <img src="img/indexImg/Group 2586.svg" alt="" className="mb-2 started-img" />
+                                    <p className="font-weight-bold text-color-dark">2. Register</p>
                                     <p>
-                                        Our registration is simple and straight forward! Sign Up in just 4 steps!
+                                        Registration is simple and straightforward
                                     </p>
                                 </div>
                             </div>
@@ -325,9 +348,9 @@ class Home extends Component {
                             <div className="col-md-3">
                                 <div>
                                     <img src="img/indexImg/Group 2588.svg" alt="" className="mb-2 started-img" />
-                                    <p className="font-weight-semibold text-color-dark">3. Get An Appointment</p>
+                                    <p className="font-weight-bold text-color-dark">3. Schedule an appointment</p>
                                     <p>
-                                        Enter your location to schedule an appointment with registered Community Health Workers in your area
+                                        After registration, you can make a request anytime, schedule an appointment and get connected with our approved health workers.
                                     </p>
                                 </div>
                             </div>
@@ -335,9 +358,9 @@ class Home extends Component {
                             <div className="col-md-3">
                                 <div>
                                     <img src="img/indexImg/Group 2590.svg" alt="" className="mb-2 started-img" />
-                                    <p className="font-weight-semibold text-color-dark">4. That's it!</p>
+                                    <p className="font-weight-bold text-color-dark">4. You’re all set!!!</p>
                                     <p>
-                                        Enjoy fast and affordable primary health care at your doorsteps
+                                        Enjoy fast and affordable primary health care at your doorstep
                                     </p>
                                 </div>
                             </div>
@@ -349,35 +372,29 @@ class Home extends Component {
                     <div className="container d-flex justify-content-center" id="our_tech">
                         <div className="row align-items-center tech">
                             <div className="col-md-6 justify-content-center">
-                                <img src="./img/indexImg/phone.svg" alt="" className="phone" />
+                                <img src="./img/indexImg/renders.svg" alt="" className="phone" />
                             </div>
                             <div className="col-md-6 text-md-right text-center">
                                 <div className="tech-head ">
-                                    <h3 className="text-color-dark font-weight-semibold mb-1">
+                                    <h3 className="text-color-dark font-weight-extrabold mb-1">
                                         Our Technology
                                     </h3>
                                     <div className="rectangle mb-2 tech-rect d-inline-block"></div>
                                 </div>
                                 <p>
-                                    Clafiya is a USSD (Unstructured Supplementary Service Data)
-                                    session-based text communication protocol available on every GSM-enabled mobile device.
-                                    A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function.
-                                    According to GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people.
-                                    As such, it was imperative that our platform is easily accessible.
-                                    In various African countries, people are using their mobile phones for banking, telecoms, agriculture and sports.
-                                    With Clafiya they can now use it for health care.
+                                    Clafiya is a USSD (Unstructured Supplementary Service Data) session-based text communication protocol available on every GSM-enabled mobile device. A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. According to GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. As such, it was imperative that our platform is easily accessible. In various African countries, people are using their mobile phones for banking, telecoms, agriculture and sports. With Clafiya they can now use it for health care.
                                     </p>
                             </div>
                         </div>
                     </div>
                 </div>
                 {/* stories */}
-                <section className="section bg-color-grey-scale-1 section-height-3 border-0 m-0 mb-5 contact">
+                <section className="section bg-color-grey-scale-1 section-height-3 border-0 m-0 mb-5 testimonial-section">
                     <div className="container pb-2">
                         <div className="row">
                             <div className="col-lg-6 text-center text-md-left mb-5 mb-lg-0">
-                                <h2 className="text-color-dark font-weight-normal text-6 mb-2">Our  <strong className="font-weight-extra-bold">Stories</strong></h2>
-
+                                <h2 className="text-color-light font-weight-extrabold text-6 mb-2">Stories People Tell About Us.</h2>
+                                <div className="rectangle mb-2 stories-rect d-inline-block"></div>
                             </div>
                         </div>
                     </div>
@@ -386,8 +403,8 @@ class Home extends Component {
                 <div className="packages-section">
                     <div className="container justify-content-center packages">
                         <div>
-                            <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
-                                Our Affordable Packages
+                            <h3 className="text-color-dark font-weight-extrabold mb-2 text-md-left ">
+                                Our Affordable Plans
                             </h3>
                             <div className="rectangle d-inline-block mb-4"></div>
                         </div>
@@ -649,7 +666,7 @@ class Home extends Component {
                                 <thead>
                                     <tr>
                                         <th scope="col" className='justify-content-start benefits-heading'>Benefits</th>
-                                        <th scope="col" className='text-center basic-col'>
+                                        <th scope="col" className='text-center'>
                                             <div>
                                                 Basic Plan <br />
                                                 <sup>₦</sup>2,000 <br />
@@ -657,7 +674,7 @@ class Home extends Component {
                                             </div>
                                             <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(200000)}>Get Started</a></div>
                                         </th>
-                                        <th scope="col" className='text-center'>
+                                        <th scope="col" className='text-center basic-col'>
                                             <div>
                                                 Single Plan <br />
                                                 <sup>₦</sup>3,000 <br />
@@ -687,10 +704,10 @@ class Home extends Component {
                                     {/* Primary Care Consultation */}
                                     <tr>
                                         <td scope="row" className='service-name'>Primary Care Consultation</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -703,10 +720,10 @@ class Home extends Component {
                                     {/* Hypertension Screening */}
                                     <tr>
                                         <td scope="row" className='service-name'>Hypertension Screening</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -719,10 +736,10 @@ class Home extends Component {
                                     {/* Blood Sugar Screening */}
                                     <tr>
                                         <td scope="row" className='service-name'>Blood Sugar Screening</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -735,10 +752,10 @@ class Home extends Component {
                                     {/* Rapid Diagnostic Test For: Malaria, Typhoid */}
                                     <tr>
                                         <td scope="row" className='service-name'>Rapid Diagnostic Test For: Malaria, Typhoid</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -751,10 +768,10 @@ class Home extends Component {
                                     {/* Pregnancy Test */}
                                     <tr>
                                         <td scope="row" className='service-name'>Pregnancy Test</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-check.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -767,10 +784,10 @@ class Home extends Component {
                                     {/* Prenatal | Antenatal | Postnatal Care Services */}
                                     <tr>
                                         <td scope="row" className='service-name'>Prenatal | Antenatal | Postnatal Care Services</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -783,10 +800,10 @@ class Home extends Component {
                                     {/* Protein and Urine Screening */}
                                     <tr>
                                         <td scope="row" className='service-name'>Protein and Urine Screening</td>
-                                        <td className='text-center basic-col'>
+                                        <td className='text-center'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
-                                        <td className='text-center'>
+                                        <td className='text-center basic-col'>
                                             <img src='./img/icons/icon-x.svg'></img>
                                         </td>
                                         <td className='text-center'>
@@ -805,9 +822,11 @@ class Home extends Component {
                 <div className="dots packages-dots">
                     <img src="./img/indexImg/dots-background-2 1packages.svg" alt="" />
                 </div>
+
+
                 {/* contact */}
 
-                <div className="contact my-5 py-4">
+                <div className="contact py-4" id='for_health_workers'>
                     <div className="container text-white align-items-center text-center text-md-left">
                         <div className="d-flex align-items-center mt-4 mb-5">
                             <div className="rectangle bg-light mx-3"></div>
@@ -818,14 +837,21 @@ class Home extends Component {
                         <div className="row align-items-center mb-5 mt-4">
                             <div className="col-md-8">
                                 <h2 className="text-white font-weight-semibold">
-                                    Are You A Skilled And Highly Qualified Community Health Worker?
+                                    Are you a skilled and qualified health worker who is interested in working in your community??
                                 </h2>
                                 <p className="text-white">
-                                    Then we are looking to hire you, click the button to your right to sign up.
+                                    We would love to hear from you. Click on the button to register
                                 </p>
                             </div>
                             <div className="col-md-4 d-flex justify-content-center ">
-                                <a href="https://localhealer.typeform.com/to/AWUPye" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">Sign Up <i className="fa fa-arrow-right px-2"></i></a>
+                                {/* <a href="https://localhealer.typeform.com/to/AWUPye" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">
+                                    Register
+                                    <i className="fa fa-arrow-right px-2"></i>
+                                </a> */}
+                                <a href="https://forms.gle/qBmnqJm6MfSjCcZH6" target="_black" className="text-white sign-up d-flex justify-content-center align-items-center">
+                                    Register
+                                    {/* <i className="fa fa-arrow-right px-2"></i> */}
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -834,10 +860,10 @@ class Home extends Component {
                 <div className="map-section mb-5">
                     <div className="container">
                         <div className="map-head d-flex text-center justify-content-center mb-4">
-                            <h4 className="font-weight-semibold w-75 map-title">Clafiya is currently operating in Nigeria with plans to scale across the African continent.</h4>
+                            <h4 className="font-weight-extrabold w-75 map-title">Clafiya started and is based in Anambra <br /> state in Nigeria.</h4>
                         </div>
-                        <div>
-                            <img src="./img/indexImg/world_map.svg" alt="map of the world" />
+                        <div className='map-img d-flex justify-content-center'>
+                            <img src="./img/indexImg/africa_map.svg" alt="map of africa" />
                         </div>
 
                     </div>
@@ -851,7 +877,7 @@ class Home extends Component {
                 <div className="mb-5 mt-4">
                     <div className="container justify-content-center packages">
                         <div>
-                            <h3 className="text-color-dark font-weight-semibold mb-2 text-md-left ">
+                            <h3 className="text-color-dark font-weight-extrabold mb-2 text-md-left ">
                                 Meet Our Sponsors and Partners
                         </h3>
                             <div className="rectangle d-inline-block mb-4"></div>
@@ -860,9 +886,9 @@ class Home extends Component {
                             <div className="sponsor-img">
                                 <img src="./img/indexImg/sponsors/Novartis Foundation Logo  1.svg" alt="" />
                             </div>
-                            <div className="sponsor-img">
+                            {/* <div className="sponsor-img">
                                 <img src="./img/indexImg/sponsors/Aws logo 1.svg" alt="" />
-                            </div>
+                            </div> */}
                             <div className="sponsor-img">
                                 <img src="./img/indexImg/sponsors/Inspired Minds Logo  1.svg" alt="" />
                             </div>
@@ -890,9 +916,9 @@ class Home extends Component {
                             <div className="sponsor-img">
                                 <img src="./img/indexImg/sponsors/Future founders logo 1.svg" alt="" />
                             </div>
-                            <div className="sponsor-img">
+                            {/* <div className="sponsor-img">
                                 <img src="./img/indexImg/sponsors/twilio logo 1.svg" alt="" />
-                            </div>
+                            </div> */}
                             <div className="sponsor-img">
                                 <img src="./img/indexImg/sponsors/Rockerfeller Foundation logo 1.svg" alt="" />
                             </div>
