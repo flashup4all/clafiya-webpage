@@ -1,0 +1,147 @@
+.register-container {
+    margin: 50px auto;
+}
+
+.register-container > .row {
+    justify-content: center;
+}
+
+.plan-heading {
+    color: #083E9E;
+    font-weight: 600;
+    margin: none;
+}
+
+.plan-row {
+    justify-content: space-evenly !important;
+}
+
+.plan-item {
+    border: 1px solid #083E9E;
+    border-radius: 10px;
+    text-align: center;
+    margin: 10px 10px;
+    cursor: pointer;
+}
+
+.plan-item.selected {
+    border: 3px solid #00875A;
+}
+
+.plan-item.selected .plan-price {
+    color: #00875A;
+}
+
+.plan-item .plan-name {
+    margin: 0px;
+    padding: none;
+    color: #000;
+    font-weight: 800;
+}
+
+.plan-item .plan-desc {
+    font-size: .7rem;
+    font-weight: 600;
+    color: #6B778C;
+}
+
+.plan-item .plan-price {
+    color: #083E9E;
+    font-size: 1.2rem;
+    font-weight: 700;
+    margin: 0;
+}
+
+p {
+    font-size: 1rem;
+}
+
+p.heading {
+    font-size: 2rem;
+    font-weight: 500;
+}
+
+#left, #right {
+    border: none;
+    border-radius: 20px;
+    padding: 40px;
+}
+
+#left {
+    width: 50vw;
+    height: 800px;
+    /* max-height: 70vh; */
+    background: linear-gradient(180deg, #083E9E 0%, #38AAE4 89.7%);
+    background-image: url(./img/auth-page-bg.png);
+    background-size: cover;
+    color: #ffffff;
+    justify-content: space-between;
+}
+
+#left-bottom {
+    position: absolute;
+    bottom: 30px;
+}
+
+#left p {
+    color: #ffffff;
+}
+
+#left div {
+    margin: 40px 0px;
+}
+
+#right {
+    width: 30vw;
+    max-height: 700px;
+    transform: translateX(-3vw);
+    background: #ffffff;
+    color: #083E9E;
+    margin: auto 0px;
+    box-shadow: 0px 0px 1px 0px #091E424F;
+    box-shadow: 0px 8px 12px 0px #091E4226;
+
+}
+
+#right .form-item {
+    background: transparent;
+    min-height: 50px;
+    max-height: 70px;
+    border: 1px solid #0A459F;
+    border-radius: 5px;
+    padding: 0px 0px 0px 0px;
+    max-width: 100%;
+    margin: 40px auto;    
+}
+
+#right .form-item .item-content {
+    margin: 0px 10px;
+    width: calc(100% - 20px);
+}
+
+#right .form-item .item-content .item-heading {
+    background: #FFFFFF;
+    position: relative;
+    top: -17px;
+    left: 10px;
+    color: #0A459F;
+    padding: 5px 5px 5px 5px;
+    font-weight: 600;
+}
+
+#right .form-item .item-content .item-value {
+    font-size: 1rem;
+    text-align: start;
+    /* margin: auto auto auto 20px; */
+    font-weight: 800;
+    border: none;
+    /* padding: 10px 5px; */
+    height: 100%;
+    transform: translateY(-20px);
+}
+
+@media only screen and (max-width: 425px) {
+    #right .form-item {
+        max-width: 100%;
+    }
+}

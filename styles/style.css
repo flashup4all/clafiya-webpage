@@ -1,11 +1,32 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200;0,300;0,400;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,600;1,700;1,800;1,900&display=swap');
+
+body, html {
+  font-family: 'Nunito', sans-serif;
+  transition: all 1s ease-in-out;
+}
+
 * {
     margin: 0;
     padding: 0;
+    transition: all .4s ease-in-out;
   }
   
   :root {
-    --primary-text: #172b4d;
+    --primary-text: #172B4D;
     --primary-bg: #083e9e;
+    --primary-white: #ffffff;
+
+  }
+
+  a.button {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  a.text-color-dark {
+    color: #2E2C47 !important
   }
   
   a:hover {
@@ -16,9 +37,20 @@
     background: url(/img/indexImg/hero\ bg.png) center center/cover;
     height: 100vh;
   }
+
+  .hero-p {
+    font-weight: 600 !important;
+  }
   
   .hero-img {
     width: 50%;
+  }
+
+  
+
+  .btn-white {
+    background-color: #ffffff !important;
+    color: #083E9E !important;
   }
   
   .my-nav {
@@ -36,10 +68,41 @@
   
   .contact {
     background: #000;
+    margin-bottom: 0px !important;
+  }
+
+  .btn {
+    height: 50px;
+    border-bottom: 10px !important;
+    font-weight: 600;
+  }
+
+  .col {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .col .button {
+    width: 100%;
+  }
+
+  .btn.outline-primary {
+    background: none;
+    border: 1px solid var(--primary-bg) !important;
+    color: var(--primary-bg);
   }
   
   .button {
     background: var(--primary-bg);
+    color: var(--primary-white);
+    font-weight: 600;
+    /* display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 150px;
+    margin: auto; */
   }
   
   .dots {
@@ -59,6 +122,10 @@
     background-color: var(--primary-bg);
     border-radius: 50px;
   }
+
+  .rectangle.stories-rect {
+    background-color: #FFFFFF !important;
+  }
   
   .service {
     width: 472px;
@@ -70,7 +137,7 @@
   }
   
   .service-text {
-    border: 1px solid #eef5ff;
+    border: 1px solid #DEEBFF;
     border-top: none;
   }
   
@@ -109,8 +176,8 @@
     position: sticky;
     top: 0;
     left: 0;
-    transform: translate(0%, -10%);
-    height: 100vh;
+    transform: translate(0%, 20%);
+    height: 60vh;
   }
   
   .scroll-section .service-head section {
@@ -156,7 +223,7 @@
   }
   
   .contact {
-    margin-bottom: 6rem !important;
+    /* margin-bottom: 6rem !important; */
     /* height: 50vh; */
   }
   
@@ -232,6 +299,14 @@
     color: #fff;
     margin: 0 3px;
   }
+
+  .my-form:invalid + .register-button {
+    display: none;
+  }
+
+  .my-form:invalid + .register-button {
+    display: inline-block;
+  }
   
   .form-div {
     position: relative;
@@ -274,15 +349,28 @@
     z-index: 10;
     background-color: #fff;
   }
+
+  .form-input:valid + .form-label {
+    display: none;
+  }
   
   .form-input:focus {
     border: 1px solid #083e9e;
+  }
+
+  .map-section {
+    background-color:#E9F6FB;
+    padding: 6rem 0px;
   }
   
   .map-head h4 {
     color: #172b4d;
     font-size: 32px;
     /* width: 50%; */
+  }
+
+  .map-img img {
+    margin: 10px auto;
   }
   
   .dots.map {
@@ -301,7 +389,7 @@
   
   .sponsor-img {
     width: max-content;
-    margin-right: 0.7rem;
+    margin: 0px 20px 0px 0px;
   }
   
   .dots.sponsor {
