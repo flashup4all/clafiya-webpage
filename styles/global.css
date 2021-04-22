@@ -92,6 +92,7 @@
 .mobile-packages .plan .plan-services .plan-service .service-name {
     padding: 0px;
     margin: 0px 10px;
+    max-width: 70%;
 }
 
 .mobile-packages .plan .plan-services .plan-service hr {
@@ -151,7 +152,7 @@ footer .social-icons-linkedin {
     margin: 10px 10px 0px 0px;
 }
 
-@media only screen and (max-width: 425px) {
+@media only screen and (max-width: 768px) {
     .mission-vision {
         padding: 20px 0px;
         width: 90vw;

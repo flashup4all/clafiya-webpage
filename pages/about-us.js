@@ -3,6 +3,7 @@ import Head from 'next/head'
 
 
 import PartialLayout from '../layout/partials-layout'
+import Link from 'next/link';
 var loadJs = require('loadjs');
 
 class Home extends Component {
@@ -108,7 +109,7 @@ class Home extends Component {
                         </div>
                     </div>
 
-                    <div className="row pt-5">
+                    <div className="row">
                         <div className="col">
 
                             <div className="row align-items-center justify-content-center mt-3 mb-5 mission-vision">
@@ -197,35 +198,89 @@ class Home extends Component {
                     <div className="row pt-5 pb-4 my-5">
                         <div className="col-md-6 order-2 order-md-1 text-center text-md-left">
                             <div className="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 1}, '992': {'items': 2}, '1200': {'items': 2}}, 'margin': 25, 'loop': false, 'nav': true, 'dots': false, 'stagePadding': 40}">
-                                <div>
-                                    <img className="team-img img-fluid rounded-0 mb-4" src="img/team/jennie.svg" alt="" />
-                                    <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Nwokoye</h3>
-                                    <p className="text-2 mb-0">CEO / Co-Founder</p>
+                                <div className='row'>
+                                    <div className='col-12 col-md-12 col-lg-12'>
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/jennie.svg" alt="" />
+                                    </div>
+                                    <div className='col-12 col-md-9 col-lg-9'>
+                                        <h3 className="font-weight-bold text-color-dark text-4 mb-0">Jennie Nwokoye</h3>
+                                        <p className="text-2 mb-0">CEO / Co-Founder</p>
+                                    </div>
+                                    <div className='col-12 col-md-3 col-lg-3'>
+                                        <ul className='social-icons'>
+                                            <li className="social-icons-linkedin"><a href=" https://www.linkedin.com/in/jennienwokoye" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img className="team-img img-fluid rounded-0 mb-4" src="img/team/itoro.svg" alt="" />
-                                    <h3 className="font-weight-bold text-color-dark text-4 mb-0">Itoro Inoyo</h3>
-                                    <p className="text-2 mb-0">Co-Founder</p>
+                                <div className='row'>
+                                    <div className='col-12 col-md-12 col-lg-12'>
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/itoro.svg" alt="" />
+                                    </div>
+                                    <div className='col-12 col-md-9 col-lg-9'>
+                                        <h3 className="font-weight-bold text-color-dark text-4 mb-0">Itoro Inoyo</h3>
+                                        <p className="text-2 mb-0">Co-Founder</p>
+                                    </div>
+                                    <div className='col-12 col-md-3 col-lg-3'>
+                                        <ul className='social-icons'>
+                                            <li className="social-icons-linkedin"><a href="https://www.linkedin.com/in/itoroinoyo" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img className="team-img img-fluid rounded-0 mb-4" src="img/team/blessing.svg" alt="" />
-                                    <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing Onyirimba</h3>
-                                    <p className="text-2 mb-0">Health Coordinator</p>
+                                <div className='row'>
+                                    <div className='col-12 col-md-12 col-lg-12'>
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/blessing.svg" alt="" />
+                                    </div>
+                                    <div className='col-12 col-md-9 col-lg-9'>
+                                        <h3 className="font-weight-bold text-color-dark text-4 mb-0">Blessing Onyirimba</h3>
+                                        <p className="text-2 mb-0">Health Coordinator</p>
+                                    </div>
+                                    <div className='col-12 col-md-3 col-lg-3'>
+                                        <ul className='social-icons'>
+                                            <li className="social-icons-linkedin"><a href="https://www.linkedin.com/in/princess-blessing-anthony-128b83183" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img className="team-img img-fluid rounded-0 mb-4" src="img/team/miracle.svg" alt="" />
-                                    <h3 className="font-weight-bold text-color-dark text-4 mb-0">Miracle Agada</h3>
-                                    <p className="text-2 mb-0">Product Designer</p>
+                                <div className='row'>
+                                    <div className='col-12 col-md-12 col-lg-12'>
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/miracle.svg" alt="" />
+                                    </div>
+                                    <div className='col-12 col-md-9 col-lg-9'>
+                                        <h3 className="font-weight-bold text-color-dark text-4 mb-0">Miracle Agada</h3>
+                                        <p className="text-2 mb-0">Product Designer</p>
+                                    </div>
+                                    <div className='col-12 col-md-3 col-lg-3'>
+                                        <ul className='social-icons'>
+                                            <li className="social-icons-linkedin"><a href="https://www.linkedin.com/in/miracle-agada-043aa719a" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img className="team-img img-fluid rounded-0 mb-4" src="img/team/ahead.svg" alt="" />
-                                    <h3 className="font-weight-bold text-color-dark text-4 mb-0">Bardeson Lucky</h3>
-                                    <p className="text-2 mb-0">Tech Lead</p>
+                                <div className='row'>
+                                    <div className='col-12 col-md-12 col-lg-12'>
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/ahead.svg" alt="" />
+                                    </div>
+                                    <div className='col-12 col-md-9 col-lg-9'>
+                                        <h3 className="font-weight-bold text-color-dark text-4 mb-0">Bardeson Lucky</h3>
+                                        <p className="text-2 mb-0">Tech Lead</p>
+                                    </div>
+                                    <div className='col-12 col-md-3 col-lg-3'>
+                                        <ul className='social-icons'>
+                                            <li className="social-icons-linkedin"><a href="https://www.linkedin.com/in/bardeson-lucky-687ab834" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
-                                <div>
-                                    <img className="team-img img-fluid rounded-0 mb-4" src="img/team/babangida.svg" alt="" />
-                                    <h3 className="font-weight-bold text-color-dark text-4 mb-0">Tsowa Babangida</h3>
-                                    <p className="text-2 mb-0">Developer</p>
+                                <div className='row'>
+                                    <div className='col-12 col-md-12 col-lg-12'>
+                                        <img className="team-img img-fluid rounded-0 mb-4" src="img/team/babangida.svg" alt="" />
+                                    </div>
+                                    <div className='col-12 col-md-9 col-lg-9'>
+                                        <h3 className="font-weight-bold text-color-dark text-4 mb-0">Tsowa Babangida</h3>
+                                        <p className="text-2 mb-0">Developer</p>
+                                    </div>
+                                    <div className='col-12 col-md-3 col-lg-3'>
+                                        <ul className='social-icons'>
+                                            <li className="social-icons-linkedin"><a href="https://www.linkedin.com/in/tsowa-babangida-38b1bb99" target="_blank" title="LinkedIn"><i className="fab fa-linkedin"></i></a></li>
+                                        </ul>
+                                    </div>
                                 </div>
                             </div>
                         </div>

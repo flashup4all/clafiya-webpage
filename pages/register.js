@@ -97,6 +97,21 @@ class Register extends Component {
             if (sub.name === this.selectedPlan) sub_id = sub.id;
         });
 
+        let phone_number = this.state.phone.split('-').join();
+
+        if (phone_number.length == 11) {
+            this.setState({
+                ...this.state,
+                phone: "+234" + phone_number.substring(1)
+            });
+        }
+        if (phone_number.length == 10) {
+            this.setState({
+                ...this.state,
+                phone: "+234" + phone_number
+            });
+        }
+
         let data = await {
             name: `${this.state.firstname} ${this.state.lastname}`,
             phone_number: this.state.phone,
@@ -142,7 +157,8 @@ class Register extends Component {
             this.state.registerLoading = false;
             setTimeout(() => {
                 window.location.pathname = '/';
-            }, 3000);
+                window.localStorage.removeItem('cl-reg');
+            }, 4000);
             this.resetForm();
         }
         // FOR PARTICULAR ERROR MESSAGES
@@ -240,7 +256,7 @@ class Register extends Component {
     componentDidMount() {
         loadJs("js/theme.init.js");
         this.getStates();
-        this.getSubscriptions();
+        // this.getSubscriptions();
         this.userData = JSON.parse(window.localStorage.getItem('cl-reg'));
         this.setState({
             ...this.state,
@@ -468,22 +484,22 @@ class Register extends Component {
                                 </div>
                                 <p className='plan-heading'>Kindly Pick A Subscription Plan</p>
                                 <div className='row plan-row'>
-                                    <div className={(this.selectedPlan == 'basic' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'} onClick={() => this.selectPlan('basic')}>
+                                    <div className={(this.selectedPlan == 'basic' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
                                         <p className='plan-name'>Basic Plan</p>
                                         <small className='plan-desc'>Pay As You Go</small>
                                         <p className='plan-price'>₦2,000</p>
                                     </div>
-                                    <div className={(this.selectedPlan == 'single' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'} onClick={() => this.selectPlan('single')}>
+                                    <div className={(this.selectedPlan == 'single' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
                                         <p className='plan-name'>Single Plan</p>
                                         <small className='plan-desc'>Monthly</small>
                                         <p className='plan-price'>₦3,000</p>
                                     </div>
-                                    <div className={(this.selectedPlan == 'maternity' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'} onClick={() => this.selectPlan('maternity')}>
+                                    <div className={(this.selectedPlan == 'maternity' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
                                         <p className='plan-name'>Maternity</p>
                                         <small className='plan-desc'>Monthly</small>
                                         <p className='plan-price'>₦3,500</p>
                                     </div>
-                                    <div className={(this.selectedPlan == 'family' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'} onClick={() => this.selectPlan('family')}>
+                                    <div className={(this.selectedPlan == 'family' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
                                         <p className='plan-name'>Family Plan</p>
                                         <small className='plan-desc'>Monthly</small>
                                         <p className='plan-price'>₦5,000</p>

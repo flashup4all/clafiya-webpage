@@ -141,6 +141,19 @@ p.heading {
 }
 
 @media only screen and (max-width: 425px) {
+    #left {
+        max-height: 70vh;
+        height: fit-content;
+    }
+
+    #left-bottom {
+        position: initial;
+    }
+
+    #right {
+        transform: translateX(0vw);
+    }
+
     #right .form-item {
         max-width: 100%;
     }

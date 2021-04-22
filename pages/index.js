@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import PartialLayout from '../layout/partials-layout'
+import MaskInput from 'react-maskinput';
 import PaystackButton from 'react-paystack';
 // import 'bootstrap/dist/js/bootstrap.js';
 var loadJs = require('loadjs');
@@ -137,10 +138,10 @@ class Home extends Component {
                     <div className="container hero-content">
                         <div className="row align-items-center py-5">
                             <div className="col-md-6 hero-text text-center text-md-left">
-                                <h1 className="font-weight-semibold text-color-dark">
+                                <h1 className="font-weight-bold text-color-dark">
                                     QUALITY PRIMARY HEALTHCARE FOR ALL AFRICANS.
                             </h1>
-                                <p className="hero-p">We are focused on bringing fast, affordable, and quality healthcare to your doorstep, anywhere in Africa.</p>
+                                <p className="hero-p font-weight-bold">We are focused on bringing fast, affordable, and quality healthcare to your doorstep, anywhere in Africa.</p>
                                 <div><a className="btn button px-4 py-2 text-white" href="#about_clafiya">Learn more</a></div>
                             </div>
                             <div className="hero-img col-md-6 col-sm-push-6 pt-5 mt-3">
@@ -213,11 +214,11 @@ class Home extends Component {
                                         This is What Makes Clafiya Different From All Others.
                                     </h2>
                                     <p>
-                                        - Clafiya thrives on a mission to consistently provide basic health care to individuals in both rural and urban communities. <br /><br />
+                                        Clafiya thrives on a mission to consistently provide basic health care to individuals in both rural and urban communities. <br /><br />
 
-                                        - We think of it as a responsibility to ensure that quality and affordable healthcare services are available everywhere in Africa. <br /><br />
+                                        We think of it as a responsibility to ensure that quality and affordable healthcare services are available everywhere in Africa. <br /><br />
 
-                                        - Are you into SDGs? This brings us closer to meeting SDGs 1,3 and 8. <br />
+                                        Are you into SDGs? This brings us closer to meeting SDGs 1,3 and 8. <br />
                                     </p>
                                 </section>
                             </div>
@@ -327,7 +328,8 @@ class Home extends Component {
                                     </div>
 
                                     <div className="form-div">
-                                        <input type="email" className="form-input" value={this.state.phone} onChange={(event) => this.isFormValid(event, 'phone')} required />
+                                        <MaskInput type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.isFormValid(event, 'phone')} mask={'0000-000-0000'} size={11} maskChar="" required />;
+                                        {/* <input type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.isFormValid(event, 'phone')} required /> */}
                                         <label className="form-label">Phone Number</label>
                                     </div>
                                 </form>
@@ -891,11 +893,11 @@ class Home extends Component {
                 </div>
                 {/* map section */}
                 <div className="map-section mb-5">
-                    <div className="container">
-                        <div className="map-head d-flex text-center justify-content-center mb-4">
+                    <div className="row w-100">
+                        <div className="map-head d-flex text-center align-items-center justify-content-center mb-4 col-12 col-md-6 col-lg-6">
                             <h4 className="font-weight-extrabold w-75 map-title">Clafiya started and is based in Anambra <br /> state in Nigeria.</h4>
                         </div>
-                        <div className='map-img d-flex justify-content-center'>
+                        <div className='map-img d-flex justify-content-center col-12 col-md-6 col-lg-6'>
                             <img src="./img/indexImg/africa_map.svg" alt="map of africa" />
                         </div>
 
