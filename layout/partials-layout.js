@@ -73,16 +73,13 @@ function PartialLayout({ children }) {
                                         Contact Us
                                 </a>
                                 </li>
-                                <li className="nav-item font-weight-semibold ml-2">
-                                    {/* <a className="nav-link text-white button btn" href="https://localhealer.typeform.com/to/AWUPye" target="_blank">
-                                    Register
-                                </a> */}
+                                {/* <li className="nav-item font-weight-semibold ml-2">
                                     <Link href='/register'>
                                         <a className="nav-link text-white button btn">
                                             Register
                                     </a>
                                     </Link>
-                                </li>
+                                </li> */}
                             </ul>
                         </div>
                     </div>
