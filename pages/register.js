@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Head from 'next/head'
-import PartialLayout from '../layout/partials-layout'
+import PartialLayout from '../layout/partials-layout';
+import moment from 'moment';
+import Swal from 'sweetalert2';
 import PaystackButton from 'react-paystack';
 // import '../public/register.css';
 // import 'bootstrap/dist/js/bootstrap.js';
@@ -31,11 +33,46 @@ class Register extends Component {
         phone: '',
         address: '',
         selectedPlan: '',
+        subscriptions: '',
+        registerLoading: false
     }
 
     states = [];
     lgas = [];
     selectedPlan = '';
+    subscriptions = [
+        {
+            name: 'single',
+            id: 1
+        },
+        {
+            name: 'maternity',
+            id: 2
+        },
+        {
+            name: 'family',
+            id: 3
+        },
+        {
+            name: 'basic',
+            id: 4
+        },
+    ];
+
+    userData = '';
+
+    getAge = (dob) => {
+        dob = moment(new Date(dob).toISOString());
+        let age = moment().diff(dob, 'years');
+        console.log('AGE', age);
+        return age;
+    }
+
+    alert = (type) => {
+        if (type === 'succsss') {
+            Swal.fire()
+        }
+    }
 
     nextStep = (event) => {
         event.preventDefault();
@@ -52,8 +89,97 @@ class Register extends Component {
         console.log('STATE', this.state);
     }
 
-    register = () => {
+    register = async (event) => {
+        this.state.registerLoading = true;
+        event.preventDefault();
+        let sub_id;
+        await this.subscriptions.filter((sub) => {
+            if (sub.name === this.selectedPlan) sub_id = sub.id;
+        });
 
+        let data = await {
+            name: `${this.state.firstname} ${this.state.lastname}`,
+            phone_number: this.state.phone,
+            email: this.state.email,
+            age: this.getAge(this.state.dob),
+            date_of_birth: this.state.dob,
+            gender: this.state.gender,
+            state_id: Number(this.state.state),
+            lga_id: Number(this.state.lga),
+            address: this.state.address,
+            password: this.state.password,
+            subscription_type_id: sub_id
+        };
+
+        console.log('REG DATA', data);
+
+        const response = await fetch(`${this.state.api}/clients/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const res = await response.json();
+        console.log(res);
+        if (res.status === "error") {
+            this.error_msg = res.data.msg;
+            Swal.fire({
+                title: "Error!",
+                text: res.msg,
+                type: "error",
+                confirmButtonText: "ok",
+            });
+            this.state.registerLoading = false;
+        } else {
+            Swal.fire({
+                title: "Successful!",
+                text: 'Account Created Sucessfully',
+                type: "success",
+                confirmButtonText: "Thank You!",
+            });
+            this.state.registerLoading = false;
+            window.location.pathname = '/';
+            this.resetForm();
+        }
+        // FOR PARTICULAR ERROR MESSAGES
+        // if (!res.status) {
+        //     Swal.fire({
+        //         title: 'Error!',
+        //         text: res.msg
+        //     })
+        // }
+    }
+
+    resetForm = () => {
+        this.selectedPlan = '';
+        this.setState({
+            ...this.state,
+            firstname: '',
+            lastname: '',
+            email: '',
+            password: '',
+            phone: '',
+            gender: '',
+            dob: '',
+            state: '',
+            lga: '',
+            address: ''
+        });
+    }
+
+    getSubscriptions = async () => {
+        const response = await fetch(`${this.state.api}/client-subscription`, {
+            method: 'GET',
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        });
+
+        const allSubs = await response.json();
+        console.log('SUBSCRIPTIONS', allSubs);
+        this.setState({ ...this.state, subscriptions: allSubs.data });
     }
 
     selectPlan = (plan_name) => {
@@ -107,9 +233,21 @@ class Register extends Component {
         // console.log(value);
     }
 
+
+
     componentDidMount() {
         loadJs("js/theme.init.js");
         this.getStates();
+        this.getSubscriptions();
+        this.userData = JSON.parse(window.localStorage.getItem('cl-reg'));
+        this.setState({
+            ...this.state,
+            firstname: this.userData.name.split(' ')[0],
+            lastname: this.userData.name.split(' ')[1],
+            email: this.userData.email,
+            phone: this.userData.phone
+        });
+        this.selectedPlan = this.userData.plan;
         // loadJs("https://js.paystack.co/v1/inline.js");
 
 
@@ -282,7 +420,7 @@ class Register extends Component {
                                         <select value={this.state.state} onChange={(event) => this.formValue(event)} name='state' type='text' autoComplete='state' className="item-value form-control form-control-lg" placeholder='Please Select A State' required>
                                             <option value='null'>State</option>
                                             {this.states.map((state) => {
-                                                return (<option value={state.id} key={state.id}>{state.state}</option>)
+                                                return (<option value={state.id} key={state.id}>{state.name}</option>)
                                             })}
                                         </select>
                                     </div>
@@ -313,7 +451,7 @@ class Register extends Component {
                             {/* Form Two End */}
 
                             {/* Form Three */}
-                            {this.state.currentStep === 3 ? <form onSubmit={this.register} >
+                            {this.state.currentStep === 3 ? <form onSubmit={(event) => this.register(event)} >
                                 <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='phone'>Phone Number</label>
@@ -354,7 +492,11 @@ class Register extends Component {
                                         <button type='button' className='btn outline-primary button' onClick={this.prevStep}>Go Back</button>
                                     </div>
                                     <div className='col-6 col'>
-                                        <button type='submit' className='btn button'>Create Account</button>
+                                        <button type='submit' disabled={this.state.registerLoading} className='btn button'>
+                                            {/* <span className="spinner-border spinner-border-sm text-light" style={(this.state.registerLoading === false) ? 'display: none' : 'display: inline-block'} role="status"></span>
+                                            <span className="visually-hidden">Loading...</span> */}
+                                            Create Account
+                                        </button>
                                     </div>
                                 </div>
                             </form> : ''}

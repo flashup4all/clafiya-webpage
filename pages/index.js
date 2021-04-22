@@ -16,7 +16,36 @@ class Home extends Component {
     state = {
         key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         email: "shodipovi@gmail.com",
-        amount: 100000
+        amount: 100000,
+        name: '',
+        user_email: '',
+        phone: '',
+        plan: ''
+    }
+
+    isRegisterFormValid = false;
+
+    isFormValid = (event, input) => {
+        if (input === 'name') this.setState({ ...this.state, name: event.target.value });
+        if (input === 'email') this.setState({ ...this.state, user_email: event.target.value });
+        if (input === 'phone') this.setState({ ...this.state, phone: event.target.value });
+
+        if (
+            this.state.name !== '' && this.state.email !== '' && this.state.phone !== ''
+        ) this.isRegisterFormValid = true;
+    }
+
+    toRegisterPage = () => {
+        let data = {
+            name: this.state.name,
+            email: this.state.user_email,
+            phone: this.state.phone,
+            plan: this.state.plan
+        };
+
+        window.localStorage.setItem('cl-reg', JSON.stringify(data))
+        window.location.pathname = '/register';
+
     }
 
     // router = useRouter();
@@ -30,9 +59,12 @@ class Home extends Component {
         console.log("Payment closed");
     }
 
-    setAmount = (amount) => {
-        this.setState({ ...this.state, amount: amount })
-        // this.router.push('/register', '', { plan: 'basic' })
+    setAmount = (plan, amount) => {
+        this.setState({ ...this.state, amount: amount, plan: plan })
+        // this.router.push({
+        //     pathname: '/register',
+        //     query: { pid: 'basic' },
+        // })
         //   this.state.amount = amount;
         //   console.log(this.state.amount);
     }
@@ -290,7 +322,7 @@ class Home extends Component {
                                     </div>
 
                                     <div className="form-div">
-                                        <input type="email" className="form-input" value={this.state.email} onChange={(event) => this.isFormValid(event, 'email')} required />
+                                        <input type="email" className="form-input" value={this.state.user_email} onChange={(event) => this.isFormValid(event, 'email')} required />
                                         <label className="form-label">Email Address</label>
                                     </div>
 
@@ -301,8 +333,8 @@ class Home extends Component {
                                 </form>
                             </div>
                             <div className="w-100 register-button">
-                                {/* <button type="button" className="btn button text-white w-100" data-dismiss="modal">Proceed to Payment</button> */}
-                                <PaystackButton
+                                <button type="button" className="btn button text-white w-100n register-form-button" data-dismiss="modal" onClick={() => this.toRegisterPage()}>Proceed To Register</button>
+                                {/* <PaystackButton
                                     className="btn button text-white w-100n register-form-button"
                                     text="Make Payment"
                                     callback={this.callback}
@@ -314,11 +346,12 @@ class Home extends Component {
                                     amount={this.state.amount}
                                     paystackkey={this.state.key}
                                     tag="button"
-                                />
+                                /> */}
                             </div>
                         </div>
                     </div>
                 </div>
+
                 {/* Getting started */}
                 <div className="getting-started" id="get_started">
                     <div className="container">
@@ -419,7 +452,7 @@ class Home extends Component {
                                     <sup>₦</sup>2,000
                                 </p>
                                 <small>Pay as you go - charges for extra services</small>
-                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(200000)}>Get Started</a></div>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('basic', 200000)}>Get Started</a></div>
                                 <div className='plan-services'>
                                     <div className='plan-service row'>
                                         <hr></hr>
@@ -481,7 +514,7 @@ class Home extends Component {
                                     <sup>₦</sup>3,000
                                 </p>
                                 <small>Monthly</small>
-                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(300000)}>Get Started</a></div>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('single', 300000)}>Get Started</a></div>
                                 <div className='plan-services'>
                                     <div className='plan-service row'>
                                         <hr></hr>
@@ -543,7 +576,7 @@ class Home extends Component {
                                     <sup>₦</sup>3,500
                                 </p>
                                 <small>Monthly</small>
-                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(350000)}>Get Started</a></div>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('maternity', 350000)}>Get Started</a></div>
                                 <div className='plan-services'>
                                     <div className='plan-service row'>
                                         <hr></hr>
@@ -605,7 +638,7 @@ class Home extends Component {
                                     <sup>₦</sup>5,000
                                 </p>
                                 <small>Monthly</small>
-                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(500000)}>Get Started</a></div>
+                                <div className='plan-button'><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('family', 500000)}>Get Started</a></div>
                                 <div className='plan-services'>
                                     <div className='plan-service row'>
                                         <hr></hr>
@@ -672,7 +705,7 @@ class Home extends Component {
                                                 <sup>₦</sup>2,000 <br />
                                                 <small>Pay as you go - charges for extra services</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(200000)}>Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('basic', 200000)}>Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center basic-col'>
                                             <div>
@@ -680,7 +713,7 @@ class Home extends Component {
                                                 <sup>₦</sup>3,000 <br />
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(300000)}>Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('single', 300000)}>Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center'>
                                             <div>
@@ -688,7 +721,7 @@ class Home extends Component {
                                                 <sup>₦</sup>3,500 <br />
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(350000)}>Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('maternity', 350000)}>Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center'>
                                             <div>
@@ -696,7 +729,7 @@ class Home extends Component {
                                                 <sup>₦</sup>5,000 <br />
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount(500000)}>Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#paymentModal" onClick={() => this.setAmount('family', 500000)}>Get Started</a></div>
                                         </th>
                                     </tr>
                                 </thead>
