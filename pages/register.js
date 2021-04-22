@@ -132,7 +132,7 @@ class Register extends Component {
                 confirmButtonText: "ok",
             });
             this.state.registerLoading = false;
-        } else {
+        } else if (res.status === 'ok') {
             Swal.fire({
                 title: "Successful!",
                 text: 'Account Created Sucessfully',
@@ -140,7 +140,9 @@ class Register extends Component {
                 confirmButtonText: "Thank You!",
             });
             this.state.registerLoading = false;
-            window.location.pathname = '/';
+            setTimeout(() => {
+                window.location.pathname = '/';
+            }, 3000);
             this.resetForm();
         }
         // FOR PARTICULAR ERROR MESSAGES
