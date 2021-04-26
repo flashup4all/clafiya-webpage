@@ -12,7 +12,7 @@ html {
 
 body {
 	background-color: #FFF;
-	color: #777;
+	color: #172B4D;
 	font-family: "Open Sans", Arial, sans-serif;
 	font-size: 14px;
 	line-height: 26px;
@@ -71,6 +71,7 @@ li {
 	display: flex;
 	flex-flow: row wrap;
 	align-items: center;
+	/* justify-content: space-between; */
 	transition: ease height 300ms;
 }
 
@@ -5665,6 +5666,8 @@ html.dark .text-muted {
 .font-weight-extrabold,
 .font-weight-extra-bold {
 	font-weight: 800 !important;
+	font-size: 2.2rem;
+	line-height: 2.3rem;
 }
 
 .font-weight-black {
@@ -5842,6 +5845,11 @@ html.dark .text-muted {
 	padding: 0;
 	position: relative;
 	clear: both;
+	color: #ffffff !important
+}
+
+#footer p, #footer h5 {
+	color: #ffffff !important
 }
 
 #footer .footer-ribbon {

@@ -4,6 +4,7 @@ import PartialLayout from '../layout/partials-layout';
 import moment from 'moment';
 import Swal from 'sweetalert2';
 import PaystackButton from 'react-paystack';
+import MaskInput from 'react-maskinput';
 // import '../public/register.css';
 // import 'bootstrap/dist/js/bootstrap.js';
 var loadJs = require('loadjs');
@@ -20,7 +21,7 @@ class Register extends Component {
         // email: "shodipovi@gmail.com",
         // amount: 100000
         api: 'https://api.clafiya.com/api/tfap',
-        currentStep: 1,
+        currentStep: 2,
         // Form One
         firstname: '',
         lastname: '',
@@ -33,6 +34,9 @@ class Register extends Component {
         phone: '',
         address: '',
         selectedPlan: '',
+        price: '',
+        states: [],
+        lgas: [],
         subscriptions: '',
         registerLoading: false
     }
@@ -40,6 +44,7 @@ class Register extends Component {
     states = [];
     lgas = [];
     selectedPlan = '';
+    selectedPlanPrice = '';
     subscriptions = [
         {
             name: 'single',
@@ -104,17 +109,19 @@ class Register extends Component {
                 ...this.state,
                 phone: "+234" + phone_number.substring(1)
             });
+            phone_number =  "+234" + phone_number.substring(1);
         }
         if (phone_number.length == 10) {
             this.setState({
                 ...this.state,
                 phone: "+234" + phone_number
             });
+            phone_number =  "+234" + phone_number;
         }
 
         let data = await {
             name: `${this.state.firstname} ${this.state.lastname}`,
-            phone_number: this.state.phone,
+            phone_number: phone_number,
             email: this.state.email,
             age: this.getAge(this.state.dob),
             date_of_birth: this.state.dob,
@@ -155,10 +162,13 @@ class Register extends Component {
                 confirmButtonText: "Thank You!",
             });
             this.state.registerLoading = false;
-            setTimeout(() => {
-                window.location.pathname = '/';
-                window.localStorage.removeItem('cl-reg');
-            }, 4000);
+            // CALL PAYSTACK MODAL
+
+            
+            // setTimeout(() => {
+            //     window.location.pathname = '/';
+            //     window.localStorage.removeItem('cl-reg');
+            // }, 4000);
             this.resetForm();
         }
         // FOR PARTICULAR ERROR MESSAGES
@@ -200,10 +210,11 @@ class Register extends Component {
         this.setState({ ...this.state, subscriptions: allSubs.data });
     }
 
-    selectPlan = (plan_name) => {
-        // console.log(plan_name);
-        // this.setState({ ...this.state, selectedPlan: plan_name })
+    selectPlan = (plan_name, amount) => {
+        console.log(plan_name, amount);
+        this.setState({ ...this.state, selectedPlan: plan_name, price: amount })
         this.selectedPlan = plan_name;
+        this.selectedPlanPrice = amount;
     }
 
     getStates = async () => {
@@ -216,8 +227,10 @@ class Register extends Component {
         });
 
         const allStates = await response.json();
-        console.log('STATES', allStates);
+        // console.log('STATES', allStates);
         this.states = allStates.data;
+        this.setState({ ...this.state , states: allStates.data });
+        console.log('STATES', this.states);
         // this.setState({...this.state, states: allStates.data})
     }
 
@@ -233,6 +246,7 @@ class Register extends Component {
 
         const allLgas = await response.json();
         this.lgas = await allLgas.data;
+        this.setState({ ...this.state , lgas: allLgas.data });
         console.log('LGAS', allLgas);
 
         // this.getLgas(state_id);
@@ -260,12 +274,15 @@ class Register extends Component {
         this.userData = JSON.parse(window.localStorage.getItem('cl-reg'));
         this.setState({
             ...this.state,
-            firstname: this.userData.name.split(' ')[0],
-            lastname: this.userData.name.split(' ')[1],
-            email: this.userData.email,
-            phone: this.userData.phone
+            // firstname: this.userData.name.split(' ')[0],
+            // lastname: this.userData.name.split(' ')[1],
+            // email: this.userData.email,
+            // phone: this.userData.phone
+            plan: this.userData.plan,
+            price: this.userData.amount
         });
         this.selectedPlan = this.userData.plan;
+        this.selectedPlanPrice = this.userData.amount;
         // loadJs("https://js.paystack.co/v1/inline.js");
 
 
@@ -322,7 +339,7 @@ class Register extends Component {
                 {/* Main Body */}
                 <div className='register-container container'>
                     <div className="row">
-                        <div className='col-12 col-md-8 col-lg-7' id='left'>
+                        <div className='col-12 col-md-6 col-lg-7' id='left'>
                             {this.state.currentStep === 1 ?
                                 <div>
                                     <div>
@@ -337,7 +354,7 @@ class Register extends Component {
                                     <br />
                                             <br />
                                             <br />
-                                    By clicking “Continue” you agree to our Terms of Service, Privacy Policy.
+                                    By clicking “Continue” you agree to our <span className='orange-text'>Terms of Service</span>, <br /> <span className='orange-text'>Privacy Policy</span>.
                                 </p>
                                     </div>
                                 </div> : ''}
@@ -375,33 +392,53 @@ class Register extends Component {
                                 <button type='button' className='btn btn-white'>Log into your account</button>
                             </div>
                         </div>
-                        <div className='col-12 col-md-4 col-lg-5' id='right'>
+                        <div className='col-12 col-md-6 col-lg-5' id='right'>
                             {/* Form One */}
                             {this.state.currentStep === 1 ? <form onSubmit={this.nextStep} >
-                                <div className="form-item">
+                                <div className="form-div">
+                                    <input type="text" className="form-input" value={this.state.firstname} onChange={(event) => this.formValue(event)} name='firstname' id='firstname' autoComplete='firstname' placeholder='E.g Jessica' required />
+                                    <label className="form-label">First Name</label>
+                                </div>
+
+                                <div className="form-div">
+                                    <input type="text" className="form-input" value={this.state.lastname} onChange={(event) => this.formValue(event)} name='lastname' id='lastname' autoComplete='lastname' placeholder='E.g Etsemobor' required />
+                                    <label className="form-label">Last Name</label>
+                                </div>
+
+                                <div className="form-div">
+                                    <input type="email" className="form-input" value={this.state.email} onChange={(event) => this.formValue(event)} name='email' id='email' autoComplete='email' placeholder='E.g jess@jessica.com' required />
+                                    <label className="form-label">Your Email Address</label>
+                                </div>
+
+                                <div className="form-div">
+                                    <input type="password" className="form-input" value={this.state.password} onChange={(event) => this.formValue(event)} name='password' id='password' autoComplete='password' placeholder='********' required />
+                                    <label className="form-label">Pick A Password</label>
+                                </div>
+
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='firstname'>First Name</label>
                                         <input value={this.state.firstname} onChange={(event) => this.formValue(event)} name='firstname' id='firstname' type='text' autoComplete='firstname' className="item-value form-control form-control-lg" placeholder='E.g Jessica' required />
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='lastname'>Last Name</label>
                                         <input value={this.state.lastname} onChange={(event) => this.formValue(event)} name='lastname' id='lastname' type='text' autoComplete='lastname' className="item-value form-control form-control-lg" placeholder='E.g Etsemobor' required />
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='email'>Your Email Address</label>
                                         <input value={this.state.email} onChange={(event) => this.formValue(event)} name='email' id='email' type='email' autoComplete='email' className="item-value form-control form-control-lg" placeholder='E.g jess@jessica.com' required />
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='password'>Pick A Password</label>
                                         <input value={this.state.password} onChange={(event) => this.formValue(event)} name='password' id='password' type='password' autoComplete='password' className="item-value form-control form-control-lg" placeholder='********' required />
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className='row'>
                                     {/* <button type='submit' className='btn outline-primary button ml-auto col-6'>Go Back</button> */}
                                     <div className='col-6 col'>
@@ -416,7 +453,40 @@ class Register extends Component {
 
                             {/* Form Two */}
                             {this.state.currentStep === 2 ? <form onSubmit={this.nextStep} >
-                                <div className="form-item">
+                                <div className="form-div">
+                                    <select type="text" className="form-input" value={this.state.gender} onChange={(event) => this.formValue(event)} name='gender' id='gender' autoComplete='gender' placeholder='Please Select A Gender' required>
+                                        <option value='null' defaultValue>Gender</option>
+                                        <option value='Male'>Male</option>
+                                        <option value='Female'>Female</option>
+                                    </select>
+                                    <label className="form-label">Gender</label>
+                                </div>
+                                <div className='form-div'>
+                                    <input type="date" className="form-input date" value={this.state.dob} onChange={(event) => this.formValue(event)} name='dob' id='dob' autoComplete='dob' placeholder='Please Input Your Date of Birth' required />
+                                    <label className="form-label">Date Of Birth</label>
+                                </div>
+                                <div className="form-div">
+                                    <select type="text" className="form-input select" value={this.state.state} onChange={(event) => this.formValue(event)} name='state' id='state' autoComplete='state' placeholder='Please Select A State' required>
+                                        <option value='null' defaultValue>State</option>
+                                        {this.state.states.map((state) => {
+                                            return (<option value={state.id} key={state.id}>{state.name}</option>)
+                                        })}
+                                    </select>
+                                    <label className="form-label">State</label>
+                                </div>
+                                <div className="form-div">
+                                    {
+                                        this.lgas.length > 0 ?
+                                            <select value={this.state.lga} onChange={(event) => this.formValue(event)} name='lga' type='text' autoComplete='lga' className="form-input select" placeholder='Please Select An LGA' required>
+                                                <option value='null'>LGA</option>
+                                                {this.state.lgas.map((lga) => {
+                                                    return (<option value={lga.id} key={lga.id}>{lga.name}</option>)
+                                                })}
+                                            </select> : <input className='form-input item-value' placeholder='Please Select A State' readOnly />
+                                    }
+                                    <label className="form-label">Local Govt. Area</label>
+                                </div>
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='gender'>Gender</label>
                                         <select value={this.state.gender} onChange={(event) => this.formValue(event)} name='gender' type='text' autoComplete='gender' className="item-value form-control form-control-lg" placeholder='Please Select A Gender' required>
@@ -425,14 +495,14 @@ class Register extends Component {
                                             <option value='Female'>Female</option>
                                         </select>
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='dob'>Date Of Birth</label>
                                         <input value={this.state.dob} onChange={(event) => this.formValue(event)} name='dob' type='date' format='dd/mm/yyyy' autoComplete='dob' className="item-value form-control form-control-lg" placeholder='E.g Etsemobor' required />
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='state'>State</label>
                                         <select value={this.state.state} onChange={(event) => this.formValue(event)} name='state' type='text' autoComplete='state' className="item-value form-control form-control-lg" placeholder='Please Select A State' required>
@@ -442,8 +512,8 @@ class Register extends Component {
                                             })}
                                         </select>
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='lga'>Local Govt. Area</label>
                                         {
@@ -456,7 +526,7 @@ class Register extends Component {
                                                 </select> : <input className='form-control item-value' placeholder='Please Select A State' readOnly />
                                         }
                                     </div>
-                                </div>
+                                </div> */}
                                 <div className='row'>
                                     <div className='col-6 col'>
                                         <button type='button' className='btn outline-primary button' onClick={this.prevStep}>Go Back</button>
@@ -470,37 +540,45 @@ class Register extends Component {
 
                             {/* Form Three */}
                             {this.state.currentStep === 3 ? <form onSubmit={(event) => this.register(event)} >
-                                <div className="form-item">
+                                <div className='form-div'>
+                                    <MaskInput type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.formValue(event)} name='phone' id='phone' autoComplete='phone' placeholder='E.g 0900 XXX XXXX' mask={'0000-000-0000'} size={11} maskChar=""  required />
+                                    <label className="form-label">Phone Number</label>
+                                </div>
+                                <div className='form-div'>
+                                    <input type="text" className="form-input" value={this.state.address} onChange={(event) => this.formValue(event)} name='address' id='address' autoComplete='address' placeholder='E.g No 01, Healthcare Close, Enugu' required />
+                                    <label className="form-label">Address</label>
+                                </div>
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='phone'>Phone Number</label>
                                         <input value={this.state.phone} onChange={(event) => this.formValue(event)} name='phone' type='tel' autoComplete='phone' className="item-value form-control form-control-lg" placeholder='E.g 0900 XXX XXXX' required />
                                     </div>
-                                </div>
-                                <div className="form-item">
+                                </div> */}
+                                {/* <div className="form-item">
                                     <div className="item-content form-group">
                                         <label className="item-heading" htmlFor='address'>Address</label>
                                         <input value={this.state.address} onChange={(event) => this.formValue(event)} name='address' type='text' autoComplete='address' className="item-value form-control form-control-lg" placeholder='E.g No 01, Healthcare Close, Enugu' required />
                                     </div>
-                                </div>
+                                </div> */}
                                 <p className='plan-heading'>Kindly Pick A Subscription Plan</p>
                                 <div className='row plan-row'>
-                                    <div className={(this.selectedPlan == 'basic' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
-                                        <p className='plan-name'>Basic Plan</p>
+                                    <div className={(this.state.selectedPlan == 'basic' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}  data-toggle="modal" data-target="#basicPlanModal">
+                                        <p className='plan-name'>Basic <br /> Plan</p>
                                         <small className='plan-desc'>Pay As You Go</small>
                                         <p className='plan-price'>₦2,000</p>
                                     </div>
-                                    <div className={(this.selectedPlan == 'single' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
-                                        <p className='plan-name'>Single Plan</p>
+                                    <div className={(this.state.selectedPlan == 'single' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}  data-toggle="modal" data-target="#singlePlanModal">
+                                        <p className='plan-name'>Single <br /> Plan</p>
                                         <small className='plan-desc'>Monthly</small>
                                         <p className='plan-price'>₦3,000</p>
                                     </div>
-                                    <div className={(this.selectedPlan == 'maternity' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
-                                        <p className='plan-name'>Maternity</p>
+                                    <div className={(this.state.selectedPlan == 'maternity' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}  data-toggle="modal" data-target="#maternityPlanModal">
+                                        <p className='plan-name'>Maternity <br /> Plan</p>
                                         <small className='plan-desc'>Monthly</small>
                                         <p className='plan-price'>₦3,500</p>
                                     </div>
-                                    <div className={(this.selectedPlan == 'family' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}>
-                                        <p className='plan-name'>Family Plan</p>
+                                    <div className={(this.state.selectedPlan == 'family' ? 'selected ' : ' ') + 'col-6 col-md-6 col-lg-4 plan-item'}  data-toggle="modal" data-target="#familyPlanModal">
+                                        <p className='plan-name'>Family <br /> Plan</p>
                                         <small className='plan-desc'>Monthly</small>
                                         <p className='plan-price'>₦5,000</p>
                                     </div>
@@ -523,11 +601,580 @@ class Register extends Component {
                     </div>
                 </div>
                 {/* Main Body End. */}
+
+                {/* MODALS */}
+
+                {/* Basic plan modal */}
+                <div className="modal fade plan-details-modal" id="basicPlanModal" aria-labelledby="basicPlanModal" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content my-modal plan-details">
+                            <div className="d-flex flex-column plan-details-header">
+                                <div className="w-100 d-flex justify-content-end p-2">
+                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                        <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
+                                    </button>
+                                </div>
+
+                                <div className="text-center w-90 p-4">
+                                    <div className='row align-items-center'>
+                                        <div className='col-8'>
+                                            <h2 className="modal-title font-weight-semibold" id="basicPlanModal">Basic Plan</h2>
+                                            <small className="modal-sub" id="basicPlanModal">Pay As You Go</small>
+                                        </div>
+                                        <div className='col-4'>
+                                            <p className='plan-details-price'>
+                                                ₦2,000
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="modal-body plan-details-body">
+                                {/* plan description */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Description
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <p className='plan-description'>
+                                            Prefer to pay for your primary care on the go? This option is for you! Enjoy access to quality and affordable primary care on the go!
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* plan benefits */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Benefits Included
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Primary Care Consultation</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Hypertension Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Blood Sugar Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Rapid Diagnostic Test for: Malaria, Typhoid</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Pregnancy Test</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Prenatal | Antenatal | Postnatal Care Services </p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Protein and Urine Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row my-4'>
+                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' data-dismiss="modal" onClick={() => this.selectPlan('basic', 2000_00)}>Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Basic plan modal end */}
+
+                {/* Single plan modal */}
+                <div className="modal fade plan-details-modal" id="singlePlanModal" aria-labelledby="singlePlanModal" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content my-modal plan-details">
+                            <div className="d-flex flex-column plan-details-header">
+                                <div className="w-100 d-flex justify-content-end p-2">
+                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                        <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
+                                    </button>
+                                </div>
+
+                                <div className="text-center w-90 p-4">
+                                    <div className='row align-items-center'>
+                                        <div className='col-8'>
+                                            <h2 className="modal-title font-weight-semibold" id="singlePlanModal">Single Plan</h2>
+                                            <small className="modal-sub" id="singlePlanModal">Paid Monthly</small>
+                                        </div>
+                                        <div className='col-4'>
+                                            <p className='plan-details-price'>
+                                                ₦3,000
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="modal-body plan-details-body">
+                                {/* plan description */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Description
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <p className='plan-description'>
+                                            Enjoy unlimited access to our services when you subscribe at any time! You can subscribe Weekly, Monthly, Quarterly, Or Annually
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* plan benefits */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Benefits Included
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Primary Care Consultation</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Hypertension Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Blood Sugar Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Rapid Diagnostic Test for: Malaria, Typhoid</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Pregnancy Test</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Prenatal | Antenatal | Postnatal Care Services </p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Protein and Urine Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-x.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row my-4'>
+                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' data-dismiss="modal" onClick={() => this.selectPlan('single', 3000_00)}>Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Single plan modal end */}
+
+                {/* Maternity plan modal */}
+                <div className="modal fade plan-details-modal" id="maternityPlanModal" aria-labelledby="maternityPlanModal" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content my-modal plan-details">
+                            <div className="d-flex flex-column plan-details-header">
+                                <div className="w-100 d-flex justify-content-end p-2">
+                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                        <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
+                                    </button>
+                                </div>
+
+                                <div className="text-center w-90 p-4">
+                                    <div className='row align-items-center'>
+                                        <div className='col-8'>
+                                            <h2 className="modal-title font-weight-semibold" id="maternityPlanModal">Maternity Plan</h2>
+                                            <small className="modal-sub" id="maternityPlanModal">Paid Monthly</small>
+                                        </div>
+                                        <div className='col-4'>
+                                            <p className='plan-details-price'>
+                                                ₦3,500
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="modal-body plan-details-body">
+                                {/* plan description */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Description
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <p className='plan-description'>
+                                            Are you a new or expectant mother? Then enjoy this dedicated package for your motherhood journey.
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* plan benefits */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Benefits Included
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Primary Care Consultation</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Hypertension Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Blood Sugar Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Rapid Diagnostic Test for: Malaria, Typhoid</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Pregnancy Test</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Prenatal | Antenatal | Postnatal Care Services </p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Protein and Urine Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row my-4'>
+                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' data-dismiss="modal" onClick={() => this.selectPlan('maternity', 3500_00)}>Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Maternity plan modal end */}
+
+                {/* Family plan modal */}
+                <div className="modal fade plan-details-modal" id="familyPlanModal" aria-labelledby="familyPlanModal" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content my-modal plan-details">
+                            <div className="d-flex flex-column plan-details-header">
+                                <div className="w-100 d-flex justify-content-end p-2">
+                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                        <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
+                                    </button>
+                                </div>
+
+                                <div className="text-center w-90 p-4">
+                                    <div className='row align-items-center'>
+                                        <div className='col-8'>
+                                            <h2 className="modal-title font-weight-semibold" id="familyPlanModal">Family Plan</h2>
+                                            <small className="modal-sub" id="familyPlanModal">Paid Monthly</small>
+                                        </div>
+                                        <div className='col-4'>
+                                            <p className='plan-details-price'>
+                                                ₦5,000
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div className="modal-body plan-details-body">
+                                {/* plan description */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Description
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <p className='plan-description'>
+                                            Enjoy access to primary health care for your family <br />
+                                            *Two parents and two children (maximum of four)
+                                        </p>
+                                    </div>
+                                </div>
+                                {/* plan benefits */}
+                                <div className='row'>
+                                    <div className='col-12'>
+                                        <h1 className='heading'>
+                                            Benefits Included
+                                        </h1>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Primary Care Consultation</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Hypertension Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Blood Sugar Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Rapid Diagnostic Test for: Malaria, Typhoid</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Pregnancy Test</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Prenatal | Antenatal | Postnatal Care Services </p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div className='col-12'>
+                                        <div className='plan-benefit row'>
+                                            <div className='col-10'>
+                                                <p>Protein and Urine Screening</p>
+                                            </div>
+                                            <div className='col-2 justify-content-end'>
+                                                <img className='justify-content-end' height='20px' width='20px' src='./img/icons/icon-check.svg'></img>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className='row my-4'>
+                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' data-dismiss="modal" onClick={() => this.selectPlan('family', 5000_00)}>Select</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {/* Maternity plan modal end */}
+
+                {/* Payment modal */}
+                <div className="modal fade" id="paymentModal" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div className="modal-dialog modal-dialog-centered">
+                        <div className="modal-content my-modal p-4">
+                            <div className="d-flex flex-column">
+                                <div className="w-100 d-flex justify-content-end">
+                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                        <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
+                                    </button>
+                                </div>
+
+                                <div className="text-center w-100">
+                                    <h2 className="modal-title font-weight-semibold" id="exampleModalLabel">Hey there, Let's get you started</h2>
+                                    <p className="modal-title" id="exampleModalLabel">Quickly sign up and pay for a subscription plan</p>
+                                </div>
+
+                            </div>
+                            <div className="modal-body">
+                                <form action="" className="my-form">
+                                    <div className="form-div">
+                                        <input type="text" className="form-input" value={this.state.name} onChange={(event) => this.isFormValid(event, 'name')} placeholder='E.g Firstname Lastname' required />
+                                        <label className="form-label">Full Name</label>
+                                    </div>
+
+                                    <div className="form-div">
+                                        <input type="email" className="form-input" value={this.state.user_email} onChange={(event) => this.isFormValid(event, 'email')} required />
+                                        <label className="form-label">Email Address</label>
+                                    </div>
+
+                                    <div className="form-div">
+                                        <MaskInput type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.isFormValid(event, 'phone')} mask={'0000-000-0000'} size={11} maskChar="" required />
+                                        {/* <input type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.isFormValid(event, 'phone')} required /> */}
+                                        <label className="form-label">Phone Number</label>
+                                    </div>
+                                </form>
+                            </div>
+                            <div className="w-100 register-button">
+                                <button type="button" className="btn button text-white w-100n register-form-button" data-dismiss="modal" onClick={() => this.toRegisterPage()}>Proceed To Register</button>
+                                {/* <PaystackButton
+                                    className="btn button text-white w-100n register-form-button"
+                                    text="Make Payment"
+                                    callback={this.callback}
+                                    close={this.close}
+                                    disabled={!this.isRegisterFormValid}
+                                    embed={false}
+                                    reference={this.getReference()}
+                                    email={this.state.email}
+                                    amount={this.state.amount}
+                                    paystackkey={this.state.key}
+                                    tag="button"
+                                /> */}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                {/* MODALS END. */}
             </>
         )
     }
 }
 
 
-Register.layout = PartialLayout;
+// Register.layout = EmptyLayout;
 export default Register;

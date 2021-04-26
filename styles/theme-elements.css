@@ -14239,6 +14239,7 @@ html.boxed section.video > div:first-child video {
 .word-rotator.slide .word-rotator-words {
 	overflow: hidden;
 	vertical-align: top;
+	margin: auto 10px;
 }
 
 .word-rotator.slide b {

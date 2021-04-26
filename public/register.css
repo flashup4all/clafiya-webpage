@@ -13,15 +13,19 @@
 }
 
 .plan-row {
-    justify-content: space-evenly !important;
+    /* justify-content: space-evenly !important; */
+    max-width: 100% !important;
+    margin: 10px 0px;
 }
 
 .plan-item {
     border: 1px solid #083E9E;
     border-radius: 10px;
     text-align: center;
-    margin: 10px 10px;
+    margin: 10px auto;
     cursor: pointer;
+    max-width: 100px !important;
+    padding: 5px !important;
 }
 
 .plan-item.selected {
@@ -70,12 +74,16 @@ p.heading {
 #left {
     width: 50vw;
     height: 800px;
-    /* max-height: 70vh; */
+    max-height: 90vh;
     background: linear-gradient(180deg, #083E9E 0%, #38AAE4 89.7%);
     background-image: url(./img/auth-page-bg.png);
     background-size: cover;
-    color: #ffffff;
+    color: #ffffff !important;
     justify-content: space-between;
+}
+
+#left .orange-text {
+    color: orange !important;
 }
 
 #left-bottom {
@@ -84,7 +92,7 @@ p.heading {
 }
 
 #left p {
-    color: #ffffff;
+    color: #ffffff !important;
 }
 
 #left div {
@@ -142,7 +150,7 @@ p.heading {
 
 @media only screen and (max-width: 425px) {
     #left {
-        max-height: 70vh;
+        max-height: fit-content;
         height: fit-content;
     }
 

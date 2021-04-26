@@ -11,6 +11,23 @@
 @import "custom.css";
 @import "style.css"; 
 
+p, h1, h2, h3, h4, h5, h6 {
+    color: #172B4D !important;
+}
+
+.lead {
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+
+.lead-2 {
+    font-size: 1.2rem;
+}
+
+#our_tech {
+    margin: 20px auto !important;
+}
+
 .getting-started#get_started {
     margin: 80px 0px 40px 0px;
 }
@@ -33,7 +50,7 @@
 }
 
 .packages-table tbody tr .service-name{
-    color: #172B4D, 100%;
+    color: #172B4D;
     font-size: .8rem;
 }
 
@@ -80,7 +97,7 @@
 }
 
 .mobile-packages .plan .plan-services .plan-service {
-    width: 100vw;
+    width: calc(100% + 40px);
     display: flex;
     flex-direction: row;
     justify-content: space-between;
@@ -91,7 +108,7 @@
 
 .mobile-packages .plan .plan-services .plan-service .service-name {
     padding: 0px;
-    margin: 0px 10px;
+    margin: 0px 10px 0px 0px;
     max-width: 70%;
 }
 
@@ -143,6 +160,10 @@
     height: 200px;
     width: 2px;
     opacity: .5;
+}
+
+footer {
+    color: #fff !important
 }
 
 footer .social-icons-facebook, 

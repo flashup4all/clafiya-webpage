@@ -46,6 +46,60 @@ body, html {
     width: 50%;
   }
 
+  .plan-details-modal .plan-details {
+    border-radius: 20px !important;
+    background-image: none !important;
+    min-height: 500px !important;
+    height: fit-content !important;
+  }
+
+  .plan-details-modal .plan-details .plan-details-header {
+    background: linear-gradient(101.29deg, #083E9E 20.02%, #38AAE4 101.4%) !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    border-radius: 20px 20px 0px 0px !important;
+  }
+
+  .plan-details-modal .plan-details .plan-details-header .modal-title {
+    text-align: left !important;
+    font-weight: 800 !important;
+    color: #ffffff !important;
+    text-transform: uppercase;
+  }
+
+  .plan-details-modal .plan-details .plan-details-header .modal-sub {
+    float: left !important;
+    font-weight: 800 !important;
+  }
+
+  .plan-details-modal .plan-details .plan-details-header .plan-details-price {
+    font-size: 2rem !important;
+    color: #ffffff !important;
+    font-weight: 800 !important;
+    margin: 0 !important;
+  }
+
+  .plan-details-modal .plan-details .plan-details-body p {
+    color: #0c0c0c !important
+  }
+
+  .plan-details-modal .plan-details .plan-details-body .heading {
+    font-weight: 800 !important;
+    font-size: 1.2rem !important;
+    margin: 0 !important;
+  }
+
+  .plan-details-modal .plan-details .plan-details-body .plan-benefit p {
+    color: #172B4D !important;
+    font-size: .9rem !important;
+    margin: 0px 20px 10px 0px !important;
+  }
+
+  .plan-details-modal .plan-details .plan-details-body .plan-modal-button {
+    width: 150px !important;
+    font-weight: 800 !important;
+  }
+
   
 
   .btn-white {
@@ -75,6 +129,26 @@ body, html {
     height: 50px;
     border-bottom: 10px !important;
     font-weight: 600;
+  }
+
+  .container {
+    max-width: 85% !important;
+  }
+
+  .navbar-brand {
+    transform: translateX(-50px);
+  }
+
+  @media only screen and (max-width: 768px) {
+    .container {
+      max-width: 93% !important;
+    }
+  }
+
+  @media only screen and (max-width: 425px) {
+    .navbar-brand {
+      transform: translateX(-35px) !important;
+    }
   }
 
   .col {
@@ -207,7 +281,7 @@ body, html {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 390px;
+    width: 90%;
   }
   
   .dots.start {
@@ -332,9 +406,14 @@ body, html {
   
   .form-div {
     position: relative;
-    height: 48px;
+    min-height: 70px;
     margin-bottom: 1.5rem;
   }
+
+  /* select.form-input {
+    height: calc(100% + 20px);
+    margin-bottom: 20px;
+  } */
   
   .form-input {
     position: absolute;
@@ -350,15 +429,36 @@ body, html {
     z-index: 1;
     font-size: 1rem;
   }
+
+  .form-input:focus::placeholder {
+    color: #0c0c0c;
+    opacity: .5;
+  }
+
+  .form-input:not(:focus)::placeholder {
+    visibility: hidden !important;
+  }
+
+  .form-input.select:not(:focus)::placeholder {
+    visibility: visible !important;
+  }
+
+  .form-input.date:not(:focus) {
+    color: transparent !important;
+  }
+
+  .form-input.date:valid {
+    color: #0c0c0c !important;
+  }
   
   .form-label {
     position: absolute;
     left: 1rem;
-    top: 1rem;
+    top: 1.9rem;
     padding: 0 0.25rem;
   
     font-size: 1rem;
-    color: #333;
+    color: #172B4D;
     transition: 0.3s;
   }
   
@@ -393,6 +493,12 @@ body, html {
 
   .map-img img {
     margin: 10px auto;
+  }
+
+  @media only screen and (max-width: 425px) {
+    .map-img img {
+      padding: 40px
+    }
   }
   
   .dots.map {
