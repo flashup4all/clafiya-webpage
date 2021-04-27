@@ -135,13 +135,13 @@ class Register extends Component {
 
         console.log('REG DATA', data);
 
-        // const response = await fetch(`${this.state.api}/clients/create`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // });
+        const response = await fetch(`${this.state.api}/clients/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
 
         const res = await response.json();
         console.log(res);
