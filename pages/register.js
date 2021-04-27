@@ -21,7 +21,7 @@ class Register extends Component {
         // email: "shodipovi@gmail.com",
         // amount: 100000
         api: 'https://api.clafiya.com/api/tfap',
-        currentStep: 2,
+        currentStep: 1,
         // Form One
         firstname: '',
         lastname: '',
@@ -102,7 +102,7 @@ class Register extends Component {
             if (sub.name === this.selectedPlan) sub_id = sub.id;
         });
 
-        let phone_number = this.state.phone.split('-').join();
+        let phone_number = this.state.phone.split('-').join('');
 
         if (phone_number.length == 11) {
             this.setState({
@@ -135,13 +135,13 @@ class Register extends Component {
 
         console.log('REG DATA', data);
 
-        const response = await fetch(`${this.state.api}/clients/create`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+        // const response = await fetch(`${this.state.api}/clients/create`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // });
 
         const res = await response.json();
         console.log(res);
@@ -541,7 +541,7 @@ class Register extends Component {
                             {/* Form Three */}
                             {this.state.currentStep === 3 ? <form onSubmit={(event) => this.register(event)} >
                                 <div className='form-div'>
-                                    <MaskInput type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.formValue(event)} name='phone' id='phone' autoComplete='phone' placeholder='E.g 0900 XXX XXXX' mask={'0000-000-0000'} size={11} maskChar=""  required />
+                                    <MaskInput type="tel" className="form-input" minlength='10' maxlength='11' value={this.state.phone} onChange={(event) => this.formValue(event)} name='phone' id='phone' autoComplete='phone' placeholder='E.g 0900 XXX XXXX' mask={'0000-000-0000'} size={11} maskChar=""  required />
                                     <label className="form-label">Phone Number</label>
                                 </div>
                                 <div className='form-div'>
