@@ -278,7 +278,7 @@ class Register extends Component {
             // lastname: this.userData.name.split(' ')[1],
             // email: this.userData.email,
             // phone: this.userData.phone
-            plan: this.userData.plan,
+            selectedPlan: this.userData.plan,
             price: this.userData.amount
         });
         this.selectedPlan = this.userData.plan;
@@ -541,7 +541,7 @@ class Register extends Component {
                             {/* Form Three */}
                             {this.state.currentStep === 3 ? <form onSubmit={(event) => this.register(event)} >
                                 <div className='form-div'>
-                                    <MaskInput type="tel" className="form-input" minlength='10' maxlength='11' value={this.state.phone} onChange={(event) => this.formValue(event)} name='phone' id='phone' autoComplete='phone' placeholder='E.g 0900 XXX XXXX' mask={'0000-000-0000'} size={11} maskChar=""  required />
+                                    <MaskInput type="tel" className="form-input" value={this.state.phone} onChange={(event) => this.formValue(event)} name='phone' id='phone' autoComplete='phone' placeholder='E.g 0900 XXX XXXX' mask={'0000-000-0000'} size={11} maskChar=""  required />
                                     <label className="form-label">Phone Number</label>
                                 </div>
                                 <div className='form-div'>
