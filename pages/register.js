@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import Head from 'next/head'
 import PartialLayout from '../layout/partials-layout';
 import moment from 'moment';
@@ -14,6 +14,7 @@ class Register extends Component {
 
     constructor(props) {
         super(props);
+        this.paystackButtonRef = createRef();
     }
 
     state = {
@@ -38,7 +39,9 @@ class Register extends Component {
         states: [],
         lgas: [],
         subscriptions: '',
-        registerLoading: false
+        registerLoading: false,
+        paystack_email: 'shodipovi@gmail.com',
+        paystack_key: 'pk_live_477f8475b863b328656efdad927cd98e47e740fd'
     }
 
     states = [];
@@ -97,6 +100,8 @@ class Register extends Component {
     register = async (event) => {
         this.state.registerLoading = true;
         event.preventDefault();
+        // const paystackButton = document.getElementById('paystackButton');
+        // this.paystackButtonRef.current.click();
         let sub_id;
         await this.subscriptions.filter((sub) => {
             if (sub.name === this.selectedPlan) sub_id = sub.id;
@@ -105,17 +110,17 @@ class Register extends Component {
         let phone_number = this.state.phone.split('-').join('');
 
         if (phone_number.length == 11) {
-            this.setState({
-                ...this.state,
-                phone: "+234" + phone_number.substring(1)
-            });
+            // this.setState({
+            //     ...this.state,
+            //     phone: "+234" + phone_number.substring(1)
+            // });
             phone_number =  "+234" + phone_number.substring(1);
         }
         if (phone_number.length == 10) {
-            this.setState({
-                ...this.state,
-                phone: "+234" + phone_number
-            });
+            // this.setState({
+            //     ...this.state,
+            //     phone: "+234" + phone_number
+            // });
             phone_number =  "+234" + phone_number;
         }
 
@@ -135,13 +140,13 @@ class Register extends Component {
 
         console.log('REG DATA', data);
 
-        const response = await fetch(`${this.state.api}/clients/create`, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(data)
-        });
+        // const response = await fetch(`${this.state.api}/clients/create`, {
+        //     method: 'POST',
+        //     headers: {
+        //         'Content-Type': 'application/json'
+        //     },
+        //     body: JSON.stringify(data)
+        // });
 
         const res = await response.json();
         console.log(res);
@@ -155,15 +160,26 @@ class Register extends Component {
             });
             this.state.registerLoading = false;
         } else if (res.status === 'ok') {
-            Swal.fire({
-                title: "Successful!",
-                text: 'Account Created Sucessfully',
-                type: "success",
-                confirmButtonText: "Thank You!",
-            });
+            // Swal.fire({
+            //     title: "Successful!",
+            //     text: 'Account Created Sucessfully',
+            //     type: "success",
+            //     confirmButtonText: "Thank You!",
+            // });
             this.state.registerLoading = false;
             // CALL PAYSTACK MODAL
-
+            this.paystackButtonRef.current.onclick(() => {
+                console.log('test');
+            });
+            // if (this.state.selectedPlan !== 'basic') {
+                // let config = {
+                //     reference: this.getReference(),
+                //     email: this.state.paystack_email,
+                //     amount: this.state.price,
+                //     publicKey: this.state.paystack_key,
+                // }
+                // const initPayment = usePaystackPayment(config)
+            // }
             
             // setTimeout(() => {
             //     window.location.pathname = '/';
@@ -172,12 +188,56 @@ class Register extends Component {
             this.resetForm();
         }
         // FOR PARTICULAR ERROR MESSAGES
-        // if (!res.status) {
-        //     Swal.fire({
-        //         title: 'Error!',
-        //         text: res.msg
-        //     })
-        // }
+        if (!res.status) {
+            if (res.phone_number) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: res.phone_number[0]
+                });
+                this.state.registerLoading = false;
+            }
+            if (res.email) {
+                Swal.fire({
+                    title: 'Error!',
+                    text: res.email[0]
+                });
+                this.state.registerLoading = false;
+            }
+        }
+    }
+
+    // PaystackHookExample = () => {
+    //     const initializePayment = usePaystackPayment(config);
+    //     return (
+    //       <div>
+    //           <button onClick={() => {
+    //               initializePayment(onSuccess, onClose)
+    //           }}>Paystack Hooks Implementation</button>
+    //       </div>
+    //     );
+    // };
+
+    getReference = () => {
+        let text = "";
+        let possible = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789-.=";
+
+        for (let i = 0; i < 15; i++)
+            text += possible.charAt(Math.floor(Math.random() * possible.length));
+
+        return text;
+    }
+
+    callback = (response) => {
+        alert('success. transaction ref is ' + response.reference);
+    }
+
+    close = () => {
+        console.log("Payment closed");
+    }
+
+    simulateClick(e) {
+        // e.target.click();
+        // console.log('E', e)
     }
 
     resetForm = () => {
@@ -212,7 +272,7 @@ class Register extends Component {
 
     selectPlan = (plan_name, amount) => {
         console.log(plan_name, amount);
-        this.setState({ ...this.state, selectedPlan: plan_name, price: amount })
+        this.setState({ ...this.state, selectedPlan: plan_name, price: Number(amount) })
         this.selectedPlan = plan_name;
         this.selectedPlanPrice = amount;
     }
@@ -266,7 +326,6 @@ class Register extends Component {
     }
 
 
-
     componentDidMount() {
         loadJs("js/theme.init.js");
         this.getStates();
@@ -279,10 +338,11 @@ class Register extends Component {
             // email: this.userData.email,
             // phone: this.userData.phone
             selectedPlan: this.userData.plan,
-            price: this.userData.amount
+            price: Number(this.userData.amount)
         });
         this.selectedPlan = this.userData.plan;
         this.selectedPlanPrice = this.userData.amount;
+        console.log(this.paystackButtonRef);
         // loadJs("https://js.paystack.co/v1/inline.js");
 
 
@@ -595,6 +655,21 @@ class Register extends Component {
                                         </button>
                                     </div>
                                 </div>
+                                {/* <PaystackButton
+                                    className="btn button text-white w-100n register-form-button"
+                                    text="Make Payment"
+                                    callback={this.callback}
+                                    close={this.close}
+                                    disabled={false}
+                                    embed={false}
+                                    reference={this.getReference()}
+                                    email={this.state.paystack_email}
+                                    amount={Number(this.state.price)}
+                                    paystackkey={this.state.paystack_key}
+                                    tag="button"
+                                    style='display: none'
+                                    ref={this.paystackButtonRef}
+                                /> */}
                             </form> : ''}
                             {/* Form Three End */}
                         </div>
@@ -1156,13 +1231,16 @@ class Register extends Component {
                                     text="Make Payment"
                                     callback={this.callback}
                                     close={this.close}
-                                    disabled={!this.isRegisterFormValid}
+                                    disabled={false}
                                     embed={false}
                                     reference={this.getReference()}
-                                    email={this.state.email}
-                                    amount={this.state.amount}
-                                    paystackkey={this.state.key}
+                                    email={this.state.paystack_email}
+                                    amount={Number(this.state.price)}
+                                    paystackkey={this.state.paystack_key}
                                     tag="button"
+                                    style='visibility: hidden'
+                                    ref={this.paystackButtonRef}
+                                    id='paystackButton'
                                 /> */}
                             </div>
                         </div>
