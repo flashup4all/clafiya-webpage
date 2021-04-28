@@ -21,7 +21,8 @@ class Register extends Component {
         // key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         // email: "shodipovi@gmail.com",
         // amount: 100000
-        api: 'https://api.clafiya.com/api/tfap',
+        // api: 'https://api.clafiya.com/api/tfap',
+        api: 'http://localhost:8000/api/tfap',
         currentStep: 1,
         // Form One
         firstname: '',
@@ -110,17 +111,9 @@ class Register extends Component {
         let phone_number = this.state.phone.split('-').join('');
 
         if (phone_number.length == 11) {
-            // this.setState({
-            //     ...this.state,
-            //     phone: "+234" + phone_number.substring(1)
-            // });
             phone_number =  "+234" + phone_number.substring(1);
         }
         if (phone_number.length == 10) {
-            // this.setState({
-            //     ...this.state,
-            //     phone: "+234" + phone_number
-            // });
             phone_number =  "+234" + phone_number;
         }
 
@@ -140,13 +133,13 @@ class Register extends Component {
 
         console.log('REG DATA', data);
 
-        // const response = await fetch(`${this.state.api}/clients/create`, {
-        //     method: 'POST',
-        //     headers: {
-        //         'Content-Type': 'application/json'
-        //     },
-        //     body: JSON.stringify(data)
-        // });
+        const response = await fetch(`${this.state.api}/clients/create`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
 
         const res = await response.json();
         console.log(res);
@@ -160,31 +153,17 @@ class Register extends Component {
             });
             this.state.registerLoading = false;
         } else if (res.status === 'ok') {
-            // Swal.fire({
-            //     title: "Successful!",
-            //     text: 'Account Created Sucessfully',
-            //     type: "success",
-            //     confirmButtonText: "Thank You!",
-            // });
-            this.state.registerLoading = false;
-            // CALL PAYSTACK MODAL
-            this.paystackButtonRef.current.onclick(() => {
-                console.log('test');
+            Swal.fire({
+                title: "Successful!",
+                text: 'Account Created Sucessfully',
+                type: "success",
+                confirmButtonText: "Thank You!",
             });
-            // if (this.state.selectedPlan !== 'basic') {
-                // let config = {
-                //     reference: this.getReference(),
-                //     email: this.state.paystack_email,
-                //     amount: this.state.price,
-                //     publicKey: this.state.paystack_key,
-                // }
-                // const initPayment = usePaystackPayment(config)
-            // }
-            
-            // setTimeout(() => {
-            //     window.location.pathname = '/';
-            //     window.localStorage.removeItem('cl-reg');
-            // }, 4000);
+            this.state.registerLoading = false;
+            // CALL PAYSTACK GENERATE PAYMENT LINK
+            let client_id = res.data.id;
+            let subscription_type_id = sub_id;
+            this.generatePaymentLink(client_id, subscription_type_id);
             this.resetForm();
         }
         // FOR PARTICULAR ERROR MESSAGES
@@ -204,6 +183,61 @@ class Register extends Component {
                 this.state.registerLoading = false;
             }
         }
+    }
+
+    generatePaymentLink = async (cid, sid) => {
+        let data = {
+            client_id: cid,
+            subscription_type_id: sid
+        }
+
+        const response = await fetch(`${this.state.api}/subscription/payment/initiate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = response.json();
+        console.log('INIT RES', result);
+
+        // VERIFY PAYMENT ON SUCCESS
+        result.then((res) => {
+            // RES PROPS => access_code, authorization_url, reference
+            console.log(res);
+            if (res.status === 'ok') {
+                // ROUTE TO AUTHORIZATION URL TO PAY
+                window.open(res.data.authorization_url, '_blank');
+                // this.verifyPayment()
+
+            }
+        })
+    }
+
+    verifyPayment = async (p_ref) => {
+        let data = {
+            reference: p_ref
+        }
+
+        const response = await fetch(`${this.state.api}/subscription/payment/initiate`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = response.json();
+        console.log('VERIFY RES', result);    
+        
+        // ROUTE TO SUCCESS PAGE ON SUCCESS
+        result.then((res) => {
+            console.log('V RES', res);
+            if (res.status === 'ok') {
+                // ROUTE TO SUCCESS
+            }
+        })
     }
 
     // PaystackHookExample = () => {
@@ -244,6 +278,7 @@ class Register extends Component {
         this.selectedPlan = '';
         this.setState({
             ...this.state,
+            currentStep: 1,
             firstname: '',
             lastname: '',
             email: '',
@@ -253,7 +288,9 @@ class Register extends Component {
             dob: '',
             state: '',
             lga: '',
-            address: ''
+            address: '',
+            selectedPlan: '',
+            price: ''
         });
     }
 
