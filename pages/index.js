@@ -7,6 +7,7 @@ import PaystackButton from 'react-paystack';
 import Link from 'next/link';
 // import 'bootstrap/dist/js/bootstrap.js';
 var loadJs = require('loadjs');
+// var window;
 
 
 class Home extends Component {
@@ -17,10 +18,11 @@ class Home extends Component {
         this.closeSingleModal = createRef();
         this.closeMaternityModal = createRef();
         this.closeFamilyModal = createRef();
+        // this.window = window;
     }
 
     state = {
-        api: (window.location.hostname === 'localhost') ? 'http://localhost:8000/api/tfap' : 'https://api.clafiya.com/api/tfap',
+        api: 'https://api.clafiya.com/api/tfap',
         // api: 'http://localhost:8000/api/tfap',
         key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         email: "shodipovi@gmail.com",
