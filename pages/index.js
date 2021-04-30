@@ -1,9 +1,10 @@
-import React, { Component } from 'react';
+import React, { Component, createRef } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import PartialLayout from '../layout/partials-layout';
 import MaskInput from 'react-maskinput';
 import PaystackButton from 'react-paystack';
+import Link from 'next/link';
 // import 'bootstrap/dist/js/bootstrap.js';
 var loadJs = require('loadjs');
 
@@ -12,9 +13,15 @@ class Home extends Component {
 
     constructor(props) {
         super(props);
+        this.closeModal = createRef();
+        this.closeSingleModal = createRef();
+        this.closeMaternityModal = createRef();
+        this.closeFamilyModal = createRef();
     }
 
     state = {
+        api: 'https://api.clafiya.com/api/tfap',
+        // api: 'http://localhost:8000/api/tfap',
         key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         email: "shodipovi@gmail.com",
         amount: 100000,
@@ -25,6 +32,34 @@ class Home extends Component {
     }
 
     isRegisterFormValid = false;
+
+    verifyPayment = async (p_ref) => {
+        // console.log('P REF', p_ref);
+        let data = {
+            reference: p_ref
+        }
+
+        const response = await fetch(`${this.state.api}/subscription/payment/verify`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+        });
+
+        const result = response.json();
+        console.log('VERIFY RES', result);    
+        
+        // ROUTE TO SUCCESS PAGE ON SUCCESS
+        result.then((res) => {
+            console.log('V RES', res);
+            if (res.status === 'ok') {
+                // ROUTE TO SUCCESS
+
+                // CLEAR cl-pref && cl-aurl
+            }
+        })
+    }
 
     isFormValid = (event, input) => {
         if (input === 'name') this.setState({ ...this.state, name: event.target.value });
@@ -58,8 +93,12 @@ class Home extends Component {
             amount: amount
         };
 
-        window.localStorage.setItem('cl-reg', JSON.stringify(data))
-        this.toRegisterPage();
+        window.localStorage.setItem('cl-reg', JSON.stringify(data));
+        this.closeModal.current.click();
+        this.closeSingleModal.current.click();
+        this.closeMaternityModal.current.click();
+        this.closeFamilyModal.current.click();
+        // this.toRegisterPage();
         // this.router.push({
         //     pathname: '/register',
         //     query: { pid: 'basic' },
@@ -80,6 +119,7 @@ class Home extends Component {
 
     componentDidMount() {
         loadJs("js/theme.init.js");
+        // this.verifyPayment(window.localStorage.getItem('cl-pref'));
         // loadJs("https://js.paystack.co/v1/inline.js");
 
 
@@ -665,7 +705,7 @@ class Home extends Component {
                                                 <sup>₦</sup>3,500 <br />
                                                 <small>Monthly</small>
                                             </div>
-                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#materniatyPlanModal">Get Started</a></div>
+                                            <div><a className="btn button px-4 py-2 text-white" data-toggle="modal" data-target="#maternityPlanModal">Get Started</a></div>
                                         </th>
                                         <th scope="col" className='text-center'>
                                             <div>
@@ -917,7 +957,7 @@ class Home extends Component {
                         <div className="modal-content my-modal plan-details">
                             <div className="d-flex flex-column plan-details-header">
                                 <div className="w-100 d-flex justify-content-end p-2">
-                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" ref={this.closeModal} className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
                                         <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
                                     </button>
                                 </div>
@@ -1030,7 +1070,9 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className='row my-4'>
-                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('basic', 2000_00)}>Select</button>
+                                    <Link href='/register'>
+                                        <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('basic', 2000_00)}>Select</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1044,7 +1086,7 @@ class Home extends Component {
                         <div className="modal-content my-modal plan-details">
                             <div className="d-flex flex-column plan-details-header">
                                 <div className="w-100 d-flex justify-content-end p-2">
-                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" ref={this.closeSingleModal} className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
                                         <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
                                     </button>
                                 </div>
@@ -1157,7 +1199,9 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className='row my-4'>
-                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('single', 3000_00)}>Select</button>
+                                    <Link href='/register'>
+                                        <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('single', 3000_00)}>Select</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1171,7 +1215,7 @@ class Home extends Component {
                         <div className="modal-content my-modal plan-details">
                             <div className="d-flex flex-column plan-details-header">
                                 <div className="w-100 d-flex justify-content-end p-2">
-                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" ref={this.closeMaternityModal} className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
                                         <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
                                     </button>
                                 </div>
@@ -1284,7 +1328,9 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className='row my-4'>
-                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('maternity', 3500_00)}>Select</button>
+                                    <Link href='/register'>
+                                        <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('maternity', 3500_00)}>Select</button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
@@ -1298,7 +1344,7 @@ class Home extends Component {
                         <div className="modal-content my-modal plan-details">
                             <div className="d-flex flex-column plan-details-header">
                                 <div className="w-100 d-flex justify-content-end p-2">
-                                    <button type="button" className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
+                                    <button type="button" ref={this.closeFamilyModal} className="close-modal d-flex outline-none" data-dismiss="modal" aria-label="Close">
                                         <p className="text-sm-1 text-dark mb-0">Close</p> <span aria-hidden="true" className="justify-content-center d-flex align-items-center"><i className="fa fa-times"></i></span>
                                     </button>
                                 </div>
@@ -1412,13 +1458,17 @@ class Home extends Component {
                                     </div>
                                 </div>
                                 <div className='row my-4'>
-                                    <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('family', 5000_00)}>Select</button>
+                                    <Link href='/register'>
+                                        <button className='btn button text-white mx-auto p-2 plan-modal-button' onClick={() => this.setAmount('family', 5000_00)}>
+                                            Select
+                                        </button>
+                                    </Link>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                {/* Maternity plan modal end */}
+                {/* Family plan modal end */}
 
                 {/* Payment modal */}
                 <div className="modal fade" id="paymentModal" aria-labelledby="exampleModalLabel" aria-hidden="true">

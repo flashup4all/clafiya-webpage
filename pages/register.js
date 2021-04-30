@@ -21,8 +21,8 @@ class Register extends Component {
         // key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         // email: "shodipovi@gmail.com",
         // amount: 100000
-        // api: 'https://api.clafiya.com/api/tfap',
-        api: 'http://localhost:8000/api/tfap',
+        api: 'https://api.clafiya.com/api/tfap',
+        // api: 'http://localhost:8000/api/tfap',
         currentStep: 1,
         // Form One
         firstname: '',
@@ -153,17 +153,18 @@ class Register extends Component {
             });
             this.state.registerLoading = false;
         } else if (res.status === 'ok') {
-            Swal.fire({
-                title: "Successful!",
-                text: 'Account Created Sucessfully',
-                type: "success",
-                confirmButtonText: "Thank You!",
-            });
+            // Swal.fire({
+            //     title: "Successful!",
+            //     text: 'Account Created Sucessfully',
+            //     type: "success",
+            //     confirmButtonText: "Thank You!",
+            // });
             this.state.registerLoading = false;
             // CALL PAYSTACK GENERATE PAYMENT LINK
             let client_id = res.data.id;
             let subscription_type_id = sub_id;
-            this.generatePaymentLink(client_id, subscription_type_id);
+            let callback_url = (window.location.hostname === 'localhost') ? 'localhost:3000/successful-registration' : 'https://clafiya.com/successful-registration';
+            this.generatePaymentLink(client_id, subscription_type_id, callback_url);
             this.resetForm();
         }
         // FOR PARTICULAR ERROR MESSAGES
@@ -185,10 +186,11 @@ class Register extends Component {
         }
     }
 
-    generatePaymentLink = async (cid, sid) => {
+    generatePaymentLink = async (cid, sid, url) => {
         let data = {
             client_id: cid,
-            subscription_type_id: sid
+            subscription_type_id: sid,
+            callback_url: url
         }
 
         const response = await fetch(`${this.state.api}/subscription/payment/initiate`, {
@@ -209,6 +211,8 @@ class Register extends Component {
             if (res.status === 'ok') {
                 // ROUTE TO AUTHORIZATION URL TO PAY
                 window.open(res.data.authorization_url, '_blank');
+                window.localStorage.setItem('cl-pref', res.data.reference);
+                window.localStorage.setItem('cl-aurl', res.data.authorization_url);
                 // this.verifyPayment()
 
             }
