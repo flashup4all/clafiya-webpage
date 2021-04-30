@@ -21,7 +21,7 @@ class Register extends Component {
         // key: "pk_live_477f8475b863b328656efdad927cd98e47e740fd",
         // email: "shodipovi@gmail.com",
         // amount: 100000
-        api: 'https://api.clafiya.com/api/tfap',
+        api: (window.location.hostname === 'localhost') ? 'http://localhost:8000/api/tfap' : 'https://api.clafiya.com/api/tfap',
         // api: 'http://localhost:8000/api/tfap',
         currentStep: 1,
         // Form One
