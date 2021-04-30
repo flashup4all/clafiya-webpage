@@ -67,7 +67,7 @@ class Home extends Component {
                     <div className="container">
                         <div className="row mt-5">
                             <div className="col-md-12 align-self-center p-static order-2 text-center">
-                                <h1 className="text-9 font-weight-bold">Know More About Clafiya</h1>
+                                <h1 className="text-white text-9 font-weight-bold">Know More About Clafiya</h1>
                                 <span className="sub-title">Primary Health Care For All</span>
                             </div>
                             <div className="col-md-12 align-self-center order-1">
@@ -120,7 +120,7 @@ class Home extends Component {
                                 <hr className="about-divider"></hr>
                                 <div className="col-md-4 text-center appeear-animation vision" data-appear-animation="fadeIn" data-appear-animation-delay="600">
                                     <h2 className="font-weight-bold text-4 mb-2">Our Vision</h2>
-                                    <p>A world where all Africans have access to quality and affordable primary health care regardless of their socioeconomic status.</p>
+                                    <p>A world where all Africans have access to quality and affordable primary health care regardless of their socioeconomic status</p>
                                 </div>
                                 {/* <div className="col-md-4 appeear-animation" data-appear-animation="fadeInRightShorter" data-appear-animation-delay="800">
                                 <h3 className="font-weight-bold text-4 mb-2">Why Us</h3>

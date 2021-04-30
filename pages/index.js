@@ -162,7 +162,7 @@ class Home extends Component {
                     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
                     <meta httpEquiv="X-UA-Compatible" content="ie=edge" />
                     <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1.0, shrink-to-fit=no" />
-                    <title>Clafiya - Quality Primary Health Care at Your Door Step</title>
+                    <title>Clafiya - Quality Primary Healthcare at Your Door Step</title>
                     <script src="vendor/jquery/jquery.min.js"></script>
                     <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
                     {/* <script src="vendor/jquery.appear/jquery.appear.min.js"></script>		 */}
@@ -220,9 +220,7 @@ class Home extends Component {
                                         For Health Workers
                                     </h4>
                                     <p>
-                                        We connect our community health workers with people who need their services.
-                                        <br />
-                                        Would you like to work with us? Connect with us here:
+                                        We connect our community health workers with people who need their services. Would you like to work with us? Click the button below.
                                     </p>
                                     <a href="#for_health_workers" className="text-color-dark pb-5">Learn more <i className="fa fa-arrow-right px-2"></i></a>
                                 </div>
@@ -254,7 +252,7 @@ class Home extends Component {
                                         This is What Makes Clafiya Different From All Others.
                                     </h2>
                                     <p>
-                                        Clafiya thrives on a mission to consistently provide basic health care to individuals in both rural and urban communities. <br /><br />
+                                        Clafiya thrives on a mission to consistently provide basic healthcare to individuals in both rural and urban communities. <br /><br />
 
                                         We think of it as a responsibility to ensure that quality and affordable healthcare services are available everywhere in Africa. <br /><br />
 
@@ -286,7 +284,7 @@ class Home extends Component {
                                             Last Mile Distribution of Primary Care Services
                                         </h2>
                                         <p>
-                                            Our Community Health Workers employ a door-to-door approach to increase access to primary care services in semi-urban, rural, and remote communities. Our reach extends all the way to the last mile, promoting an inclusive experience whilst seeking quality and affordable primary care services.
+                                            Our Community Health Workers employ a door-to-door approach to increase access to primary care services in semi-urban, and rural communities. Our reach extends all the way to the last mile, promoting an inclusive experience whilst seeking quality and affordable primary care services.
                                         </p>
                                     </div>
                                     <div>
@@ -323,7 +321,7 @@ class Home extends Component {
 
                                         </h2>
                                         <p>
-                                            Clafiya takes a holistic approach to address Africa’s fractured primary health care system. At Clafiya, we understand that in order to realize our impact, we have to make something that Africans need. That is leveraging existing systems and technologies to improve access to home based primary care services. We also understand that this problem is two sided and addressing one side without the other will not generate the desired sustained impact needed in Africa. Overtime, Clafiya seeks to improve the life expectancy of Africans and reduce health care expenditure – thus alleviating people out of poverty.
+                                            Clafiya takes a holistic approach to address Africa’s fractured primary healthcare system. At Clafiya, we understand that in order to realize our impact, we have to make something that Africans need. That is leveraging existing systems and technologies to improve access to home based primary care services. We also understand that this problem is two sided and addressing one side without the other will not generate the desired sustained impact needed in Africa. Overtime, Clafiya seeks to improve the life expectancy of Africans and reduce healthcare expenditure – thus alleviating people out of poverty.
                                         </p>
                                     </div>
                                     <div>
@@ -369,7 +367,7 @@ class Home extends Component {
                                     <img src="img/indexImg/Group 2588.svg" alt="" className="mb-2 started-img" />
                                     <p className="lead-2 font-weight-bold text-color-dark">3. Schedule an appointment</p>
                                     <p>
-                                        After registration, you can make a request anytime, schedule an appointment and get connected with our approved health workers.
+                                        After registration, you can make a request anytime, schedule an appointment and get connected with our approved health workers
                                     </p>
                                 </div>
                             </div>
@@ -377,9 +375,9 @@ class Home extends Component {
                             <div className="col-md-3">
                                 <div>
                                     <img src="img/indexImg/Group 2590.svg" alt="" className="mb-2 started-img" />
-                                    <p className="lead-2 font-weight-bold text-color-dark">4. You’re all set!!!</p>
+                                    <p className="lead-2 font-weight-bold text-color-dark">4. You’re all set!</p>
                                     <p>
-                                        Enjoy fast and affordable primary health care at your doorstep
+                                        Enjoy fast and affordable primary healthcare at your doorstep
                                     </p>
                                 </div>
                             </div>
@@ -401,7 +399,7 @@ class Home extends Component {
                                     <div className="rectangle mb-2 tech-rect d-inline-block"></div>
                                 </div>
                                 <p>
-                                    Clafiya is a USSD (Unstructured Supplementary Service Data) session-based text communication protocol available on every GSM-enabled mobile device. A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. According to GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. As such, it was imperative that our platform is easily accessible. In various African countries, people are using their mobile phones for banking, telecoms, agriculture and sports. With Clafiya they can now use it for health care.
+                                    Clafiya is a USSD (Unstructured Supplementary Service Data) session-based text communication protocol available on every GSM-enabled mobile device. A USSD is a short code that enables one to reach customers who are in hard to reach areas and does not require internet connectivity to function. According to GMSA, mobile internet penetration on the African Continent was 26% - approximately 272 million people. As such, it was imperative that our platform is easily accessible. In various African countries, people are using their mobile phones for banking, telecoms, agriculture and sports. With Clafiya they can now use it for healthcare.
                                 </p>
                             </div>
                         {/* </div> */}
@@ -856,10 +854,10 @@ class Home extends Component {
                         <div className="row align-items-center mb-5 mt-4">
                             <div className="col-md-8">
                                 <h2 className="text-white font-weight-semibold">
-                                    Are you a skilled and qualified health worker who is interested in working in your community??
+                                    Are you a skilled and qualified health worker who is interested in working in your community?
                                 </h2>
                                 <p className="text-white">
-                                    We would love to hear from you. Click on the button to register
+                                    We would love to hear from you. Click on the button to register.
                                 </p>
                             </div>
                             <div className="col-md-4 d-flex justify-content-center ">
@@ -989,7 +987,7 @@ class Home extends Component {
                                     </div>
                                     <div className='col-12'>
                                         <p className='plan-description'>
-                                            Prefer to pay for your primary care on the go? This option is for you! Enjoy access to quality and affordable primary care on the go!
+                                            Prefer to pay for your primary care on the go? This option is for you! Enjoy access to quality and affordable primary care on the go.
                                         </p>
                                     </div>
                                 </div>
@@ -1376,7 +1374,7 @@ class Home extends Component {
                                     </div>
                                     <div className='col-12'>
                                         <p className='plan-description'>
-                                            Enjoy access to primary health care for your family <br />
+                                            Enjoy access to primary healthcare for your family <br />
                                             *Two parents and two children (maximum of four)
                                         </p>
                                     </div>

@@ -99,7 +99,8 @@ function PartialLayout({ children }) {
                             <div className="col-md-6 col-lg-4 mb-4 mb-lg-0">
                                 <h5 className="text-3 mb-3">NEWSLETTER</h5>
                                 <p className="pr-1">
-                                    You would love our health tips, and updates on all things Clafiya. We promise not to spam you <img src="./img/indexImg/happy.svg" alt="" className="phone" style={{ width: "13px !important" }} />
+                                    You would love our health tips, and updates on all things Clafiya. We promise not to spam you! 
+                                    {/* <img src="./img/indexImg/happy.svg" alt="" className="phone" style={{ width: "13px !important" }} /> */}
                                 </p>
                                 <div className="alert alert-success d-none" id="newsletterSuccess">								<strong>Success!</strong> You've been added to our email list.
                         </div>
@@ -133,7 +134,7 @@ function PartialLayout({ children }) {
                                 <ul className="list list-unstyled">
                                     <li className="mb-1"><Link href="/"><a href="#" className="link-hover-style-1"> Home</a></Link></li>
                                     <li className="mb-1"><Link href="/about-us"><a href="#" className="link-hover-style-1"> About Us</a></Link></li>
-                                    <li className="mb-1"><Link href="/blog"><a href="#" className="link-hover-style-1"> Impacts</a></Link></li>
+                                    <li className="mb-1"><Link href="/blog"><a href="#" className="link-hover-style-1"> Impact</a></Link></li>
                                     {/* <li className="mb-1"><a href="#" className="link-hover-style-1"> Contact Us</a></li> */}
                                 </ul>
                             </div>
