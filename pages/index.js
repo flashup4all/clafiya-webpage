@@ -414,6 +414,60 @@ class Home extends Component {
                                 <div className="rectangle mb-2 stories-rect d-inline-block"></div>
                             </div>
                         </div>
+                        <div className='row'>
+                            <div className='col-12'>
+                            <div className="owl-carousel owl-theme nav-style-1 nav-center-images-only stage-margin mb-0" data-plugin-options="{'responsive': {'576': {'items': 1}, '768': {'items': 3}, '992': {'items': 3}, '1200': {'items': 3}}, 'margin': 25, 'loop': true, 'nav': true, 'dots': true, 'stagePadding': 40}">
+                                    <div className='row testimonial'>
+                                        <div className='col-12 col-md-12 col-lg-12'>
+                                            <img className="testimonial-img img-fluid rounded-0 mb-4" src="img/indexImg/testimonial1.svg" alt="" />
+                                        </div>
+                                        <div className='col-12 col-md-12 text-center col-lg-12'>
+                                            <p className="text-color-light font-weight-semibold mb-0">
+                                                I loveee that I don’t have to downlaod a mobile app, it is pretty straight forward. It is way faster and easier than going to the hospital
+                                            </p>
+                                        </div>
+                                        <div className='col-12 col-md-12 col-lg-12 text-center'>
+                                            <small className='text-color-light'>Name</small>
+                                            <p className='testimonial-by text-color-light'>
+                                                GABRIEL
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='row testimonial'>
+                                        <div className='col-12 col-md-12 col-lg-12'>
+                                            <img className="testimonial-img img-fluid rounded-0 mb-4" src="img/indexImg/testimonial2.svg" alt="" />
+                                        </div>
+                                        <div className='col-12 col-md-12 text-center col-lg-12'>
+                                            <p className="text-color-light font-weight-semibold mb-0">
+                                                Clafiya is what I have been waiting for, it is easy and fast. It  feels good to know someone is there when I call.
+                                            </p>
+                                        </div>
+                                        <div className='col-12 col-md-12 col-lg-12 text-center'>
+                                            <small className='text-color-light'>Name</small>
+                                            <p className='testimonial-by text-color-light'>
+                                                ESTHER ECHE
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div className='row testimonial'>
+                                        <div className='col-12 col-md-12 col-lg-12'>
+                                            <img className="testimonial-img img-fluid rounded-0 mb-4" src="img/indexImg/testimonial3.svg" alt="" />
+                                        </div>
+                                        <div className='col-12 col-md-12 text-center col-lg-12'>
+                                            <p className="text-color-light font-weight-semibold mb-0">
+                                                The best EVERRRRR! I am so excited about this, I can’t wait to sign my parents up for this, and I will definitely pay for this.
+                                            </p>
+                                        </div>
+                                        <div className='col-12 col-md-12 col-lg-12 text-center'>
+                                            <small className='text-color-light'>Name</small>
+                                            <p className='testimonial-by text-color-light'>
+                                                JULIANNA AMEH
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </section>
                 {/* packages */}
@@ -880,7 +934,7 @@ class Home extends Component {
                             <h4 className="font-weight-extrabold w-75 map-title">Clafiya started and is based in Anambra <wbr /> state in Nigeria.</h4>
                         </div>
                         <div className='map-img d-flex justify-content-center col-12 col-md-6 col-lg-6'>
-                            <img src="./img/indexImg/africa_map.svg" alt="map of africa" />
+                            <img src="./img/indexImg/dotted_africa_map.svg" alt="map of africa" />
                         </div>
 
                     </div>

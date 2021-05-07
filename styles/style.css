@@ -324,7 +324,34 @@ body, html {
   }
   
   .testimonial-section {
-    background: #083e9e !important;
+    background-color: #083e9e !important;
+    background-image: url(/img/indexImg/splash.svg) !important;
+    background-size: 500px !important;
+    background-position-x: center !important;
+    background-position-y: center !important;
+    background-repeat: no-repeat !important;
+  }
+
+  .testimonial {
+    margin: 40px 20px;
+    height: max-content;
+  }
+
+  .testimonial-img {
+    height: 70px;
+    width: 70px;
+    border-radius: 50%;
+    border: none;
+    margin: auto;
+  }
+
+  .testimonial-by {
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 0;
+    margin: 0;
+    transform: translateY(-10px);
   }
   
   .story {
@@ -519,6 +546,8 @@ body, html {
     width: max-content;
     margin: 0px 20px 0px 0px;
   }
+
+  .testimonial-
   
   .dots.sponsor {
     position: absolute;
