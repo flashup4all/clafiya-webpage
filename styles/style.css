@@ -136,7 +136,8 @@ body, html {
   }
 
   .navbar-brand {
-    transform: translateX(-50px);
+    /* transform: translateX(-50px); */
+    margin: 10px 0px;
   }
 
   @media only screen and (max-width: 768px) {
@@ -147,7 +148,21 @@ body, html {
 
   @media only screen and (max-width: 425px) {
     .navbar-brand {
-      transform: translateX(-35px) !important;
+      /* transform: translateX(-35px) !important; */
+      margin: 10px auto 10px 0px;
+      max-width: 70vw;
+    }
+
+    .navbar-brand img {
+      max-width: 50%;
+    }
+  }
+
+  @media only screen and (max-width: 320px) {
+    .navbar-brand {
+      /* transform: translateX(-35px) !important; */
+      margin: 10px auto 10px 0px;
+      max-width: 60vw;
     }
   }
 

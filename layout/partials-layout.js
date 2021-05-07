@@ -35,7 +35,7 @@ function PartialLayout({ children }) {
                     <div className="container">
                         <Link href="/">
                             <a className="navbar-brand pl-0">
-                                <img alt="Clafiya's logo" src="img/logo.svg" />
+                                <img alt="Clafiya's logo" src="img/logo.svg" height='50px' />
                             </a>
                         </Link>
                         <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
