@@ -16,6 +16,7 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-input-mask": "^2.0.4",
+    "react-loader-spinner": "^4.0.0",
     "react-maskinput": "^3.2.0",
     "react-paystack": "^2.0.2",
     "sweetalert2": "^10.16.5"

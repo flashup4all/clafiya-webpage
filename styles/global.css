@@ -10,6 +10,8 @@
 @import "default.css";
 @import "custom.css";
 @import "style.css"; 
+@import "/node_modules/react-loader-spinner/dist/loader/css/react-spinner-loader.css";
+
 
 p, h1, h2, h3, h4, h5, h6 {
     color: #172B4D !important;

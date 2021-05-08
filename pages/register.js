@@ -5,6 +5,8 @@ import moment from 'moment';
 import Swal from 'sweetalert2';
 import PaystackButton from 'react-paystack';
 import MaskInput from 'react-maskinput';
+import Loader from "react-loader-spinner";
+
 // import '../public/register.css';
 // import 'bootstrap/dist/js/bootstrap.js';
 var loadJs = require('loadjs');
@@ -691,9 +693,20 @@ class Register extends Component {
                                     </div>
                                     <div className='col-6 col'>
                                         <button type='submit' disabled={this.state.registerLoading} className='btn button'>
+                                            {
+                                                this.state.registerLoading ? 
+                                                <Loader
+                                                    type="TailSpin"
+                                                    color="#F4F5F7"
+                                                    height={30}
+                                                    width={30}
+                                                    // timeout={3000} //3 secs
+                                                /> :
+                                                'Create Account'
+                                            }
                                             {/* <span className="spinner-border spinner-border-sm text-light" style={(this.state.registerLoading === false) ? 'display: none' : 'display: inline-block'} role="status"></span>
                                             <span className="visually-hidden">Loading...</span> */}
-                                            Create Account
+                                            
                                         </button>
                                     </div>
                                 </div>
