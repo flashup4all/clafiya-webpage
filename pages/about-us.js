@@ -173,12 +173,15 @@ class Home extends Component {
                         <div className="row align-items-center justify-content-center">
                             <div className="col-lg-6 pb-sm-4 pb-lg-0 pr-lg-5 mb-sm-5 mb-lg-0">
                                 <h2 className="text-color-dark font-weight-normal text-6 mb-2">Our <strong className="font-weight-extra-bold">Story</strong></h2>
-                                <p className="pr-5 mr-5">Building Clafiya continues to be a remarkable & meaningful journey. We strongly believe that access to fast
+                                <p className="pr-5 mr-5">
+                                    Clafiya (which means Community Wellness) was started due to our personal experiences seeking primary healthcare in Nigeria and the challenges we faced. It was such a profound experience, that we felt we had to approach this problem from a systems perspective - prevent, respond, and recover. Building Clafiya continues to be a remarkable & meaningful journey. We strongly believe that access to fast and affordable primary care is a basic right for everyone. High medical fees should not be an impediment to one's health or future. Success for us is when Clafiya is the platform not only used among all patients seeking primary care, but ubiquitously used to create networks aimed at building primary health resiliency at the population level. Our core ethos remains that primary care programs have to adapt to individual health needs, integrate into current care practices and make optimal use of health system resources so as to improve health outcomes & reduce cost.
+                                    {/* Building Clafiya continues to be a remarkable & meaningful journey. We strongly believe that access to fast
                                 and affordable primary care is a basic right for everyone. High medical fees should not be an impediment to one's health or
                                 future. Success for us is when Clafiya is the platform not only used among all patients seeking primary care, but ubiquitously
                                 used to create networks aimed at building primary health resiliency at the population level. Our core ethos remains that primary
                                 care programs have to adapt to individual health needs, integrate into current care practices and make optimal use of health
-                                            system resources so as to improve health outcomes & reduce cost.</p>
+                                            system resources so as to improve health outcomes & reduce cost. */}
+                                </p>
                             </div>
                             <div className="col-md-6">
 

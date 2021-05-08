@@ -42,7 +42,7 @@ class Register extends Component {
         lgas: [],
         subscriptions: '',
         registerLoading: false,
-        paystack_email: 'shodipovi@gmail.com',
+        paystack_email: 'dev@clafiya.com',
         paystack_key: 'pk_live_477f8475b863b328656efdad927cd98e47e740fd'
     }
 

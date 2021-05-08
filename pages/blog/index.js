@@ -12,8 +12,8 @@ export default function Home() {
 
                 <div className="col-md-12 align-self-center p-static order-2 text-center">
 
-                    <h1 className="text-dark font-weight-bold text-8">Welcome to Our Blog Section</h1>
-                    <span className="sub-title text-dark">Stay up to date with latest stories, articles and news about health care and Clafiya!</span>
+                    <h1 className="text-dark font-weight-bold text-8">Learn More About Clafiya's Impact</h1>
+                    <span className="sub-title text-dark">Read more about our work, impact, and how Clafiya is improving the lives of Africans across the Continent</span>
                 </div>
             </div>
         </div>
@@ -26,6 +26,65 @@ export default function Home() {
             
                 <section className="timeline">
                     <div className="timeline-body">
+
+                        <div className="timeline-date">
+                            <h3 className="text-primary font-weight-bold">April 2021</h3>
+                        </div>
+
+                        <article className="timeline-box right post post-small">
+                            <div className="timeline-box-arrow"></div>
+                            <div className="p-2">
+                                <div className="row mb-2">
+
+                                    <div className="col">
+                                        <div className="post-image">
+                                        <Link href="https://techcabal.com/2021/04/27/jennie-and-itoro-nigerian-mobile-healthcare-service-founders/">
+                                            <a>
+                                                <img src="https://x7d4c5z5.stackpathcdn.com/wp-content/uploads/tc/2021/04/IMG_3272-1536x1152.jpg" className="img-fluid img-thumbnail img-thumbnail-no-borders rounded-0" alt="" />
+                                            </a>
+                                        </Link>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+
+                                        <div className="post-content">
+                                            <h2 className="font-weight-semibold text-5 line-height-4 mt-2 mb-2">
+                                                <Link href="https://techcabal.com/2021/04/27/jennie-and-itoro-nigerian-mobile-healthcare-service-founders/">
+                                                    <a>
+                                                        Jennie Nwokoye and Itoro Inoyo are bringing hospital-to-home services to rural communities in Nigeria
+                                                    </a>
+                                                </Link>
+                                            </h2>
+                                            {/* <p>Last year a new strain of coronavirus disease also known as COVID-19 was identified in China. Since then, the World Health Organization (WHO) has declared this as a global pandemic that has reached 185 countries and has claimed 126,722 lives to date. Although ... </p> */}
+                                        </div>
+
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <div className="post-meta">
+                                            <span><i className="far fa-calendar-alt"></i> April 27, 2021 </span>
+                                            <br />
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                        <div className="post-meta">
+                                            <span><i className="far fa-user"></i> By <a href="#">Tech Cabal</a> </span>
+                                            {/* <span><i className="far fa-folder"></i> <a href="#">Lifestyle</a>, <a href="#">Design</a> </span> */}
+                                        </div>
+                                    </div>
+                                </div>
+                                <div className="row">
+                                    <div className="col">
+                                    <Link href="/blog/healthcare-mobile-and-covid-news-story"><a className="btn btn-xs btn-light text-1 text-uppercase">Read More</a></Link>
+                                    </div>
+                                </div>
+                            </div>
+                        </article>
                         <div className="timeline-date">
                             <h3 className="text-primary font-weight-bold">July 2020</h3>
                         </div>

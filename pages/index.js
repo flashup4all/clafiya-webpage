@@ -284,7 +284,7 @@ class Home extends Component {
                                             Last Mile Distribution of Primary Care Services
                                         </h2>
                                         <p>
-                                            Our Community Health Workers employ a door-to-door approach to increase access to primary care services in semi-urban, and rural communities. Our reach extends all the way to the last mile, promoting an inclusive experience whilst seeking quality and affordable primary care services.
+                                            Our Community Health Workers employ a door-to-door approach to increase access to primary care services in semi-urban, and rural communities.
                                         </p>
                                     </div>
                                     <div>
@@ -931,7 +931,7 @@ class Home extends Component {
                 <div className="map-section mb-5">
                     <div className="row">
                         <div className="map-head d-flex text-center align-items-center justify-content-center mb-4 col-12 col-md-6 col-lg-6">
-                            <h4 className="font-weight-extrabold w-75 map-title">Clafiya started and is based in Anambra <wbr /> state in Nigeria.</h4>
+                            <h4 className="font-weight-extrabold w-75 map-title">We are part of a movement advancing <wbr /> access to primary healthcare to all Africans.</h4>
                         </div>
                         <div className='map-img d-flex justify-content-center col-12 col-md-6 col-lg-6'>
                             <img src="./img/indexImg/dotted_africa_map.svg" alt="map of africa" />
