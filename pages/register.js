@@ -211,7 +211,7 @@ class Register extends Component {
             console.log(res);
             if (res.status === 'ok') {
                 // ROUTE TO AUTHORIZATION URL TO PAY
-                window.open(res.data.authorization_url);
+                window.open(res.data.authorization_url, '_self');
                 window.localStorage.setItem('cl-pref', res.data.reference);
                 window.localStorage.setItem('cl-aurl', res.data.authorization_url);
                 // this.verifyPayment()
@@ -225,7 +225,7 @@ class Register extends Component {
             reference: p_ref
         }
 
-        const response = await fetch(`${this.state.api}/subscription/payment/initiate`, {
+        const response = await fetch(`${this.state.api}/subscription/payment/verify`, {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
