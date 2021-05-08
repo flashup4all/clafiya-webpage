@@ -211,7 +211,7 @@ class Register extends Component {
             console.log(res);
             if (res.status === 'ok') {
                 // ROUTE TO AUTHORIZATION URL TO PAY
-                window.open(res.data.authorization_url, '_blank');
+                window.open(res.data.authorization_url);
                 window.localStorage.setItem('cl-pref', res.data.reference);
                 window.localStorage.setItem('cl-aurl', res.data.authorization_url);
                 // this.verifyPayment()
