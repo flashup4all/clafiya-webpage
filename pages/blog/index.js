@@ -31,7 +31,7 @@ export default function Home() {
                             <h3 className="text-primary font-weight-bold">April 2021</h3>
                         </div>
 
-                        <article className="timeline-box right post post-small">
+                        <article className="timeline-box left post post-small">
                             <div className="timeline-box-arrow"></div>
                             <div className="p-2">
                                 <div className="row mb-2">
@@ -89,7 +89,7 @@ export default function Home() {
                             <h3 className="text-primary font-weight-bold">July 2020</h3>
                         </div>
             
-                        <article className="timeline-box left post post-medium">
+                        <article className="timeline-box right post post-medium">
                             <div className="timeline-box-arrow"></div>
                             <div className="p-2">
                                 <div className="row mb-2">
